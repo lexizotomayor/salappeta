@@ -47,10 +47,10 @@
       "note": "placeholder — feeds to be selected",
       "fallback": [
         {
-          "source": "Regional press",
+          "source": "Yahoo Finance",
           "date": "",
-          "title": "Guam, Palau, FSM and American Samoa pension headlines appear here",
-          "href": ""
+          "title": "Will Social Security go broke in 2032? Congressional Budget Office says benefits must be slashed",
+          "href": "https://finance.yahoo.com/personal-finance/investing/article/will-social-security-go-broke-in-2032-congressional-budget-office-says-benefits-must-be-slashed-130000243.html"
         },
         {
           "source": "Regional press",
