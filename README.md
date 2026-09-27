@@ -129,6 +129,6 @@ From the design handoff:
 
 Noticed while building:
 
-- The **Medicare** number (1-800-772-1213) is the Social Security Administration's line, which handles Medicare enrollment. Medicare's own line is 1-800-633-4227 (1-800-MEDICARE). It is listed in the article, on *Will the money last?* and in the glossary.
+- Confirm the Medicare numbers against medicare.gov and ssa.gov: Medicare 1-800-633-4227 (coverage and claims) and Social Security 1-800-772-1213 (Medicare sign-up). They appear in the article, on *Will the money last?* and in the glossary.
 - nmisf.com's RSS feed (`/feed/`) currently returns no items, so the Settlement Fund tab shows the curated press releases in `feeds.json`.
 - The $427 million total excludes FY 2015 ($27M per the actuarial report). Add `"2015": 27` to `requiredMinimumAnnualPaymentHistory_nmisfStatusPages` in `fund.json` to show $454M.

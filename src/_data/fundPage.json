@@ -17,7 +17,8 @@
   "healthContacts": [
     { "name": "Pacifica Insurance (Aetna agent), Susupe", "num": "(670) 234-6267", "href": "tel:+16702346267" },
     { "name": "GHLI office, Department of Finance", "num": "ghli@dof.gov.mp", "href": "mailto:ghli@dof.gov.mp" },
-    { "name": "Medicare", "num": "1-800-772-1213", "href": "tel:+18007721213" },
+    { "name": "Medicare (coverage and claims)", "num": "1-800-633-4227", "href": "tel:+18006334227" },
+    { "name": "Social Security (Medicare sign-up)", "num": "1-800-772-1213", "href": "tel:+18007721213" },
     { "name": "CNMI Medicaid", "num": "(670) 664-4880", "href": "tel:+16706644880" }
   ],
   "allocation": [
