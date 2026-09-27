@@ -13,6 +13,7 @@ export default function (eleventyConfig) {
   // ---- Static assets -------------------------------------------------------
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
   eleventyConfig.addPassthroughCopy({
     "node_modules/@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2": "assets/fonts/outfit-latin-wght-normal.woff2",
     "node_modules/@fontsource-variable/outfit/files/outfit-latin-ext-wght-normal.woff2": "assets/fonts/outfit-latin-ext-wght-normal.woff2",
@@ -45,7 +46,7 @@ export default function (eleventyConfig) {
       language: "en",
       title: "Salåppeʼta — NMI pensions, explained",
       subtitle: "Explainers and podcast episodes about the pensions of Northern Mariana retirees.",
-      base: "https://salappeta.netlify.app/",
+      base: "https://salappeta.com/",
       author: { name: "Salåppeʼta" },
     },
   });
@@ -92,6 +93,8 @@ export default function (eleventyConfig) {
   // Renders an optimized grayscale image if the file exists in src/assets/img,
   // otherwise a labelled placeholder so the layout holds until the photo arrives.
   eleventyConfig.addShortcode("photo", async (file, alt = "", placeholder = "Photo to come") => {
+    // The CMS stores "/assets/img/name.jpg"; templates may pass just "name.jpg".
+    file = String(file || "").replace(/^\/?assets\/img\//, "");
     const src = path.join(IMG_DIR, file || "");
     if (!file || !fs.existsSync(src)) {
       const label = escapeAttr(placeholder);
@@ -110,6 +113,8 @@ export default function (eleventyConfig) {
       decoding: "async",
     });
   });
+
+  eleventyConfig.ignores.add("src/admin/**");
 
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },

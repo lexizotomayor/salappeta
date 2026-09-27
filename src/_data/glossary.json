@@ -1,130 +1,132 @@
-[
-  {
-    "term": "25% payment",
-    "definition": "The part of a retiree’s full benefit above the guaranteed 75%. It was paid separately by the Government and stopped after it said there was no funding beyond December 31, 2025."
-  },
-  {
-    "term": "75% guarantee",
-    "definition": "The settlement’s promise that members receive at least 75% of their Full Benefits."
-  },
-  {
-    "term": "Actuary",
-    "definition": "An expert who uses math and statistics to estimate how much a pension fund will need to pay, and for how long."
-  },
-  {
-    "term": "Actuarial valuation",
-    "definition": "The actuary’s yearly check-up of the Fund: how many members there are, how much money there is, and how much the Government must pay."
-  },
-  {
-    "term": "Annuity",
-    "definition": "A regular payment for life. Your monthly pension is an annuity."
-  },
-  {
-    "term": "Appeal",
-    "definition": "A formal request asking the Settlement Fund to review a decision about your benefits. The Fund publishes its appeal rules, forms and fees."
-  },
-  {
-    "term": "Assumed return",
-    "definition": "The yearly investment earnings the plan expects over the long run. For the Settlement Fund it is 5.8%."
-  },
-  {
-    "term": "Beneficiary",
-    "definition": "A person who receives benefits because of a member, such as a surviving spouse or child."
-  },
-  {
-    "term": "Class action",
-    "definition": "A lawsuit brought by a few people on behalf of a larger group with the same problem. Johnson v. Inos was a class action for retirees."
-  },
-  {
-    "term": "Class Member",
-    "definition": "A retiree or beneficiary covered by the 2013 settlement."
-  },
-  {
-    "term": "Consent judgment",
-    "definition": "A court order that records what both sides agreed to. Doc 562 in the settlement case."
-  },
-  {
-    "term": "Contribution",
-    "definition": "Money paid into a pension fund, by the employee from each paycheck or by the employer."
-  },
-  {
-    "term": "Defined benefit plan",
-    "definition": "A pension that promises a set monthly amount based on salary and years of service, rather than on how investments perform."
-  },
-  {
-    "term": "Final judgment",
-    "definition": "The court’s last decision in a case. Doc 561 approved the retirees’ settlement."
-  },
-  {
-    "term": "Full Benefits",
-    "definition": "The pension a member would receive under the original Retirement Fund rules, before any reduction."
-  },
-  {
-    "term": "Funded ratio",
-    "definition": "Money a fund holds divided by what it owes. 100% means fully funded."
-  },
-  {
-    "term": "GHLI",
-    "definition": "Group Health and Life Insurance: the Government program that provides health and life insurance to employees and retirees."
-  },
-  {
-    "term": "Investment return",
-    "definition": "What the Fund’s money earned over a period, shown as a percentage."
-  },
-  {
-    "term": "Medicaid",
-    "definition": "Government health coverage for people with low income. CNMI Medicaid: (670) 664-4880."
-  },
-  {
-    "term": "Medicare",
-    "definition": "Federal health insurance for people 65 and older. Medicare: 1-800-772-1213."
-  },
-  {
-    "term": "Minimum Annual Payment",
-    "definition": "The amount the Government must pay the Settlement Fund each fiscal year, set by the actuary. $29 million for FY 2026."
-  },
-  {
-    "term": "MPLT",
-    "definition": "Marianas Public Land Trust, which holds public land money in trust. The Government has borrowed from it to meet budget needs."
-  },
-  {
-    "term": "Net of fees",
-    "definition": "Investment returns after the managers’ fees are taken out."
-  },
-  {
-    "term": "Pay-as-you-go",
-    "definition": "Paying each year’s benefits from that year’s budget instead of from savings. Expected for the Settlement Fund from about 2048."
-  },
-  {
-    "term": "Public Law",
-    "definition": "A bill that has passed the Legislature and been signed by the Governor. Written like P.L. 24-20."
-  },
-  {
-    "term": "Retirement Fund",
-    "definition": "The NMI Retirement Fund, created in 1980. It ran short of money after years of unpaid Government contributions."
-  },
-  {
-    "term": "Settlement Agreement",
-    "definition": "The 2013 agreement in Johnson v. Inos that created the Settlement Fund. Doc 468."
-  },
-  {
-    "term": "Settlement Fund",
-    "definition": "The NMI Settlement Fund, which took over Retirement Fund assets to pay class members at least 75% of Full Benefits."
-  },
-  {
-    "term": "SF-200",
-    "definition": "The Annuity Recipient Information Update form. The Fund asks members to return it each year to keep payments going."
-  },
-  {
-    "term": "Surviving spouse benefit",
-    "definition": "A pension paid to a member’s husband or wife after the member dies, generally 50% of the member’s benefit."
-  },
-  {
-    "term": "Trustee",
-    "definition": "The independent person appointed by the court to oversee the Settlement Fund and report on it."
-  },
-  {
-    "term": "Vested terminee",
-    "definition": "A former employee who earned the right to a pension but has not started receiving it yet."
-  }
-]
+{
+  "terms": [
+    {
+      "term": "25% payment",
+      "definition": "The part of a retiree’s full benefit above the guaranteed 75%. It was paid separately by the Government and stopped after it said there was no funding beyond December 31, 2025."
+    },
+    {
+      "term": "75% guarantee",
+      "definition": "The settlement’s promise that members receive at least 75% of their Full Benefits."
+    },
+    {
+      "term": "Actuary",
+      "definition": "An expert who uses math and statistics to estimate how much a pension fund will need to pay, and for how long."
+    },
+    {
+      "term": "Actuarial valuation",
+      "definition": "The actuary’s yearly check-up of the Fund: how many members there are, how much money there is, and how much the Government must pay."
+    },
+    {
+      "term": "Annuity",
+      "definition": "A regular payment for life. Your monthly pension is an annuity."
+    },
+    {
+      "term": "Appeal",
+      "definition": "A formal request asking the Settlement Fund to review a decision about your benefits. The Fund publishes its appeal rules, forms and fees."
+    },
+    {
+      "term": "Assumed return",
+      "definition": "The yearly investment earnings the plan expects over the long run. For the Settlement Fund it is 5.8%."
+    },
+    {
+      "term": "Beneficiary",
+      "definition": "A person who receives benefits because of a member, such as a surviving spouse or child."
+    },
+    {
+      "term": "Class action",
+      "definition": "A lawsuit brought by a few people on behalf of a larger group with the same problem. Johnson v. Inos was a class action for retirees."
+    },
+    {
+      "term": "Class Member",
+      "definition": "A retiree or beneficiary covered by the 2013 settlement."
+    },
+    {
+      "term": "Consent judgment",
+      "definition": "A court order that records what both sides agreed to. Doc 562 in the settlement case."
+    },
+    {
+      "term": "Contribution",
+      "definition": "Money paid into a pension fund, by the employee from each paycheck or by the employer."
+    },
+    {
+      "term": "Defined benefit plan",
+      "definition": "A pension that promises a set monthly amount based on salary and years of service, rather than on how investments perform."
+    },
+    {
+      "term": "Final judgment",
+      "definition": "The court’s last decision in a case. Doc 561 approved the retirees’ settlement."
+    },
+    {
+      "term": "Full Benefits",
+      "definition": "The pension a member would receive under the original Retirement Fund rules, before any reduction."
+    },
+    {
+      "term": "Funded ratio",
+      "definition": "Money a fund holds divided by what it owes. 100% means fully funded."
+    },
+    {
+      "term": "GHLI",
+      "definition": "Group Health and Life Insurance: the Government program that provides health and life insurance to employees and retirees."
+    },
+    {
+      "term": "Investment return",
+      "definition": "What the Fund’s money earned over a period, shown as a percentage."
+    },
+    {
+      "term": "Medicaid",
+      "definition": "Government health coverage for people with low income. CNMI Medicaid: (670) 664-4880."
+    },
+    {
+      "term": "Medicare",
+      "definition": "Federal health insurance for people 65 and older. Medicare: 1-800-772-1213."
+    },
+    {
+      "term": "Minimum Annual Payment",
+      "definition": "The amount the Government must pay the Settlement Fund each fiscal year, set by the actuary. $29 million for FY 2026."
+    },
+    {
+      "term": "MPLT",
+      "definition": "Marianas Public Land Trust, which holds public land money in trust. The Government has borrowed from it to meet budget needs."
+    },
+    {
+      "term": "Net of fees",
+      "definition": "Investment returns after the managers’ fees are taken out."
+    },
+    {
+      "term": "Pay-as-you-go",
+      "definition": "Paying each year’s benefits from that year’s budget instead of from savings. Expected for the Settlement Fund from about 2048."
+    },
+    {
+      "term": "Public Law",
+      "definition": "A bill that has passed the Legislature and been signed by the Governor. Written like P.L. 24-20."
+    },
+    {
+      "term": "Retirement Fund",
+      "definition": "The NMI Retirement Fund, created in 1980. It ran short of money after years of unpaid Government contributions."
+    },
+    {
+      "term": "Settlement Agreement",
+      "definition": "The 2013 agreement in Johnson v. Inos that created the Settlement Fund. Doc 468."
+    },
+    {
+      "term": "Settlement Fund",
+      "definition": "The NMI Settlement Fund, which took over Retirement Fund assets to pay class members at least 75% of Full Benefits."
+    },
+    {
+      "term": "SF-200",
+      "definition": "The Annuity Recipient Information Update form. The Fund asks members to return it each year to keep payments going."
+    },
+    {
+      "term": "Surviving spouse benefit",
+      "definition": "A pension paid to a member’s husband or wife after the member dies, generally 50% of the member’s benefit."
+    },
+    {
+      "term": "Trustee",
+      "definition": "The independent person appointed by the court to oversee the Settlement Fund and report on it."
+    },
+    {
+      "term": "Vested terminee",
+      "definition": "A former employee who earned the right to a pension but has not started receiving it yet."
+    }
+  ]
+}

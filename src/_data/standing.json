@@ -1,5 +1,27 @@
-[
-  { "n": "1", "urgent": true, "title": "The extra 25% has stopped", "body": "The settlement guarantees retirees at least 75% of their full benefit. The Government had been paying the other 25% separately, then told the Fund there was no money for it after December 31, 2025. Further notices on the cessation followed in June and July 2026.", "src": "NMISF press release, 8 July 2026", "href": "http://www.nmisf.com/wp-content/uploads/2026/07/NMISF-Press-Release-Important-Notice-re-Cessation-of-25-Percent-Benefit-Payments-7.8.2026.pdf" },
-  { "n": "2", "title": "Health insurance: covered for 2026, not settled for 2027", "body": "A last-minute budget in December 2025 kept retirees on the Aetna plan for 2026. The FY 2027 budget has passed the House and is now with the Senate. Retiree coverage is estimated to cost about $6.9 million next year.", "src": "Health insurance, explained", "href": "/will-the-money-last/#health", "internal": true },
-  { "n": "3", "title": "Payments have been late", "body": "The Fund announced delays to benefit payments in February, July and October 2025.", "src": "NMISF press releases", "href": "https://www.nmisf.com/news/" }
-]
+{
+  "items": [
+    {
+      "n": "1",
+      "urgent": true,
+      "title": "The extra 25% has stopped",
+      "body": "The settlement guarantees retirees at least 75% of their full benefit. The Government had been paying the other 25% separately, then told the Fund there was no money for it after December 31, 2025. Further notices on the cessation followed in June and July 2026.",
+      "src": "NMISF press release, 8 July 2026",
+      "href": "http://www.nmisf.com/wp-content/uploads/2026/07/NMISF-Press-Release-Important-Notice-re-Cessation-of-25-Percent-Benefit-Payments-7.8.2026.pdf"
+    },
+    {
+      "n": "2",
+      "title": "Health insurance: covered for 2026, not settled for 2027",
+      "body": "A last-minute budget in December 2025 kept retirees on the Aetna plan for 2026. The FY 2027 budget has passed the House and is now with the Senate. Retiree coverage is estimated to cost about $6.9 million next year.",
+      "src": "Health insurance, explained",
+      "href": "/will-the-money-last/#health",
+      "internal": true
+    },
+    {
+      "n": "3",
+      "title": "Payments have been late",
+      "body": "The Fund announced delays to benefit payments in February, July and October 2025.",
+      "src": "NMISF press releases",
+      "href": "https://www.nmisf.com/news/"
+    }
+  ]
+}

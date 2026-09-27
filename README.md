@@ -75,7 +75,45 @@ Every image slot shows a labelled placeholder until its file exists in `src/asse
 1. Connect the GitHub repository in Netlify. The build settings come from `netlify.toml` (`npm run build`, publish `_site`).
 2. **Forms:** Netlify detects the `newsletter` and `feedback` forms at deploy time. Turn on email notifications under **Forms → Form notifications**. Netlify stores submissions but does not send newsletters, so connect the `newsletter` form to Buttondown or Mailchimp (webhook or Zapier) when you're ready.
 3. **Daily feed refresh:** create a build hook (**Site configuration → Build & deploy → Build hooks**), then add it as the environment variable `BUILD_HOOK_URL`. The scheduled function `daily-rebuild` calls it once a day.
-4. Update `url` in `src/_data/site.json` (and `base` in `eleventy.config.js`) when the final domain is known.
+4. **Domain:** add `salappeta.com` under **Domain management** and follow Netlify's DNS instructions. The site is already configured for `https://salappeta.com`.
+5. **CMS login:** see below.
+
+## Content editor (Decap CMS)
+
+Edit explainers, podcast episodes and page content at **https://salappeta.com/admin/**. Every save is a commit to GitHub, and Netlify rebuilds the site in a minute or two.
+
+What you can edit:
+
+- **Explainers (blog):** write, date, feature, or mark as planned. Body is Markdown. (The sample article *the 75% and the 25%* uses a custom layout, so edit it in GitHub, `src/explainers/the-75-and-the-25.njk`.)
+- **Podcast episodes**
+- **Home page:** where things stand, timeline, retiree stories (with portraits), what you may hear, laws & court orders, bill tracker, the feed's sources
+- **Other pages:** site settings (the "last updated" date), glossary, podcast links and formats, about page lists, *Will the money last?* text and report figures
+- **Media:** photos upload to `src/assets/img/`
+
+Section headings and fixed paragraphs live in the page templates in `src/`.
+
+### One-time login setup
+
+The editor signs in with GitHub. Anyone who should edit needs a GitHub account with write access to this repository.
+
+1. On GitHub, go to **Settings → Developer settings → OAuth Apps → New OAuth App**:
+   - Application name: `Salåppeʼta CMS`
+   - Homepage URL: `https://salappeta.com`
+   - Authorization callback URL: `https://api.netlify.com/auth/done`
+2. Copy the **Client ID**, and generate and copy a **Client secret**.
+3. In Netlify: **Site configuration → Access & security → OAuth → Install provider → GitHub**, and paste both.
+4. Open `/admin/` and choose **Login with GitHub**.
+
+To add an editor, invite them as a collaborator on the GitHub repository.
+
+### Trying the editor locally
+
+```bash
+npx decap-server        # in one terminal (port 8081)
+npm start -- --port=8082  # in another
+```
+
+Then open http://localhost:8082/admin/ and choose **Login**. Changes are written to your local files, not GitHub.
 
 ## Still to confirm before launch
 

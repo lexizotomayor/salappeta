@@ -1,0 +1,431 @@
+# Decap CMS — content editor for Salåppeʼta, at /admin/
+# Every save is a commit to GitHub, which triggers a Netlify rebuild (1–2 min).
+
+backend:
+  name: github
+  repo: lexizotomayor/salappeta
+  branch: main
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+# Lets `npx decap-server` edit your local copy when testing on localhost.
+local_backend: true
+
+site_url: https://salappeta.com
+display_url: https://salappeta.com
+
+media_folder: src/assets/img
+public_folder: /assets/img
+
+collections:
+  # ------------------------------------------------------------------ Blog
+  - name: explainers
+    label: Explainers (blog)
+    label_singular: Explainer
+    description: "Plain-language explainers. Tick “Planned” to list a title on the blog without publishing it yet."
+    folder: src/explainers
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{topic}} · {{date}}"
+    sortable_fields: [date, title, topic]
+    view_filters:
+      - { label: Planned, field: planned, pattern: true }
+      - { label: Featured, field: featured, pattern: true }
+    preview_path: "explainers/{{slug}}/"
+    fields:
+      - { label: "Title (page heading, lower case in the design)", name: title, widget: string, hint: "e.g. the 75% and the 25%" }
+      - { label: "Headline (for lists)", name: headline, widget: string, required: false, hint: "Sentence case, e.g. The 75% and the 25%: where each part of your pension comes from" }
+      - { label: "Short description (dek)", name: dek, widget: text, hint: "One or two sentences shown in lists." }
+      - { label: "Lede", name: lede, widget: text, required: false, hint: "Larger intro under the title. Uses the dek if left empty." }
+      - label: Topic
+        name: topic
+        widget: select
+        options: ["The settlement", "The money", "Health insurance", "Reading reports", "The courts", "Your rights"]
+      - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "D MMM YYYY", time_format: false, default: "{{now}}" }
+      - { label: "Reading time (minutes)", name: readMinutes, widget: number, value_type: int, min: 1, default: 5 }
+      - { label: "Featured on the blog page", name: featured, widget: boolean, default: false, hint: "Only one explainer should be featured." }
+      - { label: "Planned (list only, not published yet)", name: planned, widget: boolean, default: false, required: false }
+      - { label: "Featured photo", name: photo, widget: image, required: false, hint: "Shown in black and white in a circle when featured." }
+      - { label: "Photo description", name: photoLabel, widget: string, required: false }
+      - label: "In short (summary points)"
+        name: summary
+        widget: list
+        required: false
+        field: { label: Point, name: point, widget: string }
+      - label: Sources
+        name: sources
+        widget: list
+        required: false
+        summary: "{{fields.label}}"
+        fields:
+          - { label: "Label", name: label, widget: string }
+          - { label: "Link", name: href, widget: string }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # --------------------------------------------------------------- Podcast
+  - name: episodes
+    label: Podcast episodes
+    label_singular: Episode
+    description: "The Breadfruit Dispatch. Summaries only, no transcripts."
+    folder: src/episodes
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{fields.no}}-{{slug}}"
+    identifier_field: title
+    summary: "no. {{no}} · {{title}} ({{format}})"
+    sortable_fields: [no, title]
+    fields:
+      - { label: "Episode number", name: no, widget: number, value_type: int, min: 1 }
+      - { label: Title, name: title, widget: string }
+      - label: Format
+        name: format
+        widget: select
+        options: ["Retiree voices", "Explainers", "On the record", "Roundup"]
+      - { label: "Length", name: length, widget: string, hint: "e.g. 18 min" }
+      - { label: Summary, name: summary, widget: text }
+      - { label: "Spotify link", name: spotify, widget: string, required: false }
+      - { label: "Apple Podcasts link", name: apple, widget: string, required: false }
+      - { label: "Planned (guest to be confirmed)", name: planned, widget: boolean, default: false, required: false }
+
+  # ------------------------------------------------------------ Page content
+  - name: home
+    label: Home page
+    description: "Sections of the home page."
+    editor: { preview: false }
+    files:
+      - name: standing
+        label: "Where things stand"
+        file: src/_data/standing.json
+        format: json
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            summary: "{{fields.n}}. {{fields.title}}"
+            fields:
+              - { label: "Number", name: n, widget: string }
+              - { label: "Urgent (terracotta number)", name: urgent, widget: boolean, required: false, default: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: body, widget: text }
+              - { label: "Source label", name: src, widget: string }
+              - { label: "Source link", name: href, widget: string }
+              - { label: "Link is on this site", name: internal, widget: boolean, required: false, default: false }
+      - name: timeline
+        label: "Timeline"
+        file: src/_data/timeline.json
+        format: json
+        fields:
+          - label: Entries
+            name: items
+            widget: list
+            summary: "{{fields.year}} — {{fields.title}}"
+            fields:
+              - { label: Year, name: year, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: body, widget: text }
+              - label: "Dot colour"
+                name: dot
+                widget: select
+                default: almond
+                options:
+                  - { label: "Empty (almond)", value: almond }
+                  - { label: "Sage", value: sage }
+                  - { label: "Pale sage (warning)", value: pale }
+                  - { label: "Terracotta (now / urgent)", value: terracotta }
+      - name: stories
+        label: "In their words (retiree stories)"
+        file: src/_data/stories.json
+        format: json
+        fields:
+          - label: Stories
+            name: items
+            widget: list
+            summary: "{{fields.name}} — {{fields.meta}}"
+            fields:
+              - { label: Portrait, name: photo, widget: image, required: false }
+              - { label: "Line above name", name: meta, widget: string, hint: "e.g. retired teacher · Saipan" }
+              - { label: Name, name: name, widget: string }
+              - { label: Quote, name: quote, widget: text }
+      - name: myths
+        label: "What you may hear"
+        file: src/_data/myths.json
+        format: json
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            summary: "{{fields.myth}}"
+            fields:
+              - { label: "What you may hear", name: myth, widget: text }
+              - { label: "What the record says", name: fact, widget: text }
+              - { label: "Source label", name: src, widget: string }
+              - { label: "Source link", name: href, widget: string }
+      - name: documents
+        label: "Laws & court orders"
+        file: src/_data/documents.json
+        format: json
+        fields:
+          - label: Documents
+            name: items
+            widget: list
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { label: "Kind", name: kind, widget: string, hint: "e.g. Court order · Doc 561" }
+              - { label: Date, name: date, widget: string, hint: "e.g. Dec 2025" }
+              - { label: Title, name: title, widget: string }
+              - { label: "Plain-language summary", name: plain, widget: text }
+              - { label: Link, name: href, widget: string }
+      - name: bills
+        label: "Bill tracker"
+        file: src/_data/bills.json
+        format: json
+        fields:
+          - { label: Stages, name: stages, widget: list, field: { label: Stage, name: stage, widget: string }, hint: "Usually leave as is." }
+          - label: Bills
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: "Plain-language summary", name: plain, widget: text }
+              - label: "Current stage"
+                name: stage
+                widget: select
+                options:
+                  - { label: "Introduced", value: 0 }
+                  - { label: "Committee", value: 1 }
+                  - { label: "Passed House", value: 2 }
+                  - { label: "Senate", value: 3 }
+                  - { label: "Governor", value: 4 }
+              - { label: "Status note", name: note, widget: string }
+      - name: feeds
+        label: "The feed (news sources)"
+        file: src/_data/feeds.json
+        format: json
+        fields:
+          - label: Tabs
+            name: regions
+            widget: list
+            allow_add: false
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "ID", name: region, widget: hidden }
+              - { label: "Tab name", name: label, widget: string }
+              - { label: "Source name", name: name, widget: string }
+              - { label: "RSS feed URL", name: url, widget: string, required: false, hint: "Leave empty to show the items below." }
+              - { label: "Note under the list", name: note, widget: string }
+              - label: "Items shown when there is no feed"
+                name: fallback
+                widget: list
+                summary: "{{fields.date}} {{fields.title}}"
+                fields:
+                  - { label: Source, name: source, widget: string }
+                  - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "D MMM YYYY", time_format: false, required: false }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Link, name: href, widget: string, required: false }
+
+  - name: pages
+    label: Other pages
+    editor: { preview: false }
+    files:
+      - name: site
+        label: "Site settings"
+        file: src/_data/site.json
+        format: json
+        fields:
+          - { label: "Last updated (shown in “where things stand”)", name: updated, widget: datetime, format: "YYYY-MM-DD", date_format: "D MMM YYYY", time_format: false }
+          - { label: "Site description (search engines)", name: description, widget: text }
+          - { label: "Copyright line", name: copyright, widget: string }
+          - { label: Name, name: name, widget: hidden }
+          - { label: Tagline, name: tagline, widget: hidden }
+          - { label: URL, name: url, widget: hidden }
+          - { label: nmisf, name: nmisf, widget: hidden }
+          - { label: uploads, name: uploads, widget: hidden }
+      - name: glossary
+        label: "Glossary"
+        file: src/_data/glossary.json
+        format: json
+        fields:
+          - label: Terms
+            name: terms
+            widget: list
+            summary: "{{fields.term}}"
+            hint: "Terms are grouped by first letter automatically. Keep them in A–Z order."
+            fields:
+              - { label: Term, name: term, widget: string }
+              - { label: Definition, name: definition, widget: text }
+      - name: podcast
+        label: "Podcast page"
+        file: src/_data/podcast.json
+        format: json
+        fields:
+          - { label: "Spotify show link", name: spotify, widget: string, required: false }
+          - { label: "Apple Podcasts show link", name: apple, widget: string, required: false }
+          - label: Formats
+            name: formats
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Description, name: body, widget: string }
+      - name: about
+        label: "About page"
+        file: src/_data/about.json
+        format: json
+        fields:
+          - label: "nmisf.com vs salåppeʼta"
+            name: why
+            widget: list
+            summary: "{{fields.fund}}"
+            fields:
+              - { label: "nmisf.com", name: fund, widget: text }
+              - { label: "salåppeʼta", name: us, widget: text }
+          - label: "How we work"
+            name: principles
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: body, widget: text }
+          - label: Sources
+            name: sources
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: "What it provides", name: what, widget: text }
+              - { label: Link, name: href, widget: string }
+      - name: fundPage
+        label: "Will the money last? (text)"
+        file: src/_data/fundPage.json
+        format: json
+        fields:
+          - label: "Three answers"
+            name: answers
+            widget: list
+            allow_add: false
+            summary: "{{fields.q}}"
+            fields:
+              - { label: Question, name: q, widget: string }
+              - { label: "Big answer", name: big, widget: string }
+              - { label: Text, name: body, widget: text }
+              - { label: Colour, name: tone, widget: select, options: [almond, terracotta, forest] }
+          - label: "Milestones under the balance chart"
+            name: milestones
+            widget: list
+            summary: "{{fields.y}}: {{fields.v}}"
+            fields:
+              - { label: Year, name: y, widget: string }
+              - { label: Value, name: v, widget: string }
+          - label: "Health insurance: how we got here"
+            name: ghli
+            widget: list
+            summary: "{{fields.date}}"
+            fields:
+              - { label: Date, name: date, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: "Dot colour", name: dot, widget: select, options: [almond, sage, pale, forest, terracotta] }
+          - label: "Health insurance contacts"
+            name: healthContacts
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: "Phone or email (as shown)", name: num, widget: string }
+              - { label: "Link", name: href, widget: string, hint: "tel:+16701234567 or mailto:name@example.com" }
+          - label: "Where it is invested (legend)"
+            name: allocation
+            widget: list
+            allow_add: false
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Key, name: key, widget: hidden }
+              - { label: Name, name: name, widget: string }
+              - { label: Colour, name: color, widget: hidden }
+              - { label: Note, name: note, widget: string }
+          - label: "Investment return periods"
+            name: returns
+            widget: list
+            allow_add: false
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Key, name: key, widget: hidden }
+              - { label: Label, name: label, widget: string }
+          - label: "What could go wrong"
+            name: risks
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Urgent (terracotta number)", name: urgent, widget: boolean, required: false, default: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: body, widget: text }
+          - label: "Words used"
+            name: terms
+            widget: list
+            summary: "{{fields.term}}"
+            fields:
+              - { label: Term, name: term, widget: string }
+              - { label: Definition, name: def, widget: text }
+      - name: fund
+        label: "Will the money last? (report figures)"
+        file: src/_data/fund.json
+        format: json
+        description: "Numbers from the actuarial valuation and investment summary. Charts are drawn from these. Year-by-year projections are edited directly in GitHub."
+        fields:
+          - { label: "Valuation date", name: asOf, widget: string }
+          - label: "One year, in and out (FY projection, whole dollars)"
+            name: fy2026Projection
+            widget: object
+            fields:
+              - { label: "Starting balance", name: beginningBalance, widget: number, value_type: int }
+              - { label: "Government payment", name: cnmiPayment, widget: number, value_type: int }
+              - { label: "Other contributions", name: otherContribs, widget: number, value_type: int }
+              - { label: "Investment earnings", name: investmentEarnings, widget: number, value_type: int }
+              - { label: "Pensions paid at 75% (negative)", name: benefitsAt75, widget: number, value_type: int }
+              - { label: "Expenses (negative)", name: expenses, widget: number, value_type: int }
+              - { label: "Ending balance", name: endingBalance, widget: number, value_type: int }
+          - { label: "Assumed return (e.g. 0.058)", name: assumedReturn, widget: number, value_type: float }
+          - label: "Who is covered"
+            name: members
+            widget: object
+            fields:
+              - { label: "Members in total", name: total, widget: number, value_type: int }
+              - { label: "Members a year earlier", name: totalPriorYear, widget: number, value_type: int }
+              - { label: "Receiving a benefit", name: receiving, widget: number, value_type: int }
+              - { label: "Retirees", name: healthyRetirees, widget: number, value_type: int }
+              - { label: "Surviving spouses", name: survivingSpouses, widget: number, value_type: int }
+              - { label: "Children", name: childPensioners, widget: number, value_type: int }
+              - { label: "Average age", name: averageAge, widget: number, value_type: float }
+              - { label: "Years of life expected", name: averageRemainingLifeExpectancy, widget: number, value_type: float }
+          - label: "Investments"
+            name: investments
+            widget: object
+            fields:
+              - { label: "As of", name: asOf, widget: string }
+              - { label: "Market value (whole dollars)", name: marketValue, widget: number, value_type: int }
+              - label: "Returns after fees (%)"
+                name: returnsNetOfFees
+                widget: object
+                fields:
+                  - { label: "1 year", name: 1yr, widget: number, value_type: float }
+                  - { label: "3 years", name: 3yr, widget: number, value_type: float }
+                  - { label: "5 years", name: 5yr, widget: number, value_type: float }
+                  - { label: "10 years", name: 10yr, widget: number, value_type: float }
+                  - { label: "Since 2013", name: sinceInception2013, widget: number, value_type: float }
+              - label: "Allocation (%)"
+                name: allocationPct
+                widget: object
+                fields:
+                  - { label: Bonds, name: bonds, widget: number, value_type: float }
+                  - { label: "Real assets", name: realAssets, widget: number, value_type: float }
+                  - { label: "Real return", name: realReturn, widget: number, value_type: float }
+                  - { label: Stocks, name: stocks, widget: number, value_type: float }
+                  - { label: Cash, name: cash, widget: number, value_type: float }

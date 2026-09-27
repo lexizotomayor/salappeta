@@ -1,8 +1,40 @@
-[
-  { "year": "2009", "dot": "almond", "title": "Johnson v. Inos is filed", "body": "Retirees sue in the U.S. District Court for the NMI over the Government’s unpaid contributions to the Retirement Fund (Case No. 09-00023)." },
-  { "year": "2012", "dot": "sage", "title": "The Retirement Fund files for bankruptcy", "body": "Years of unpaid contributions leave the Fund nearly empty. The court later dismisses the filing." },
-  { "year": "2013", "dot": "almond", "title": "The settlement", "body": "The court approves the class-action settlement. The new Settlement Fund takes over Retirement Fund assets and must pay members at least 75% of their full benefits, backed by annual Government payments." },
-  { "year": "2018", "dot": "almond", "title": "Payments peak", "body": "The required Minimum Annual Payment reaches $45 million, then declines each year after." },
-  { "year": "2025", "dot": "pale", "title": "Health insurance and the 25% in doubt", "body": "The Fund warns of lapsing health coverage and says the Government has no funding for 25% payments beyond December 31." },
-  { "year": "2026", "dot": "terracotta", "title": "The 25% payments stop", "body": "The Fund issues cessation notices in June and July. The FY 2026 payment status references an MPLT loan." }
-]
+{
+  "items": [
+    {
+      "year": "2009",
+      "dot": "almond",
+      "title": "Johnson v. Inos is filed",
+      "body": "Retirees sue in the U.S. District Court for the NMI over the Government’s unpaid contributions to the Retirement Fund (Case No. 09-00023)."
+    },
+    {
+      "year": "2012",
+      "dot": "sage",
+      "title": "The Retirement Fund files for bankruptcy",
+      "body": "Years of unpaid contributions leave the Fund nearly empty. The court later dismisses the filing."
+    },
+    {
+      "year": "2013",
+      "dot": "almond",
+      "title": "The settlement",
+      "body": "The court approves the class-action settlement. The new Settlement Fund takes over Retirement Fund assets and must pay members at least 75% of their full benefits, backed by annual Government payments."
+    },
+    {
+      "year": "2018",
+      "dot": "almond",
+      "title": "Payments peak",
+      "body": "The required Minimum Annual Payment reaches $45 million, then declines each year after."
+    },
+    {
+      "year": "2025",
+      "dot": "pale",
+      "title": "Health insurance and the 25% in doubt",
+      "body": "The Fund warns of lapsing health coverage and says the Government has no funding for 25% payments beyond December 31."
+    },
+    {
+      "year": "2026",
+      "dot": "terracotta",
+      "title": "The 25% payments stop",
+      "body": "The Fund issues cessation notices in June and July. The FY 2026 payment status references an MPLT loan."
+    }
+  ]
+}

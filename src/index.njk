@@ -44,7 +44,7 @@ navSet: home
     <p class="meta">last updated {{ site.updated | dateDots }}<br>source: NMI Settlement Fund notices</p>
   </div>
   <div class="justify-end stack gap-5" style="max-width:600px">
-    {%- for s in standing %}
+    {%- for s in standing.items %}
     <article class="standing__item">
       <div class="standing__n{% if s.urgent %} standing__n--urgent{% endif %}" aria-hidden="true">{{ s.n }}</div>
       <div>
@@ -98,7 +98,7 @@ navSet: home
     <p class="meta justify-end">each entry links to its source</p>
   </div>
   <ol class="timeline timeline--home" style="list-style:none;margin-top:0;margin-bottom:0;padding-right:0">
-    {%- for t in timeline %}
+    {%- for t in timeline.items %}
     <li class="timeline__item">
       <div class="tl-dot tl-dot--{{ t.dot }}" aria-hidden="true"></div>
       <div class="timeline__year">{{ t.year }}</div>
@@ -120,8 +120,9 @@ navSet: home
     </div>
   </div>
   <div class="auto stories">
-    {%- for st in stories %}
-    <figure class="story" style="--offset:{{ st.offset }};--size:{{ st.size }}">
+    {%- set storySizes = ["100%", "61.8%", "80%"] %}{% set storyOffsets = ["0px", "123px", "47px"] %}
+    {%- for st in stories.items %}
+    <figure class="story" style="--offset:{{ storyOffsets[loop.index0 % 3] }};--size:{{ storySizes[loop.index0 % 3] }}">
       <div class="circle"><div class="circle__img">{% photo st.photo, st.name, "Portrait (b&w)" %}</div></div>
       <span class="meta">{{ st.meta }}</span>
       <h3 style="font-size:1.5rem;font-weight:600;line-height:1.3">{{ st.name }}</h3>
@@ -170,7 +171,7 @@ navSet: home
 
 <section id="myths" class="section section--94 bg-deep" aria-labelledby="myths-h">
   <h2 id="myths-h" class="h-section mb-6">what you may hear</h2>
-  {%- for m in myths %}
+  {%- for m in myths.items %}
   <div class="auto myth">
     <div class="myth__side"><span class="myth__label" style="color:var(--sage-muted)">heard</span><p class="myth__heard"><span class="visually-hidden">Not quite: </span><s style="text-decoration-thickness:1px;text-decoration-color:var(--sage-muted)">{{ m.myth }}</s></p></div>
     <div class="myth__side"><span class="myth__label" style="color:var(--sage)">record</span><div><p class="myth__fact">{{ m.fact }}</p><a class="meta" href="{{ m.href }}">{{ m.src }} ↗</a></div></div>
@@ -184,7 +185,7 @@ navSet: home
     <h2 id="library-h" class="h-section mb-6">laws &amp; court orders</h2>
   </div>
   <div class="row-list row-list--thin">
-    {%- for d in documents %}
+    {%- for d in documents.items %}
     <a class="row split" href="{{ d.href }}">
       <div class="row-meta"><span>{{ d.kind }}</span><span class="date">{{ d.date }}</span></div>
       <div><h3 class="h-item h-item--lg" style="margin-bottom:8px">{{ d.title }} <span aria-hidden="true" style="font-weight:400">↗</span></h3><p class="body-sm measure-wide">{{ d.plain }}</p></div>

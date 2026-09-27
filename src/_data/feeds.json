@@ -1,29 +1,85 @@
-[
-  {
-    "region": "sf", "label": "Settlement Fund", "name": "NMISF", "url": "https://www.nmisf.com/feed/",
-    "note": "from nmisf.com/news — refreshed at each build",
-    "fallback": [
-      { "source": "NMISF", "date": "2026-07-08", "title": "Important notice re cessation of 25 percent benefit payments", "href": "http://www.nmisf.com/wp-content/uploads/2026/07/NMISF-Press-Release-Important-Notice-re-Cessation-of-25-Percent-Benefit-Payments-7.8.2026.pdf" },
-      { "source": "NMISF", "date": "2026-06-09", "title": "Cessation of 25 percent benefit payments", "href": "http://www.nmisf.com/wp-content/uploads/2026/06/Press-Release-Cessation-of-25-Percent-Benefit-Payments-6.9.2026.pdf" },
-      { "source": "NMISF", "date": "2025-12-05", "title": "Lapse of health insurance coverage and 25% benefit payments", "href": "http://www.nmisf.com/wp-content/uploads/2025/12/12.5.2025-NMISF-Press-Release-Lapse-of-Health-Insurance-Coverage-and-25-Benefit-Payments.pdf" },
-      { "source": "NMISF", "date": "2025-11-21", "title": "Possible lapse of health insurance and discontinuation of 25% payments", "href": "http://www.nmisf.com/wp-content/uploads/2025/11/11.21.2025-NMISF-Press-Release-Possible-Lapse-of-Health-Insurance-Coverage-and-Discontinuation-of-25-Percent-Benefit-Payments.pdf" },
-      { "source": "NMISF", "date": "2025-10-15", "title": "Delay in October 15, 2025 benefit payments", "href": "http://www.nmisf.com/wp-content/uploads/2025/10/10.15.2025-NMISF-Press-Release-Delay-in-October-15-2025-Benefits-Payments.pdf" }
-    ]
-  },
-  {
-    "region": "pacific", "label": "Pacific", "name": "Regional press", "url": "",
-    "note": "placeholder — feeds to be selected",
-    "fallback": [
-      { "source": "Regional press", "date": "", "title": "Guam, Palau, FSM and American Samoa pension headlines appear here", "href": "" },
-      { "source": "Regional press", "date": "", "title": "Sources to confirm: Pacific Daily News, Marianas Variety, Saipan Tribune", "href": "" }
-    ]
-  },
-  {
-    "region": "us", "label": "United States", "name": "National press", "url": "",
-    "note": "placeholder — feeds to be selected",
-    "fallback": [
-      { "source": "National press", "date": "", "title": "US public pension headlines appear here", "href": "" },
-      { "source": "Research", "date": "", "title": "Sources to confirm: Pew, NASRA, Pensions & Investments", "href": "" }
-    ]
-  }
-]
+{
+  "regions": [
+    {
+      "region": "sf",
+      "label": "Settlement Fund",
+      "name": "NMISF",
+      "url": "https://www.nmisf.com/feed/",
+      "note": "from nmisf.com/news — refreshed at each build",
+      "fallback": [
+        {
+          "source": "NMISF",
+          "date": "2026-07-08",
+          "title": "Important notice re cessation of 25 percent benefit payments",
+          "href": "http://www.nmisf.com/wp-content/uploads/2026/07/NMISF-Press-Release-Important-Notice-re-Cessation-of-25-Percent-Benefit-Payments-7.8.2026.pdf"
+        },
+        {
+          "source": "NMISF",
+          "date": "2026-06-09",
+          "title": "Cessation of 25 percent benefit payments",
+          "href": "http://www.nmisf.com/wp-content/uploads/2026/06/Press-Release-Cessation-of-25-Percent-Benefit-Payments-6.9.2026.pdf"
+        },
+        {
+          "source": "NMISF",
+          "date": "2025-12-05",
+          "title": "Lapse of health insurance coverage and 25% benefit payments",
+          "href": "http://www.nmisf.com/wp-content/uploads/2025/12/12.5.2025-NMISF-Press-Release-Lapse-of-Health-Insurance-Coverage-and-25-Benefit-Payments.pdf"
+        },
+        {
+          "source": "NMISF",
+          "date": "2025-11-21",
+          "title": "Possible lapse of health insurance and discontinuation of 25% payments",
+          "href": "http://www.nmisf.com/wp-content/uploads/2025/11/11.21.2025-NMISF-Press-Release-Possible-Lapse-of-Health-Insurance-Coverage-and-Discontinuation-of-25-Percent-Benefit-Payments.pdf"
+        },
+        {
+          "source": "NMISF",
+          "date": "2025-10-15",
+          "title": "Delay in October 15, 2025 benefit payments",
+          "href": "http://www.nmisf.com/wp-content/uploads/2025/10/10.15.2025-NMISF-Press-Release-Delay-in-October-15-2025-Benefits-Payments.pdf"
+        }
+      ]
+    },
+    {
+      "region": "pacific",
+      "label": "Pacific",
+      "name": "Regional press",
+      "url": "",
+      "note": "placeholder — feeds to be selected",
+      "fallback": [
+        {
+          "source": "Regional press",
+          "date": "",
+          "title": "Guam, Palau, FSM and American Samoa pension headlines appear here",
+          "href": ""
+        },
+        {
+          "source": "Regional press",
+          "date": "",
+          "title": "Sources to confirm: Pacific Daily News, Marianas Variety, Saipan Tribune",
+          "href": ""
+        }
+      ]
+    },
+    {
+      "region": "us",
+      "label": "United States",
+      "name": "National press",
+      "url": "",
+      "note": "placeholder — feeds to be selected",
+      "fallback": [
+        {
+          "source": "National press",
+          "date": "",
+          "title": "US public pension headlines appear here",
+          "href": ""
+        },
+        {
+          "source": "Research",
+          "date": "",
+          "title": "Sources to confirm: Pew, NASRA, Pensions & Investments",
+          "href": ""
+        }
+      ]
+    }
+  ]
+}

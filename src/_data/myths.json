@@ -1,5 +1,22 @@
-[
-  { "myth": "The settlement guarantees retirees their full pension.", "fact": "It guarantees at least 75% of full benefits. The remaining 25% depended on separate Government funding.", "src": "nmisf.com", "href": "https://www.nmisf.com" },
-  { "myth": "The Settlement Fund decided to stop the 25%.", "fact": "The Government informed the Fund there was no funding for the 25% payments beyond December 31, 2025.", "src": "NMISF press release, 5 Dec 2025", "href": "http://www.nmisf.com/wp-content/uploads/2025/12/12.5.2025-NMISF-Press-Release-Lapse-of-Health-Insurance-Coverage-and-25-Benefit-Payments.pdf" },
-  { "myth": "The Government’s yearly payment is voluntary.", "fact": "The settlement requires the NMI Government to make annual payments to the Settlement Fund.", "src": "nmisf.com", "href": "https://www.nmisf.com" }
-]
+{
+  "items": [
+    {
+      "myth": "The settlement guarantees retirees their full pension.",
+      "fact": "It guarantees at least 75% of full benefits. The remaining 25% depended on separate Government funding.",
+      "src": "nmisf.com",
+      "href": "https://www.nmisf.com"
+    },
+    {
+      "myth": "The Settlement Fund decided to stop the 25%.",
+      "fact": "The Government informed the Fund there was no funding for the 25% payments beyond December 31, 2025.",
+      "src": "NMISF press release, 5 Dec 2025",
+      "href": "http://www.nmisf.com/wp-content/uploads/2025/12/12.5.2025-NMISF-Press-Release-Lapse-of-Health-Insurance-Coverage-and-25-Benefit-Payments.pdf"
+    },
+    {
+      "myth": "The Government’s yearly payment is voluntary.",
+      "fact": "The settlement requires the NMI Government to make annual payments to the Settlement Fund.",
+      "src": "nmisf.com",
+      "href": "https://www.nmisf.com"
+    }
+  ]
+}

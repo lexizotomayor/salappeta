@@ -5,10 +5,10 @@ description: "The words you will meet in court orders, fund reports and news abo
 navSet: reference
 permalink: /glossary/
 ---
-{%- set groups = glossary | glossaryGroups -%}
+{%- set groups = glossary.terms | glossaryGroups -%}
 <section class="page-title" aria-labelledby="gl-h">
   <div class="split">
-    <div class="aside-r meta meta--bold meta--forest" style="padding-top:var(--s2)">{{ glossary | length }} words, in plain English</div>
+    <div class="aside-r meta meta--bold meta--forest" style="padding-top:var(--s2)">{{ glossary.terms | length }} words, in plain English</div>
     <div>
       <div class="sigbar mb-4" aria-hidden="true"></div>
       <h1 id="gl-h" class="h-page mb-5">glossary</h1>

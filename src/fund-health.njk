@@ -244,7 +244,7 @@ permalink: /will-the-money-last/
       {%- for t in fundPage.terms %}
       <div><b>{{ t.term }}</b><p>{{ t.def }}</p></div>
       {%- endfor %}
-      <p class="mt-4"><a class="link-strong" href="/glossary/">All {{ glossary | length }} words in the glossary →</a></p>
+      <p class="mt-4"><a class="link-strong" href="/glossary/">All {{ glossary.terms | length }} words in the glossary →</a></p>
     </div>
   </div>
 </section>

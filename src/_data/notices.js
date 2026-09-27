@@ -31,7 +31,7 @@ function parseFeed(xml, source) {
 
 export default async function () {
   const out = [];
-  for (const feed of feeds) {
+  for (const feed of feeds.regions) {
     let items = [];
     if (feed.url) {
       try {

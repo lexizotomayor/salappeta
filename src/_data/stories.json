@@ -1,5 +1,22 @@
-[
-  { "photo": "story-1.jpg", "size": "100%", "offset": "0px", "meta": "retired teacher · Saipan", "name": "Name to come", "quote": "Story to be collected. Portrait and quote with permission." },
-  { "photo": "story-2.jpg", "size": "61.8%", "offset": "123px", "meta": "retired nurse · Tinian", "name": "Name to come", "quote": "Story to be collected. Portrait and quote with permission." },
-  { "photo": "story-3.jpg", "size": "80%", "offset": "47px", "meta": "retired officer · Rota", "name": "Name to come", "quote": "Story to be collected. Portrait and quote with permission." }
-]
+{
+  "items": [
+    {
+      "photo": "story-1.jpg",
+      "meta": "retired teacher · Saipan",
+      "name": "Name to come",
+      "quote": "Story to be collected. Portrait and quote with permission."
+    },
+    {
+      "photo": "story-2.jpg",
+      "meta": "retired nurse · Tinian",
+      "name": "Name to come",
+      "quote": "Story to be collected. Portrait and quote with permission."
+    },
+    {
+      "photo": "story-3.jpg",
+      "meta": "retired officer · Rota",
+      "name": "Name to come",
+      "quote": "Story to be collected. Portrait and quote with permission."
+    }
+  ]
+}
