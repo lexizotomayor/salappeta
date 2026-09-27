@@ -102,6 +102,13 @@ collections:
     description: "Sections of the home page."
     editor: { preview: false }
     files:
+      - name: hero
+        label: "Top photo"
+        file: src/_data/home.json
+        format: json
+        fields:
+          - { label: "Photo (large circle at the top)", name: heroPhoto, widget: image, required: false, hint: "Any colour photo works; the site shows it in black and white. A square crop with faces near the centre looks best." }
+          - { label: "Photo description (for screen readers)", name: heroAlt, widget: string, hint: "e.g. Retirees gathered outside the Settlement Fund office, Saipan" }
       - name: standing
         label: "Where things stand"
         file: src/_data/standing.json

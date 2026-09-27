@@ -19,7 +19,7 @@ navSet: home
       </div>
     </div>
     <div class="circle hero__art">
-      <div class="circle__img">{% photo "hero-retirees.jpg", "Retirees on Saipan", "Photo: retirees, Saipan (b&w)" %}</div>
+      <div class="circle__img">{% photo home.heroPhoto or "hero-retirees.jpg", home.heroAlt, "Photo: retirees, Saipan (b&w)" %}</div>
       <div class="circle__disc circle__disc--pale" aria-hidden="true"></div>
       <div class="hero__badge"><b>75%</b><span>guaranteed</span></div>
       <div class="hero__vertical" aria-hidden="true">Johnson v. Inos</div>

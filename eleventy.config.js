@@ -14,6 +14,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  // Originals too, so the CMS media library can show thumbnails.
+  eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({
     "node_modules/@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2": "assets/fonts/outfit-latin-wght-normal.woff2",
     "node_modules/@fontsource-variable/outfit/files/outfit-latin-ext-wght-normal.woff2": "assets/fonts/outfit-latin-ext-wght-normal.woff2",
