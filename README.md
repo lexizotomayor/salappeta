@@ -92,19 +92,18 @@ What you can edit:
 
 Section headings and fixed paragraphs live in the page templates in `src/`.
 
-### One-time login setup
+### Logins (Netlify Identity)
 
-The editor signs in with GitHub. Anyone who should edit needs a GitHub account with write access to this repository.
+Editors sign in with an email and password; no GitHub account is needed.
 
-1. On GitHub, go to **Settings → Developer settings → OAuth Apps → New OAuth App**:
-   - Application name: `Salåppeʼta CMS`
-   - Homepage URL: `https://salappeta.com`
-   - Authorization callback URL: `https://api.netlify.com/auth/done`
-2. Copy the **Client ID**, and generate and copy a **Client secret**.
-3. In Netlify: **Site configuration → Access & security → OAuth → Install provider → GitHub**, and paste both.
-4. Open `/admin/` and choose **Login with GitHub**.
+One-time setup in Netlify (**Site configuration → Identity**):
 
-To add an editor, invite them as a collaborator on the GitHub repository.
+1. **Enable Identity**, and set **Registration** to **Invite only**.
+2. Under **Services → Git Gateway**, choose **Enable Git Gateway**. This lets the editor save changes to GitHub.
+
+To add an editor: **Identity → Invite users**, and enter their email. They click the link in the email, which opens salappeta.com with a **Complete your signup** box, choose a password, and are taken to `/admin/`. Password resets work the same way.
+
+After that, editors log in at **https://salappeta.com/admin/**.
 
 ### Trying the editor locally
 
@@ -113,7 +112,7 @@ npx decap-server        # in one terminal (port 8081)
 npm start -- --port=8082  # in another
 ```
 
-Then open http://localhost:8082/admin/ and choose **Login**. Changes are written to your local files, not GitHub.
+Then open http://localhost:8082/admin/ and choose **Login**. (Identity itself only works on the live site.) Changes are written to your local files, not GitHub.
 
 ## Still to confirm before launch
 

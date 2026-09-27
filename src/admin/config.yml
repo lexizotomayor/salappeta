@@ -1,9 +1,10 @@
 # Decap CMS — content editor for Salåppeʼta, at /admin/
 # Every save is a commit to GitHub, which triggers a Netlify rebuild (1–2 min).
 
+# Editors log in with Netlify Identity (email invite + password); Git Gateway
+# commits their changes to GitHub for them.
 backend:
-  name: github
-  repo: lexizotomayor/salappeta
+  name: git-gateway
   branch: main
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"

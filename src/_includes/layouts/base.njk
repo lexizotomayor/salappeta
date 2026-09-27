@@ -16,6 +16,19 @@
 <link rel="preload" href="/assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
 <script>
+  /* Netlify Identity emails (invite, password reset, confirmation) link here
+     with a token. Load the Identity widget only then, so it can show the
+     "set password" form, and go to the editor once logged in. */
+  if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) {
+    document.addEventListener("DOMContentLoaded", function () {
+      var s = document.createElement("script");
+      s.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+      s.onload = function () {
+        window.netlifyIdentity.on("login", function () { location.href = "/admin/"; });
+      };
+      document.head.appendChild(s);
+    });
+  }
   /* Apply the reader's text-size choice before first paint. */
   document.documentElement.classList.add("js");
   try { if (localStorage.getItem("salappeta:large") === "1") document.documentElement.classList.add("large"); } catch (e) {}
