@@ -1,0 +1,70 @@
+---
+layout: layouts/base.njk
+---
+<div class="progress" data-progress aria-hidden="true"></div>
+
+<section class="page-title" aria-labelledby="article-title">
+  <div class="split">
+    <div class="aside-r stack meta meta--forest" style="padding-top:var(--s2)">
+      <a href="/explainers/" style="color:var(--sage)">← all explainers</a>
+      <span style="margin-top:var(--s4)">{{ topic | lower }}</span>
+      <time datetime="{{ page.date | isoDate }}" style="font-weight:700">{{ page.date | dateShort }}</time>
+      <span data-ago="{{ page.date | isoDate }}" hidden style="color:var(--sage)"></span>
+      <span style="color:var(--sage-muted)">{{ readMinutes }} min read</span>
+    </div>
+    <div>
+      <div class="sigbar mb-4" aria-hidden="true"></div>
+      <h1 id="article-title" class="h-page mb-5">{{ title }}</h1>
+      <p class="lede">{{ lede or dek }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="split" style="padding:0 var(--gutter) var(--s6)">
+  <div class="spacer"></div>
+  {% include "partials/notice.njk" %}
+</div>
+
+{% if summary %}
+<section class="split" style="padding:0 var(--gutter) var(--s7)" aria-label="In short">
+  <div class="aside-r meta" style="padding-top:var(--s1)">in short</div>
+  <div class="in-short">
+    <ol>
+      {%- for s in summary %}
+      <li><span class="n" aria-hidden="true">{{ loop.index }}</span><p>{{ s }}</p></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+<article class="article-body">
+{{ content | safe }}
+</article>
+
+{% if sources %}
+<section class="section section--94 bg-deep" style="padding-bottom:var(--s7)" aria-labelledby="sources-h">
+  <div class="split">
+    <h2 id="sources-h" class="h-section h-section--xs aside-r">sources</h2>
+    <ol class="sources-list">
+      {%- for s in sources %}
+      <li><a href="{{ s.href }}">{{ s.label }}</a></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" aria-labelledby="next-h">
+  <div class="split">
+    <h2 id="next-h" class="aside-r meta" style="font-weight:400">read next</h2>
+    <div class="row-list">
+      {%- for r in collections.explainers | whereNot("title", title) | take(2) %}
+      <a class="row" href="{{ r.url or '/explainers/' }}">
+        <div class="meta" style="margin-bottom:var(--s1)">{{ r.data.topic }}</div>
+        <div style="font-size:1.8125rem;font-weight:600;line-height:1.2">{{ r.data.title }}</div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

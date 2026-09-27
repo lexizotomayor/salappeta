@@ -1,0 +1,6 @@
+<div class="site-nav__links">
+{%- for item in site.nav[navSet or 'reading'] %}
+  <a href="{{ item.href }}"{% if item.href == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+{%- endfor %}
+  <button type="button" class="text-toggle" data-text-toggle aria-pressed="false">A+ larger text</button>
+</div>

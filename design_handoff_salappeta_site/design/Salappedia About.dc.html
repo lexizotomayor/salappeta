@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#F3ECE0;color:#2F4A3D;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2F4A3D;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:#C4553A}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="background:#F3ECE0;min-height:100vh;zoom:{{ zoom }}">
+<header data-screen-label="Header" style="padding:40px clamp(20px,5vw,88px) 0;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:clamp(16px,3vw,47px);align-items:start">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-weight:700;font-size:24px;letter-spacing:-.01em">salåppeʼ<span style="color:#C4553A">ta</span></a>
+<nav style="justify-self:end;display:flex;gap:29px;align-items:stretch">
+<div style="display:flex;flex-direction:column">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">home</a>
+<a href="Salappedia%20Fund%20Health.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">will the money last?</a>
+<a href="Salappedia%20Blog.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">blog</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">glossary</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px;background:#3F5A4C;color:#EEF3ED">about</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">contact us</a>
+<button onClick="{{ toggleLarge }}" style="font-family:inherit;font-size:20px;font-weight:600;background:none;border:none;padding:0;min-height:44px;cursor:pointer;color:#3F5A4C;text-align:left">{{ largeLabel }}</button>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</nav>
+</header>
+
+<section data-screen-label="Title" style="padding:94px clamp(20px,5vw,88px) 123px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:right;padding-top:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span>salåppeʼ · money</span><span>-ta · our</span></div>
+<div>
+<div style="height:14px;background:#C4553A;width:61.8%;margin-bottom:29px"></div>
+<h1 style="font-weight:100;font-size:clamp(60px,7.5vw,120px);line-height:.95;letter-spacing:-.04em;margin:0 0 47px">about salåppeʼta</h1>
+<p style="font-size:clamp(22px,2.2vw,29px);font-weight:400;line-height:1.382;margin:0;max-width:30em;text-wrap:pretty">An independent site that exists to keep the conversation going about what the Northern Mariana Islands' retirees are facing, and to put the documents behind it within everyone's reach.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Why" style="padding:0 clamp(20px,5vw,88px) 123px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:76px;align-items:start">
+<div style="position:relative;width:min(100%,460px);aspect-ratio:1">
+<div style="position:absolute;inset:0;border-radius:50%;overflow:hidden;filter:grayscale(1);background:#EADFCD">
+<image-slot id="about-founder" shape="circle" placeholder="Portrait: Alexie Zotomayor (b&amp;w)" style="width:100%;height:100%;display:block"></image-slot>
+</div>
+<div style="position:absolute;width:38.2%;aspect-ratio:1;right:-6%;bottom:-4%;border-radius:50%;background:#C4553A;mix-blend-mode:multiply;pointer-events:none"></div>
+</div>
+<div style="max-width:36em;display:flex;flex-direction:column;gap:29px">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0">Why this site exists</h2>
+<p style="font-size:20px;line-height:1.618;margin:0">Thousands of retirees gave their working lives to public service in the Commonwealth. Today, what they receive depends on court orders, budget votes and fund reports that few people have the time to read.</p>
+<p style="font-size:20px;line-height:1.618;margin:0">Salåppeʼta gathers those documents in one place, explains them in plain language, and keeps a record of what changes and when, so retirees, their families and the public can follow along and keep talking about it.</p>
+<p style="font-size:20px;line-height:1.618;margin:0">It is especially meant for readers outside the system, such as family members, students, journalists and lawmakers' staff, who want to understand and discuss the issues facing retirees.</p>
+<div style="border-top:2px solid #2F4A3D;padding-top:18px">
+<div style="font-size:24px;font-weight:700">Alexie Zotomayor</div>
+<div style="font-size:20px">Founder and editor</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Supplement, not replacement" style="padding:0 clamp(20px,5vw,88px) 123px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:right;padding-top:12px">a note on our role</div>
+<div style="background:#EADFCD;padding:47px;max-width:820px;display:flex;flex-direction:column;gap:18px">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0">A supplement, not a replacement</h2>
+<p style="font-size:20px;line-height:1.618;margin:0">Salåppeʼta does not replace the NMI Settlement Fund or its website. The Fund and the Settlement Fund Trustee's office have done many years of exemplary work for members, and nmisf.com remains the official source for notices, forms, reports and benefit questions.</p>
+<p style="font-size:20px;line-height:1.618;margin:0">This site is supplementary. It exists to keep the conversation going and to help people thresh out the topics that concern retirees.</p>
+<a href="https://www.nmisf.com" style="align-self:flex-start;background:#2F4A3D;color:#F3ECE0;font-size:20px;font-weight:700;text-decoration:none;padding:16px 26px;margin-top:8px" style-hover="background:#3F5A4C">Visit the official NMI Settlement Fund site ↗</a>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Why another site" style="padding:0 clamp(20px,5vw,88px) 123px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="text-align:right">
+<span style="display:inline-block;background:#C4553A;color:#FFFFFF;font-size:20px;font-weight:700;padding:8px 16px;margin-bottom:18px">A fair question</span>
+<h2 style="font-weight:100;font-size:clamp(47px,5vw,76px);line-height:1;letter-spacing:-.03em;margin:0;text-wrap:balance">nmisf.com already has the documents. why another site?</h2>
+</div>
+<div style="display:flex;flex-direction:column;max-width:40em">
+<p style="font-size:22px;font-weight:500;line-height:1.5;margin:0 0 29px">It does, and it should stay the first place members go. The Fund publishes records; we help people talk about them. The two do different jobs.</p>
+<sc-for list="{{ why }}" as="w" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px 29px;padding:20px 0;border-top:1px solid #AFC0B3">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#3F5A4C">nmisf.com</span><span style="font-size:20px;line-height:1.4">{{ w.fund }}</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#C4553A">salåppeʼta</span><span style="font-size:20px;font-weight:600;line-height:1.4">{{ w.us }}</span></div>
+</div>
+</sc-for>
+<p style="font-size:20px;line-height:1.618;margin:29px 0 0;border-top:2px solid #2F4A3D;padding-top:18px">As the Fund's official record, some things are rightly outside its role: commenting on bills, weighing budget choices, or hosting public discussion. That is the space this site tries to fill, while always pointing back to the Fund.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Principles" style="padding:94px clamp(20px,5vw,88px) 123px;background:#2F4A3D;color:#F3ECE0;font-weight:500">
+<h2 style="font-weight:100;font-size:clamp(60px,7vw,110px);line-height:.95;letter-spacing:-.035em;margin:0 0 76px">how we work</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:47px">
+<sc-for list="{{ principles }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:12px;border-top:2px solid #AFC0B3;padding-top:18px">
+<span style="font-weight:300;font-size:60px;line-height:.9;color:#EA8B70">{{ p.n }}</span>
+<h3 style="font-size:24px;font-weight:700;margin:0">{{ p.title }}</h3>
+<p style="font-size:20px;line-height:1.5;margin:0">{{ p.body }}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="sources" data-screen-label="Sources" style="padding:123px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="text-align:right">
+<h2 style="font-weight:100;font-size:clamp(60px,6vw,96px);line-height:.95;letter-spacing:-.035em;margin:0 0 18px">sources</h2>
+<p style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;margin:0">where our information comes from</p>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ sources }}" as="s" hint-placeholder-count="6">
+<a href="{{ s.href }}" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:20px 0;border-top:1px solid #AFC0B3;text-decoration:none" style-hover="background:#EADFCD">
+<span style="font-size:22px;font-weight:700">{{ s.name }}</span>
+<span style="font-size:20px;font-weight:700;color:#C4553A">↗</span>
+<span style="font-size:20px;line-height:1.5;grid-column:1/-1">{{ s.what }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Corrections and name" style="padding:94px clamp(20px,5vw,88px) 123px;background:#EADFCD;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:76px">
+<div style="border-left:6px solid #2F4A3D;padding-left:36px">
+<h2 style="font-size:36px;font-weight:600;margin:0 0 18px">Corrections</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 18px">If we get something wrong, we want to know. We fix errors quickly and note the change and its date at the bottom of the page.</p>
+<a href="Salappedia%20Home.dc.html#stay" style="font-size:20px;font-weight:700">Send a correction →</a>
+</div>
+<div style="border-left:6px solid #C4553A;padding-left:36px">
+<h2 style="font-size:36px;font-weight:600;margin:0 0 18px">The name</h2>
+<p style="font-size:20px;line-height:1.618;margin:0">Salåppeʼ is the Chamorro word for money; -ta makes it ours. The name is a reminder that these pensions were built from the contributions of the people who earned them.</p>
+</div>
+</section>
+
+<section data-screen-label="Notice" style="padding:94px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div></div>
+<div style="border:3px solid #C4553A;padding:24px 29px;display:flex;gap:18px;align-items:flex-start;max-width:760px">
+<span style="width:18px;height:18px;border-radius:50%;background:#C4553A;flex:none;margin-top:8px"></span>
+<p style="font-size:22px;line-height:1.5;margin:0"><strong style="font-weight:700;font-size:24px">Not legal or financial advice.</strong> Salåppeʼta is independent of the NMI Settlement Fund, the CNMI Government and the Legislature. For decisions about your own benefits, contact the NMI Settlement Fund or a qualified adviser.</p>
+</div>
+</div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#C4553A;color:#FFFFFF;padding:94px clamp(20px,5vw,88px) 47px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:47px;align-items:end">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:29px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font-weight:400;font-size:29px">an independent guide</span><span style="font-weight:600;font-size:29px;white-space:nowrap">nmi pensions, explained</span></div>
+<div style="height:12px;background:#2F4A3D;width:100%"></div>
+<div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:clamp(60px,6vw,96px);line-height:.85;letter-spacing:-.03em">salåppeʼta</div>
+</div>
+<div style="justify-self:end;display:flex;gap:18px;align-items:stretch">
+<div style="display:flex;flex-direction:column;font-size:20px;line-height:1.3;font-weight:600">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">home</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">about</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">glossary</a>
+<a href="Salappedia%20About.dc.html#sources" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">sources</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">contact</a>
+<span style="display:inline-flex;align-items:center;gap:14px;border:2px solid #FFFFFF;padding:14px 20px;font-size:22px;font-weight:700;line-height:1.3;margin-top:29px;max-width:16em"><span style="width:14px;height:14px;border-radius:50%;background:#FFFFFF;flex:none"></span>Not legal or financial advice</span>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</div>
+<div style="grid-column:1/-1;border-top:1px solid rgba(255,255,255,.6);padding-top:18px;margin-top:29px;font-size:18px;font-weight:600">© 2026 Salåppeʼta and Alexie Zotomayor. All rights reserved.</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { large: false };
+  renderVals() {
+    return {
+      zoom: this.state.large ? 1.18 : 1,
+      largeLabel: this.state.large ? 'A− smaller text' : 'A+ larger text',
+      toggleLarge: () => this.setState(s => ({ large: !s.large })),
+      why: [
+        { fund:'Posts the official documents: reports, orders, notices and forms.', us:'Explains what they mean in plain language, and links back to every original.' },
+        { fund:'Organizes documents by type and date.', us:'Connects them into one story: the timeline, the money, and what changed.' },
+        { fund:'Speaks for the Fund, to its members.', us:'Speaks to everyone else too: families, students, journalists and policymakers.' },
+        { fund:'Covers the Settlement Fund\u2019s own business.', us:'Also follows the Legislature, the budget, health insurance, and pension news across the Pacific and the U.S.' },
+        { fund:'Stays neutral, as an official body must.', us:'Hosts the conversation: stories, questions, podcasts and reader feedback.' }
+      ],
+      principles: [
+        { n:'01', title:'Every claim has a source', body:'Each fact links to the court order, law, report or notice it comes from.' },
+        { n:'02', title:'Plain words first', body:'We explain before we quote, and define every technical term.' },
+        { n:'03', title:'Facts, not sides', body:'We report what the documents say. We do not campaign for any official or party.' },
+        { n:'04', title:'Dated and updated', body:'Every page shows when it was last checked, and we correct mistakes openly.' }
+      ],
+      sources: [
+        { name:'NMI Settlement Fund', what:'The official source. Actuarial, audit and investment reports, press releases, payment status, forms and the settlement documents.', href:'https://www.nmisf.com' },
+        { name:'U.S. District Court for the NMI', what:'Orders in Johnson v. Inos, Case No. 09-00023.', href:'http://www.nmid.uscourts.gov/' },
+        { name:'CNMI Legislature', what:'Bills and public laws affecting retirees and the Fund.', href:'https://www.cnmileg.net' },
+        { name:'CNMI Department of Finance', what:'GHLI health and life insurance information and forms.', href:'https://finance.gov.mp' },
+        { name:'CNMI Law Revision Commission', what:'The Commonwealth Code and administrative rules.', href:'https://cnmilaw.org' },
+        { name:'Local news', what:'Marianas Variety, Saipan Tribune, Marianas Press and Isla Public Media, for context and reporting on hearings and votes.', href:'https://www.mvariety.com' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

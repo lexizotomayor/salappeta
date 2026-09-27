@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: Glossary
+description: "The words you will meet in court orders, fund reports and news about the NMI pensions, explained simply."
+navSet: reference
+permalink: /glossary/
+---
+{%- set groups = glossary | glossaryGroups -%}
+<section class="page-title" aria-labelledby="gl-h">
+  <div class="split">
+    <div class="aside-r meta meta--bold meta--forest" style="padding-top:var(--s2)">{{ glossary | length }} words, in plain English</div>
+    <div>
+      <div class="sigbar mb-4" aria-hidden="true"></div>
+      <h1 id="gl-h" class="h-page mb-5">glossary</h1>
+      <p class="lede mb-5">The words you will meet in court orders, fund reports and news about the pensions, explained simply.</p>
+      <div class="search-field">
+        <label for="gl-q" class="field-label">Look up a word</label>
+        <input id="gl-q" type="search" placeholder="e.g. actuary" autocomplete="off" data-glossary-search>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav style="padding:0 var(--gutter) var(--s5)" aria-label="Jump to letter">
+  <div class="split">
+    <div class="spacer"></div>
+    <div class="letters">
+      {%- for g in groups %}<a href="#{{ g.id }}" data-gloss-letter>{{ g.ch }}</a>{% endfor %}
+    </div>
+  </div>
+</nav>
+
+<section style="padding:var(--s5) var(--gutter) var(--s8)" aria-label="Terms">
+  {%- for g in groups %}
+  <div class="split gloss-group" id="{{ g.id }}" data-gloss-group>
+    <div class="gloss-group__ch" aria-hidden="true">{{ g.ch }}</div>
+    <div>
+      {%- for t in g.items %}
+      <div class="gloss-term" data-gloss-term>
+        <h2>{{ t.term }}</h2>
+        <p>{{ t.definition }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endfor %}
+  <p data-gloss-empty hidden role="status" style="font-size:1.375rem;font-weight:600">No match. Try another word, or <a href="/#stay">ask us to add it</a>.</p>
+</section>

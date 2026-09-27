@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+title: About
+description: "Salåppeʼta is an independent site that keeps the conversation going about what the Northern Mariana Islands' retirees are facing."
+navSet: reference
+permalink: /about/
+---
+<section class="page-title" style="padding-bottom:var(--s8)" aria-labelledby="ab-h">
+  <div class="split">
+    <div class="aside-r stack meta meta--bold meta--forest" style="padding-top:var(--s2)"><span>salåppeʼ · money</span><span>-ta · our</span></div>
+    <div>
+      <div class="sigbar mb-4" aria-hidden="true"></div>
+      <h1 id="ab-h" class="h-page mb-5">about salåppeʼta</h1>
+      <p class="lede">An independent site that exists to keep the conversation going about what the Northern Mariana Islands' retirees are facing, and to put the documents behind it within everyone's reach.</p>
+    </div>
+  </div>
+</section>
+
+<section class="auto align-start" style="padding:0 var(--gutter) var(--s8);--min:360px;--gap:var(--s6)" aria-labelledby="why-h">
+  <div class="circle about-art">
+    <div class="circle__img">{% photo "about-founder.jpg", "Alexie Zotomayor", "Portrait: Alexie Zotomayor (b&w)" %}</div>
+    <div class="circle__disc" aria-hidden="true"></div>
+  </div>
+  <div class="stack gap-4 measure-wide">
+    <h2 id="why-h" class="h-article">Why this site exists</h2>
+    <p class="body">Thousands of retirees gave their working lives to public service in the Commonwealth. Today, what they receive depends on court orders, budget votes and fund reports that few people have the time to read.</p>
+    <p class="body">Salåppeʼta gathers those documents in one place, explains them in plain language, and keeps a record of what changes and when, so retirees, their families and the public can follow along and keep talking about it.</p>
+    <p class="body">It is especially meant for readers outside the system, such as family members, students, journalists and lawmakers' staff, who want to understand and discuss the issues facing retirees.</p>
+    <div style="border-top:2px solid var(--forest);padding-top:var(--s3)">
+      <div style="font-size:1.5rem;font-weight:700">Alexie Zotomayor</div>
+      <div class="body">Founder and editor</div>
+    </div>
+  </div>
+</section>
+
+<section class="split" style="padding:0 var(--gutter) var(--s8)" aria-labelledby="sup-h">
+  <div class="aside-r meta meta--bold meta--forest" style="padding-top:var(--s2)">a note on our role</div>
+  <div class="supplement">
+    <h2 id="sup-h" class="h-article">A supplement, not a replacement</h2>
+    <p class="body">Salåppeʼta does not replace the NMI Settlement Fund or its website. The Fund and the Settlement Fund Trustee's office have done many years of exemplary work for members, and nmisf.com remains the official source for notices, forms, reports and benefit questions.</p>
+    <p class="body">This site is supplementary. It exists to keep the conversation going and to help people thresh out the topics that concern retirees.</p>
+    <a class="btn btn--forest" href="{{ site.nmisf }}">Visit the official NMI Settlement Fund site ↗</a>
+  </div>
+</section>
+
+<section class="split" style="padding:0 var(--gutter) var(--s8)" aria-labelledby="fair-h">
+  <div class="aside-r">
+    <span class="fair-q">A fair question</span>
+    <h2 id="fair-h" class="h-fair">nmisf.com already has the documents. why another site?</h2>
+  </div>
+  <div class="stack" style="max-width:40em">
+    <p style="font-size:1.375rem;font-weight:500;line-height:1.5;margin-bottom:var(--s4)">It does, and it should stay the first place members go. The Fund publishes records; we help people talk about them. The two do different jobs.</p>
+    {%- for w in about.why %}
+    <div class="auto compare">
+      <div><span class="who">nmisf.com</span><p>{{ w.fund }}</p></div>
+      <div><span class="who who--us">salåppeʼta</span><p class="us">{{ w.us }}</p></div>
+    </div>
+    {%- endfor %}
+    <p class="body" style="margin-top:var(--s4);border-top:2px solid var(--forest);padding-top:var(--s3)">As the Fund's official record, some things are rightly outside its role: commenting on bills, weighing budget choices, or hosting public discussion. That is the space this site tries to fill, while always pointing back to the Fund.</p>
+  </div>
+</section>
+
+<section class="section section--94 bg-forest on-dark" aria-labelledby="how-h">
+  <h2 id="how-h" class="h-section mb-6">how we work</h2>
+  <div class="auto principles">
+    {%- for p in about.principles %}
+    <div class="principle">
+      <span class="n" aria-hidden="true">{{ loop.index | pad2 }}</span>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.body }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section id="sources" class="section" aria-labelledby="src-h">
+  <div class="split">
+    <div class="aside-r">
+      <h2 id="src-h" class="h-section h-section--xs mb-3">sources</h2>
+      <p class="meta meta--bold meta--forest">where our information comes from</p>
+    </div>
+    <div class="stack">
+      {%- for s in about.sources %}
+      <a class="source-row" href="{{ s.href }}">
+        <b>{{ s.name }}</b><span class="arr" aria-hidden="true">↗</span>
+        <p>{{ s.what }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--94 bg-deep auto" style="--gap:var(--s6)" aria-label="Corrections and the name">
+  <div class="side-rule">
+    <h2 class="h-article mb-3">Corrections</h2>
+    <p class="body mb-3">If we get something wrong, we want to know. We fix errors quickly and note the change and its date at the bottom of the page.</p>
+    <a class="link-strong" style="font-weight:700" href="/#stay">Send a correction →</a>
+  </div>
+  <div class="side-rule side-rule--accent">
+    <h2 class="h-article mb-3">The name</h2>
+    <p class="body">Salåppeʼ is the Chamorro word for money; -ta makes it ours. The name is a reminder that these pensions were built from the contributions of the people who earned them.</p>
+  </div>
+</section>
+
+<section class="section section--94 split" style="padding-bottom:var(--s7)" aria-label="Notice">
+  <div class="spacer"></div>
+  {% set noticeText = "Salåppeʼta is independent of the NMI Settlement Fund, the CNMI Government and the Legislature. For decisions about your own benefits, contact the NMI Settlement Fund or a qualified adviser." %}
+  {% include "partials/notice.njk" %}
+</section>

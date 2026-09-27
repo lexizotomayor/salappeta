@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+title: The Breadfruit Dispatch
+description: "The Breadfruit Dispatch, a podcast from Salåppeʼta: retirees in their own voices, lawmakers and trustees on the record, and one topic explained at a time."
+navSet: reading
+permalink: /podcast/
+---
+<section class="pod-title" aria-labelledby="pod-h">
+  <h1 id="pod-h">the breadfruit<br>dispatch</h1>
+  <div class="auto align-end" style="--min:320px;--gap:var(--s6) var(--s5)">
+    <div class="stack gap-4" style="max-width:520px">
+      <div class="sigbar" aria-hidden="true"></div>
+      <span class="meta">a podcast from salåppeʼta</span>
+      <p class="body">Retirees in their own voices, lawmakers and trustees on the record, and one topic explained at a time.</p>
+      <div style="display:flex;gap:var(--s2);flex-wrap:wrap">
+        <a class="btn btn--sm" href="{{ podcast.spotify or '#' }}"{% if not podcast.spotify %} aria-disabled="true"{% endif %}>Listen on Spotify ↗</a>
+        <a class="btn-outline" href="{{ podcast.apple or '#' }}"{% if not podcast.apple %} aria-disabled="true"{% endif %}>Apple Podcasts ↗</a>
+      </div>
+    </div>
+    <div class="circle pod-art">
+      <div class="circle__img">{% photo "podcast-cover.jpg", "The Breadfruit Dispatch cover art", "Podcast cover art / breadfruit (b&w)" %}</div>
+      <div class="circle__disc" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--94 rule-top auto formats" style="padding-bottom:var(--s7)" aria-label="Formats">
+  {%- for f in podcast.formats %}
+  <div class="stack gap-2">
+    <span class="format__n" aria-hidden="true">{{ loop.index | pad2 }}</span>
+    <h2 style="font-size:1.5rem;font-weight:600;line-height:1.3">{{ f.name }}</h2>
+    <p class="body-sm">{{ f.body }}</p>
+  </div>
+  {%- endfor %}
+</section>
+
+<section class="section section--94 bg-forest on-dark" aria-labelledby="eps-h">
+  <div class="auto align-end mb-6" style="--min:300px;--gap:var(--s4) var(--s5)">
+    <h2 id="eps-h" class="h-section">episodes</h2>
+    <div class="chips justify-end" role="group" aria-label="Filter by format" data-filter="format">
+      <button type="button" class="chip" data-value="All" aria-pressed="true">All</button>
+      {%- for f in podcast.formats %}
+      <button type="button" class="chip" data-value="{{ f.name }}" aria-pressed="false">{{ f.name }}</button>
+      {%- endfor %}
+    </div>
+  </div>
+  <ul style="list-style:none;margin:0;padding:0">
+    {%- for e in collections.episodes %}
+    <li class="episode" data-filter-item="format" data-value="{{ e.data.format }}">
+      <div class="row-meta" style="font-family:var(--sans)">
+        <span class="episode__no">no. {{ e.data.no | pad2 }}</span>
+        <span class="meta">{{ e.data.format }} · {{ e.data.length }}</span>
+      </div>
+      <div>
+        <h3 class="h-item h-item--lg" style="margin-bottom:8px">{{ e.data.title }}</h3>
+        <p class="body-sm measure-wide">{{ e.data.summary }}</p>
+        <div class="episode__links">
+          {% if e.data.spotify %}<a href="{{ e.data.spotify }}">Spotify ↗</a>{% endif %}
+          {% if e.data.apple %}<a href="{{ e.data.apple }}">Apple ↗</a>{% endif %}
+          {% if not e.data.spotify and not e.data.apple %}<span class="soon">coming soon</span>{% endif %}
+        </div>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+  {% if (collections.episodes | where("planned", true) | length) %}<p class="meta mt-4">planned episodes — guests to be confirmed</p>{% endif %}
+</section>
+
+<section class="section split" aria-labelledby="guest-h">
+  <div class="spacer"></div>
+  <div class="side-rule" style="padding-left:var(--s5);max-width:640px">
+    <h2 id="guest-h" class="h-sub" style="margin-bottom:var(--s2)">Want to be on the show?</h2>
+    <p class="body mb-4">Retirees, family members and anyone who has worked on the Fund — we would like to hear from you.</p>
+    <a class="link-strong" href="/#stay">Get in touch →</a>
+  </div>
+</section>

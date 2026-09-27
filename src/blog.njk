@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+title: Explainers
+description: "Plain-language explainers on the NMI pension settlement, the Settlement Fund, bills and retiree health insurance — each with its sources."
+navSet: reading
+permalink: /explainers/
+---
+{%- set featured = (collections.explainers | where("featured", true))[0] -%}
+<section class="page-title" aria-labelledby="blog-h">
+  <div class="title-bar" aria-hidden="true"><div></div><span></span></div>
+  <h1 id="blog-h" class="h-display">explainers</h1>
+  <div class="split">
+    <p class="meta">the blog · neutral, sourced, plain</p>
+    <p class="lede" style="font-size:clamp(1.375rem,2vw,1.8125rem)">One topic at a time: what a document says, what it means for retirees, and where to read the original.</p>
+  </div>
+</section>
+
+{% if featured %}
+<section class="section section--flat-top auto featured" aria-label="Featured explainer">
+  <div class="circle featured__art">
+    <div class="circle__img">{% photo featured.data.photo, "", featured.data.photoLabel %}</div>
+    <div class="circle__disc" aria-hidden="true"></div>
+  </div>
+  <a class="featured__link" href="{{ featured.url }}">
+    <span class="meta">featured · <time datetime="{{ featured.date | isoDate }}">{{ featured.date | dateShort }}</time><span data-ago="{{ featured.date | isoDate }}" data-prefix=" · " hidden></span> · {{ featured.data.readMinutes }} min read</span>
+    <h2>{{ featured.data.headline or featured.data.title }}</h2>
+    <p class="body">{{ featured.data.dek }}</p>
+    <span class="btn btn--sm">Read the explainer →</span>
+  </a>
+</section>
+{% endif %}
+
+<section class="section section--94 bg-deep" aria-labelledby="all-h">
+  <div class="auto align-end mb-6" style="--min:300px;--gap:var(--s4) var(--s5)">
+    <h2 id="all-h" class="h-section">all explainers</h2>
+    <div class="chips justify-end" role="group" aria-label="Filter by topic" data-filter="topic">
+      <button type="button" class="chip" data-value="All" aria-pressed="true">All</button>
+      {%- for t in topics %}
+      <button type="button" class="chip" data-value="{{ t }}" aria-pressed="false">{{ t }}</button>
+      {%- endfor %}
+    </div>
+  </div>
+  <ul class="row-list" style="list-style:none;margin:0;padding:0">
+    {%- for p in collections.explainers | whereNot("featured", true) %}
+    <li data-filter-item="topic" data-value="{{ p.data.topic }}">
+      {% if p.url %}<a class="row post-row" href="{{ p.url }}">{% else %}<div class="row post-row">{% endif %}
+        <div class="row-meta">
+          <span>{{ p.data.topic }}</span>
+          <time class="date" datetime="{{ p.date | isoDate }}">{{ p.date | dateShort }}</time>
+          <span class="ago" data-ago="{{ p.date | isoDate }}" hidden></span>
+          <span class="read">{% if p.data.planned %}planned · {% endif %}{{ p.data.readMinutes }} min read</span>
+        </div>
+        <div>
+          <h3 class="h-item h-item--lg" style="margin-bottom:8px">{{ p.data.headline or p.data.title }}</h3>
+          <p class="body-sm measure-wide">{{ p.data.dek }}</p>
+        </div>
+      {% if p.url %}</a>{% else %}</div>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {% if (collections.explainers | where("planned", true) | length) %}<p class="meta mt-4">planned articles — drafts to be written and sourced</p>{% endif %}
+</section>

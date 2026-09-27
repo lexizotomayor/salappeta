@@ -1,0 +1,10 @@
+{
+  "spotify": "",
+  "apple": "",
+  "formats": [
+    { "name": "Retiree voices", "body": "Retirees and their families on life since the cuts." },
+    { "name": "Explainers", "body": "One topic, fifteen minutes, sources in the show notes." },
+    { "name": "On the record", "body": "Interviews with lawmakers, the trustee and Fund staff." },
+    { "name": "Roundup", "body": "The month’s bills, court filings and notices." }
+  ]
+}

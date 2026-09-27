@@ -1,0 +1,260 @@
+---
+layout: layouts/base.njk
+title: Home
+isHome: true
+navSet: home
+---
+{%- set map = fund.requiredMinimumAnnualPaymentHistory_nmisfStatusPages -%}
+<section class="hero-body" aria-label="Introduction">
+  <div class="auto hero__body">
+    <div class="hero__intro">
+      <div class="bar-v bar-v--6" aria-hidden="true"></div>
+      <div>
+        <p class="meta mb-3">salåppeʼ · money &nbsp;+&nbsp; -ta · our</p>
+        <p class="lede mb-4" style="font-size:clamp(1.375rem,2vw,1.8125rem)">What is happening to the pensions of Northern Mariana retirees — explained plainly, with the original laws, court orders and Settlement Fund reports beside every answer.</p>
+        <div class="stack gap-2 link-strong">
+          <a href="#standing">What changed in 2026 →</a>
+          <a href="#money">Where the money comes from →</a>
+        </div>
+      </div>
+    </div>
+    <div class="circle hero__art">
+      <div class="circle__img">{% photo "hero-retirees.jpg", "Retirees on Saipan", "Photo: retirees, Saipan (b&w)" %}</div>
+      <div class="circle__disc circle__disc--pale" aria-hidden="true"></div>
+      <div class="hero__badge"><b>75%</b><span>guaranteed</span></div>
+      <div class="hero__vertical" aria-hidden="true">Johnson v. Inos</div>
+    </div>
+  </div>
+</section>
+
+<section class="running auto rule-top" aria-label="Total required payments">
+  <div class="stack gap-3" style="max-width:22em">
+    <div style="width:61.8%;height:10px;background:var(--forest)" aria-hidden="true"></div>
+    <span class="meta">required from the Government since FY 2014</span>
+  </div>
+  <div class="justify-end" style="text-align:right">
+    <div class="running__num"><b>${{ map | sum }}</b><span>million</span></div>
+    <p class="body-sm mt-4" style="margin-left:auto;max-width:30em;text-wrap:pretty">The total of the Minimum Annual Payments set under the settlement, FY 2014–2026 (FY 2015 not posted). What was actually paid, and when, is in each year’s status report.</p>
+  </div>
+</section>
+
+<section id="standing" class="section auto rule-top align-start" style="--gap:var(--s5) var(--s6)" aria-labelledby="standing-h">
+  <div>
+    <h2 id="standing-h" class="h-section mb-5">where things stand</h2>
+    <p class="meta">last updated {{ site.updated | dateDots }}<br>source: NMI Settlement Fund notices</p>
+  </div>
+  <div class="justify-end stack gap-5" style="max-width:600px">
+    {%- for s in standing %}
+    <article class="standing__item">
+      <div class="standing__n{% if s.urgent %} standing__n--urgent{% endif %}" aria-hidden="true">{{ s.n }}</div>
+      <div>
+        <h3 class="h-item mb-3" style="margin-bottom:var(--s2)">{{ s.title }}</h3>
+        <p class="body" style="margin-bottom:var(--s2)">{{ s.body }}</p>
+        <a class="meta" href="{{ s.href }}">{{ s.src }}{% if s.internal %} →{% else %} ↗{% endif %}</a>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section id="check" class="section bg-forest on-dark auto" style="--min:360px;--gap:var(--s6)" aria-labelledby="check-h">
+  <div>
+    <span class="calc-tag">Check calculator</span>
+    <h2 id="check-h" class="h-section h-section--sm mb-5">what does this mean for my check?</h2>
+    <div class="calc-field">
+      <label for="benefit" class="field-label">Your full monthly benefit</label>
+      <span class="meta" id="benefit-hint">the amount before any reduction</span>
+      <div class="calc-input">
+        <span aria-hidden="true">$</span>
+        <input id="benefit" type="number" inputmode="numeric" min="0" step="50" value="1500" aria-describedby="benefit-hint" data-calc-input>
+      </div>
+    </div>
+    <p class="note-outline mt-4" style="max-width:26em"><span class="dot" aria-hidden="true"></span><span><strong>An estimate, not financial advice.</strong> Your Settlement Fund statement is the official figure.</span></p>
+  </div>
+  <div class="stack gap-5" style="justify-content:flex-end" aria-live="polite">
+    <div class="split-bar" aria-hidden="true"><div class="a"></div><div class="b"></div></div>
+    <div class="auto" style="--min:180px;--gap:var(--s4)">
+      <div>
+        <div class="calc-out__label">Guaranteed · 75%</div>
+        <div class="calc-out__value" data-calc="g75">$1,125</div>
+        <div class="meta mt-1" style="margin-top:var(--s1)">per month</div>
+      </div>
+      <div>
+        <div class="calc-out__label"><span class="sq" aria-hidden="true"></span>Stopped · 25%</div>
+        <div class="calc-out__value calc-out__value--warn" data-calc="s25">$375</div>
+        <div class="meta" style="margin-top:var(--s1)">per month</div>
+      </div>
+    </div>
+    <div class="calc-year">
+      <span style="font-size:1.375rem;font-weight:600">Lost over a year</span>
+      <b data-calc="y25">$4,500</b>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="section section--94 bg-deep" aria-labelledby="timeline-h">
+  <div class="auto align-end mb-6" style="--min:300px;--gap:var(--s4) var(--s5)">
+    <h2 id="timeline-h" class="h-section">the timeline</h2>
+    <p class="meta justify-end">each entry links to its source</p>
+  </div>
+  <ol class="timeline timeline--home" style="list-style:none;margin-top:0;margin-bottom:0;padding-right:0">
+    {%- for t in timeline %}
+    <li class="timeline__item">
+      <div class="tl-dot tl-dot--{{ t.dot }}" aria-hidden="true"></div>
+      <div class="timeline__year">{{ t.year }}</div>
+      <div>
+        <h3 style="font-size:1.5rem;font-weight:600;margin:6px 0 8px;line-height:1.3">{{ t.title }}</h3>
+        <p class="body-sm" style="max-width:34em">{{ t.body }}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section id="stories" class="section" aria-labelledby="stories-h">
+  <div class="split mb-6">
+    <div class="spacer"></div>
+    <div>
+      <h2 id="stories-h" class="h-section mb-4">in their words</h2>
+      <p class="body measure">Teachers, nurses, police officers and clerks who spent their careers in public service, on what the cuts have meant for them.</p>
+    </div>
+  </div>
+  <div class="auto stories">
+    {%- for st in stories %}
+    <figure class="story" style="--offset:{{ st.offset }};--size:{{ st.size }}">
+      <div class="circle"><div class="circle__img">{% photo st.photo, st.name, "Portrait (b&w)" %}</div></div>
+      <span class="meta">{{ st.meta }}</span>
+      <h3 style="font-size:1.5rem;font-weight:600;line-height:1.3">{{ st.name }}</h3>
+      <blockquote class="body" style="line-height:1.5">{{ st.quote }}</blockquote>
+    </figure>
+    {%- endfor %}
+  </div>
+  <div class="split mt-6">
+    <div class="spacer"></div>
+    <a href="#stay" class="link-strong">Share your story →</a>
+  </div>
+</section>
+
+<section id="money" class="section" aria-labelledby="money-h">
+  <div class="auto align-end mb-6">
+    <h2 id="money-h" class="h-section h-section--sm">where the money comes from</h2>
+    <p class="body justify-end measure">The settlement requires the NMI Government to pay the Settlement Fund a minimum amount every year. Without it, the Fund cannot pay the guaranteed 75%. The required payment has been falling since 2018.</p>
+  </div>
+  <div style="display:flex;justify-content:flex-end;margin:calc(-1 * var(--s4)) 0 var(--s6)">
+    <a class="btn" href="/will-the-money-last/">Will the money last? Read the 2025 reports, explained <span class="arrow">→</span></a>
+  </div>
+  <figure class="vchart" style="--n:{{ map | length }}" aria-labelledby="map-caption">
+    <div class="vchart__axis" aria-hidden="true">$ millions per fiscal year</div>
+    <div class="vchart__bars" role="list">
+      {%- for y, v in map %}
+      <div class="vchart__col" role="listitem" aria-label="FY {{ y }}: ${{ v }} million">
+        <span aria-hidden="true">{{ v }}</span>
+        <i class="{% if y == '2026' %}c-sage{% elif y == '2018' %}c-sage-muted{% endif %}" style="height:{{ v | scale(45, 88) }}"></i>
+      </div>
+      {%- endfor %}
+    </div>
+    <div></div>
+    <div class="vchart__labels" aria-hidden="true">
+      {%- for y, v in map %}<span>{{ y | yy }}</span>{% endfor %}
+    </div>
+    <figcaption id="map-caption" class="visually-hidden">Required Minimum Annual Payment by fiscal year, FY 2014 to FY 2026, in millions of dollars.</figcaption>
+  </figure>
+  <div class="split mt-5">
+    <div class="spacer"></div>
+    <div class="auto" style="--min:240px;--gap:var(--s4) var(--s5)">
+      <div><h3 style="font-size:1.375rem;font-weight:600;margin-bottom:8px">Minimum Annual Payment</h3><p class="body-sm">The yearly amount the Government must pay under the settlement. FY 2015 not shown; its status file was not separately posted.</p></div>
+      <div><h3 style="font-size:1.375rem;font-weight:600;margin-bottom:8px">FY 2026</h3><p class="body-sm">$29 million, with the status report referencing an MPLT loan. <a class="meta" href="http://www.nmisf.com/rfp/annual-payment-status/">payment status ↗</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="myths" class="section section--94 bg-deep" aria-labelledby="myths-h">
+  <h2 id="myths-h" class="h-section mb-6">what you may hear</h2>
+  {%- for m in myths %}
+  <div class="auto myth">
+    <div class="myth__side"><span class="myth__label" style="color:var(--sage-muted)">heard</span><p class="myth__heard"><span class="visually-hidden">Not quite: </span><s style="text-decoration-thickness:1px;text-decoration-color:var(--sage-muted)">{{ m.myth }}</s></p></div>
+    <div class="myth__side"><span class="myth__label" style="color:var(--sage)">record</span><div><p class="myth__fact">{{ m.fact }}</p><a class="meta" href="{{ m.href }}">{{ m.src }} ↗</a></div></div>
+  </div>
+  {%- endfor %}
+</section>
+
+<section id="library" class="section section--94 bg-sage on-dark" aria-labelledby="library-h">
+  <div class="split">
+    <div class="spacer"></div>
+    <h2 id="library-h" class="h-section mb-6">laws &amp; court orders</h2>
+  </div>
+  <div class="row-list row-list--thin">
+    {%- for d in documents %}
+    <a class="row split" href="{{ d.href }}">
+      <div class="row-meta"><span>{{ d.kind }}</span><span class="date">{{ d.date }}</span></div>
+      <div><h3 class="h-item h-item--lg" style="margin-bottom:8px">{{ d.title }} <span aria-hidden="true" style="font-weight:400">↗</span></h3><p class="body-sm measure-wide">{{ d.plain }}</p></div>
+    </a>
+    {%- endfor %}
+  </div>
+  <div style="display:flex;justify-content:flex-end;border-top:1px solid var(--sage-muted);padding-top:var(--s5)">
+    <a class="btn" href="https://www.nmisf.com/settlement-agreement/">All settlement documents <span class="arrow">→</span></a>
+  </div>
+  <div class="split mt-5">
+    <div class="spacer"></div>
+    <p class="note-outline" style="color:var(--sage-mist)"><span class="dot dot--light" aria-hidden="true"></span><span>Salåppeʼta is independent and supplements the NMI Settlement Fund, the official source, to keep the conversation going about the retirees. <strong>Nothing here is legal or financial advice.</strong></span></p>
+  </div>
+</section>
+
+<section id="bills" class="section section--94 bg-terracotta on-terracotta" aria-labelledby="bills-h">
+  <div class="split">
+    <div class="bills__title">
+      <h2 id="bills-h" class="h-section" style="font-size:clamp(3.75rem,6vw,6rem);margin-bottom:var(--s3);text-wrap:balance">bill tracker</h2>
+      <p class="meta">where each bill stands</p>
+    </div>
+    <div>
+      {%- for b in bills.items %}
+      <article class="bill">
+        <h3>{{ b.title }}</h3>
+        <p class="body measure-wide">{{ b.plain }}</p>
+        <p class="visually-hidden">Stage: {{ bills.stages[b.stage] }}</p>
+        <ol class="stages">
+          {%- for label in bills.stages %}
+          <li class="stage{% if loop.index0 < b.stage %} stage--done{% elif loop.index0 == b.stage %} stage--current{% endif %}"{% if loop.index0 == b.stage %} aria-current="step"{% endif %}>
+            <div class="stage__track" aria-hidden="true"><div class="stage__dot"></div><div class="stage__line"></div></div>
+            <span class="stage__label">{{ label }}</span>
+          </li>
+          {%- endfor %}
+        </ol>
+        <p class="meta mt-4">{{ b.note }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="news" class="section auto" style="--gap:var(--s6)" aria-labelledby="news-h">
+  <div>
+    <h2 id="news-h" class="h-section mb-4">the feed</h2>
+    <p class="body mb-4" style="max-width:22em">Notices from the Settlement Fund, and pension news from across the Pacific and the United States.</p>
+    <div class="chips" role="group" aria-label="Choose a feed" data-tabs="feed">
+      {%- for f in notices %}
+      <button type="button" class="chip chip--round" aria-pressed="{{ 'true' if loop.first else 'false' }}" aria-controls="feed-{{ f.region }}" data-tab="{{ f.region }}">{{ f.label }}</button>
+      {%- endfor %}
+    </div>
+  </div>
+  <div>
+    {%- for f in notices %}
+    <div class="feed-panel{% if loop.first %} is-active{% endif %}" id="feed-{{ f.region }}" data-panel="{{ f.region }}">
+      <h3>{{ f.label }}</h3>
+      <ul class="feed-list" style="list-style:none;margin:0;padding:0">
+        {%- for n in f.items %}
+        <li>
+          {% if n.href %}<a href="{{ n.href }}">{% else %}<div class="feed-item">{% endif %}
+            <div class="meta" style="margin-bottom:var(--s1)">{{ n.source }} · {% if n.date %}<time datetime="{{ n.date | isoDate }}">{{ n.date | dateDots }}</time>{% else %}—{% endif %}</div>
+            <div class="t">{{ n.title }}{% if n.href %} <span aria-hidden="true">↗</span>{% endif %}</div>
+          {% if n.href %}</a>{% else %}</div>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+      <p class="meta mt-3">{{ f.note }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+{% include "partials/stay-informed.njk" %}

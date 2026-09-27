@@ -1,0 +1,23 @@
+{
+  "why": [
+    { "fund": "Posts the official documents: reports, orders, notices and forms.", "us": "Explains what they mean in plain language, and links back to every original." },
+    { "fund": "Organizes documents by type and date.", "us": "Connects them into one story: the timeline, the money, and what changed." },
+    { "fund": "Speaks for the Fund, to its members.", "us": "Speaks to everyone else too: families, students, journalists and policymakers." },
+    { "fund": "Covers the Settlement Fund’s own business.", "us": "Also follows the Legislature, the budget, health insurance, and pension news across the Pacific and the U.S." },
+    { "fund": "Stays neutral, as an official body must.", "us": "Hosts the conversation: stories, questions, podcasts and reader feedback." }
+  ],
+  "principles": [
+    { "title": "Every claim has a source", "body": "Each fact links to the court order, law, report or notice it comes from." },
+    { "title": "Plain words first", "body": "We explain before we quote, and define every technical term." },
+    { "title": "Facts, not sides", "body": "We report what the documents say. We do not campaign for any official or party." },
+    { "title": "Dated and updated", "body": "Every page shows when it was last checked, and we correct mistakes openly." }
+  ],
+  "sources": [
+    { "name": "NMI Settlement Fund", "what": "The official source. Actuarial, audit and investment reports, press releases, payment status, forms and the settlement documents.", "href": "https://www.nmisf.com" },
+    { "name": "U.S. District Court for the NMI", "what": "Orders in Johnson v. Inos, Case No. 09-00023.", "href": "http://www.nmid.uscourts.gov/" },
+    { "name": "CNMI Legislature", "what": "Bills and public laws affecting retirees and the Fund.", "href": "https://www.cnmileg.net" },
+    { "name": "CNMI Department of Finance", "what": "GHLI health and life insurance information and forms.", "href": "https://finance.gov.mp" },
+    { "name": "CNMI Law Revision Commission", "what": "The Commonwealth Code and administrative rules.", "href": "https://cnmilaw.org" },
+    { "name": "Local news", "what": "Marianas Variety, Saipan Tribune, Marianas Press and Isla Public Media, for context and reporting on hearings and votes.", "href": "https://www.mvariety.com" }
+  ]
+}

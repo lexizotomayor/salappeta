@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title and not isHome %}{{ title }} · {% endif %}{{ site.name }} — {{ site.tagline }}</title>
+<meta name="description" content="{{ description or site.description }}">
+<meta name="theme-color" content="#F3ECE0">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ title or site.name }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:type" content="{{ 'article' if layout == 'layouts/explainer.njk' else 'website' }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="/feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3ECE0'/%3E%3Crect y='4' width='20' height='6' fill='%23C4553A'/%3E%3Ccircle cx='16' cy='21' r='8' fill='%232F4A3D'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+  /* Apply the reader's text-size choice before first paint. */
+  document.documentElement.classList.add("js");
+  try { if (localStorage.getItem("salappeta:large") === "1") document.documentElement.classList.add("large"); } catch (e) {}
+</script>
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{% if isHome %}{% include "partials/header-home.njk" %}{% else %}{% include "partials/header.njk" %}{% endif %}
+<main id="main">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+</body>
+</html>

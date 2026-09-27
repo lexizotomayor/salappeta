@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3ECE0;color:#2F4A3D;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2F4A3D;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:#C4553A}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="background:#F3ECE0;min-height:100vh;zoom:{{ zoom }}">
+
+<header data-screen-label="Header" style="padding:40px clamp(20px,5vw,88px) 0;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:clamp(16px,3vw,47px);align-items:start">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-weight:700;font-size:24px;letter-spacing:-.01em">salåppeʼ<span style="color:#C4553A">ta</span></a>
+<nav style="justify-self:end;display:flex;gap:29px;align-items:stretch">
+<div style="display:flex;flex-direction:column">
+<a href="Salappedia%20Home.dc.html#standing" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">where things stand</a>
+<a href="Salappedia%20Fund%20Health.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px;background:#3F5A4C;color:#EEF3ED">will the money last?</a>
+<a href="#health" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">health insurance</a>
+<a href="Salappedia%20Home.dc.html#library" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">laws &amp; court orders</a>
+<a href="Salappedia%20Blog.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">blog</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">contact us</a>
+<button onClick="{{ toggleLarge }}" style="font-family:inherit;font-size:20px;font-weight:600;background:none;border:none;padding:0;min-height:44px;cursor:pointer;color:#3F5A4C;text-align:left">{{ largeLabel }}</button>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</nav>
+</header>
+
+<section data-screen-label="Title" style="padding:94px clamp(20px,5vw,88px) 76px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:6px;padding-top:12px">
+<span>fund reports, explained</span>
+<span style="color:#3F5A4C">actuarial valuation · 30 Sep 2025</span>
+<span style="color:#3F5A4C">investment summary · 31 Jul 2026</span>
+</div>
+<div>
+<div style="height:14px;background:#C4553A;width:61.8%;margin-bottom:29px"></div>
+<h1 style="font-weight:100;font-size:clamp(60px,7.5vw,120px);line-height:.95;letter-spacing:-.04em;margin:0 0 47px;text-wrap:balance">will the money last?</h1>
+<p style="font-size:clamp(22px,2.2vw,29px);font-weight:400;line-height:1.382;margin:0;max-width:30em;text-wrap:pretty">The short answer: <strong style="font-weight:700">yes, for the 75% — if the Government keeps paying and the investments keep earning.</strong> Here is what the two latest reports say, in plain words.</p>
+</div>
+</div>
+</section>
+
+<div data-screen-label="Notice" style="padding:0 clamp(20px,5vw,88px) 76px;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px"><div></div><div style="border:3px solid #C4553A;padding:24px 29px;display:flex;gap:18px;align-items:flex-start;max-width:760px"><span style="width:18px;height:18px;border-radius:50%;background:#C4553A;flex:none;margin-top:8px"></span><p style="font-size:22px;line-height:1.5;margin:0"><strong style="font-weight:700;font-size:24px">Not legal or financial advice.</strong> Salåppeʼta exists to keep the conversation going about what retirees are facing. It supplements, and does not replace, the NMI Settlement Fund, which remains the official source. For questions about your own benefits, contact the Fund or a qualified adviser.</p></div></div>
+<section data-screen-label="Three answers" style="padding:0 clamp(20px,5vw,88px) 123px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2px">
+<sc-for list="{{ answers }}" as="a" hint-placeholder-count="3">
+<div style="background:{{ a.bg }};color:{{ a.fg }};padding:47px 36px;display:flex;flex-direction:column;gap:18px;outline:2px solid #2F4A3D;outline-offset:-2px">
+<span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700">{{ a.q }}</span>
+<span style="font-weight:300;font-size:clamp(47px,5vw,76px);line-height:.95;letter-spacing:-.03em">{{ a.big }}</span>
+<p style="font-size:20px;font-weight:500;line-height:1.5;margin:0">{{ a.body }}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section data-screen-label="One year of money" style="padding:94px clamp(20px,5vw,88px) 123px;background:#EADFCD">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:47px 76px;align-items:end;margin-bottom:76px">
+<h2 style="font-weight:100;font-size:clamp(60px,6.5vw,100px);line-height:.95;letter-spacing:-.035em;margin:0">one year, in and out</h2>
+<p style="font-size:20px;line-height:1.618;margin:0;max-width:28em;justify-self:end">Think of the Fund as a bank account. This is what the actuary expects to go in and come out during the year ending September 2026.</p>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;align-items:start">
+<div style="text-align:right">
+<div style="font-size:20px;font-weight:600">In the account</div>
+<div style="font-weight:100;font-size:clamp(76px,9vw,140px);line-height:.9;letter-spacing:-.04em">$148.5M</div>
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#3F5A4C;margin-top:12px">30 September 2025</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:18px">
+<sc-for list="{{ flows }}" as="f" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;align-items:center">
+<span style="font-size:20px;font-weight:600">{{ f.label }}</span>
+<span style="font-weight:300;font-size:29px;text-align:right;color:{{ f.text }}">{{ f.v }}</span>
+<div style="grid-column:1/-1;height:29px;width:{{ f.w }};background:{{ f.color }}"></div>
+</div>
+</sc-for>
+<div style="border-top:2px solid #2F4A3D;padding-top:18px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline">
+<span style="font-size:22px;font-weight:700">Left at year end</span>
+<span style="font-weight:300;font-size:47px">$148.4M</span>
+</div>
+<p style="font-size:18px;line-height:1.618;margin:0">Money in almost exactly matches money out, so the balance stays about the same this year.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="The plan" style="padding:123px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:47px 76px;align-items:end;margin-bottom:76px">
+<h2 style="font-weight:100;font-size:clamp(60px,6.5vw,100px);line-height:.95;letter-spacing:-.035em;margin:0">the plan: spend it down</h2>
+<div style="max-width:30em;justify-self:end">
+<p style="font-size:20px;line-height:1.618;margin:0 0 18px">The Fund is <strong style="font-weight:700">meant</strong> to shrink. As members pass away, less is paid out, and the Government's yearly payment gets smaller too.</p>
+<p style="font-size:20px;line-height:1.618;margin:0">By about 2048 the account is expected to be empty. From then on, the Government is expected to pay each year's benefits directly.</p>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px">
+<div style="writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:center">money in the Fund, $ millions</div>
+<div>
+<div style="display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:clamp(2px,.5vw,8px);align-items:end;height:clamp(240px,30vw,380px);border-bottom:2px solid #2F4A3D">
+<sc-for list="{{ balance }}" as="b" hint-placeholder-count="25">
+<div style="height:{{ b.h }};background:{{ b.c }};position:relative"></div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:clamp(2px,.5vw,8px);margin-top:8px">
+<sc-for list="{{ balance }}" as="b" hint-placeholder-count="25">
+<span style="font-family:'Courier Prime',monospace;font-size:clamp(11px,1vw,16px);font-weight:700;text-align:center">{{ b.label }}</span>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-top:47px">
+<div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:29px">
+<sc-for list="{{ milestones }}" as="m" hint-placeholder-count="4">
+<div><div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#3F5A4C">{{ m.y }}</div><div style="font-weight:300;font-size:47px;line-height:1">{{ m.v }}</div></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Government payments" style="padding:94px clamp(20px,5vw,88px) 123px;background:#2F4A3D;color:#F3ECE0;font-weight:500">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:right;color:#AFC0B3;padding-top:18px">required by the settlement</div>
+<div>
+<h2 style="font-weight:100;font-size:clamp(60px,6.5vw,100px);line-height:.95;letter-spacing:-.035em;margin:0 0 29px">what the Government must pay</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 47px;max-width:32em">The actuary sets this amount each year. It is the money needed, on top of investments, to keep paying the 75%.</p>
+<div style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+<sc-for list="{{ govpay }}" as="g" hint-placeholder-count="10">
+<div style="display:grid;grid-template-columns:110px minmax(0,1fr) 100px;gap:18px;align-items:center">
+<span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700">{{ g.y }}</span>
+<div style="height:22px;width:{{ g.w }};background:{{ g.c }}"></div>
+<span style="font-size:20px;font-weight:600;text-align:right">{{ g.v }}</span>
+</div>
+</sc-for>
+</div>
+<div style="margin-top:47px;padding:29px;background:#3F5A4C;display:flex;gap:18px;align-items:flex-start;max-width:640px">
+<span style="width:18px;height:18px;border-radius:50%;background:#AFC0B3;flex:none;margin-top:6px"></span>
+<p style="font-size:20px;line-height:1.5;margin:0"><strong style="font-weight:700">FY 2026 is paid in full.</strong> The $29 million was remitted in installments; the last $8.7 million arrived on 1 July 2026. The Fund's schedule for this year references an MPLT loan.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="health" data-screen-label="Health insurance" style="padding:123px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:47px 76px;align-items:end;margin-bottom:76px">
+<h2 style="font-weight:100;font-size:clamp(60px,6.5vw,100px);line-height:.95;letter-spacing:-.035em;margin:0">and your health insurance</h2>
+<div style="max-width:30em;justify-self:end">
+<p style="font-size:20px;line-height:1.618;margin:0 0 18px">Health insurance is <strong style="font-weight:700">not paid from the Settlement Fund.</strong> It comes from the Government's yearly budget, through its Group Health and Life Insurance program (GHLI).</p>
+<p style="font-size:20px;line-height:1.618;margin:0">Under the settlement, the Government must give retirees the same health insurance it gives full-time employees. That means every budget fight puts coverage at risk.</p>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2px;margin-bottom:94px">
+<div style="background:#2F4A3D;color:#F3ECE0;padding:47px 36px;display:flex;flex-direction:column;gap:18px">
+<span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700">2026</span>
+<span style="font-weight:300;font-size:clamp(47px,5vw,76px);line-height:.95;letter-spacing:-.03em">Covered</span>
+<p style="font-size:20px;font-weight:500;line-height:1.5;margin:0">A last-minute budget in December 2025 renewed the Aetna contract for about 7,000 retirees and employees.</p>
+</div>
+<div style="background:#C4553A;color:#FFFFFF;padding:47px 36px;display:flex;flex-direction:column;gap:18px">
+<span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700">2027</span>
+<span style="font-weight:300;font-size:clamp(47px,5vw,76px);line-height:.95;letter-spacing:-.03em">Not settled</span>
+<p style="font-size:20px;font-weight:500;line-height:1.5;margin:0">The FY 2027 budget has passed the House and is now with the Senate. Lawmakers have called it a very tight budget.</p>
+</div>
+<div style="background:#F3ECE0;color:#2F4A3D;padding:47px 36px;display:flex;flex-direction:column;gap:18px;outline:2px solid #2F4A3D;outline-offset:-2px">
+<span style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700">cost to cover retirees, FY 2027</span>
+<span style="font-weight:300;font-size:clamp(47px,5vw,76px);line-height:.95;letter-spacing:-.03em">$6.9M</span>
+<p style="font-size:20px;font-weight:500;line-height:1.5;margin:0">About $6.4M for retiree health and $494K for retiree life insurance, per the Secretary of Finance.</p>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-bottom:94px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:right;color:#3F5A4C;padding-top:6px">how we got here</div>
+<div style="border-left:2px solid #2F4A3D;display:flex;flex-direction:column;gap:29px;max-width:40em">
+<sc-for list="{{ ghli }}" as="g" hint-placeholder-count="5">
+<div style="position:relative;padding-left:29px">
+<div style="position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:{{ g.dot }};border:2px solid #2F4A3D"></div>
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#3F5A4C;margin-bottom:4px">{{ g.date }}</div>
+<p style="font-size:20px;line-height:1.5;margin:0">{{ g.text }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:47px 76px">
+<div>
+<h3 style="font-size:29px;font-weight:600;margin:0 0 18px">Being discussed</h3>
+<p style="font-size:20px;line-height:1.618;margin:0 0 18px">Lawmakers and the Department of Finance have talked about moving retirees 65 and older onto Medicare as their main coverage, since insuring them on the Aetna plan is costly.</p>
+<p style="font-size:20px;line-height:1.618;margin:0">Another idea is Guam's approach, where the government reimburses retirees' Medicare premiums instead. Nothing has been decided.</p>
+</div>
+<div style="border-left:6px solid #2F4A3D;padding-left:36px">
+<h3 style="font-size:29px;font-weight:600;margin:0 0 18px">Questions about your coverage</h3>
+<sc-for list="{{ hcontacts }}" as="c" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:14px 0;border-top:1px solid #AFC0B3;align-items:baseline">
+<span style="font-size:20px;font-weight:600">{{ c.name }}</span>
+<a href="{{ c.href }}" style="font-size:20px;font-weight:700">{{ c.num }}</a>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Investments" style="padding:123px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:47px 76px;align-items:end;margin-bottom:76px">
+<h2 style="font-weight:100;font-size:clamp(60px,6.5vw,100px);line-height:.95;letter-spacing:-.035em;margin:0">how the investments are doing</h2>
+<p style="font-size:20px;line-height:1.618;margin:0;max-width:30em;justify-self:end">The plan assumes the Fund's investments earn <strong style="font-weight:700">5.8% a year</strong> over the long run. Here is what they have actually earned, after fees.</p>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="text-align:right">
+<div style="font-size:20px;font-weight:600">Invested today</div>
+<div style="font-weight:100;font-size:clamp(60px,7vw,110px);line-height:.9;letter-spacing:-.04em">$153.8M</div>
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#3F5A4C;margin-top:12px">31 July 2026</div>
+</div>
+<div>
+<div style="position:relative;display:flex;flex-direction:column;gap:18px;padding-top:36px">
+<div style="position:absolute;top:0;bottom:0;left:{{ targetLeft }};border-left:2px dashed #C4553A"></div>
+<div style="position:absolute;top:0;left:{{ targetLeft }};transform:translateX(8px);font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;color:#C4553A;white-space:nowrap">5.8% goal</div>
+<sc-for list="{{ returns }}" as="r" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:minmax(0,1fr);gap:6px">
+<div style="display:flex;justify-content:space-between;gap:12px"><span style="font-size:20px;font-weight:600">{{ r.label }}</span><span style="font-size:20px;font-weight:700;color:{{ r.c }}">{{ r.v }}</span></div>
+<div style="height:29px;width:{{ r.w }};background:{{ r.c }}"></div>
+</div>
+</sc-for>
+</div>
+<p style="font-size:20px;line-height:1.618;margin:47px 0 0;max-width:34em">The last one and three years beat the goal. Over five and ten years, and since the Fund began in 2013, returns have been <strong style="font-weight:700">below</strong> it. Last year's strong results let the actuary trim future Government payments slightly.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Where it is invested" style="padding:94px clamp(20px,5vw,88px) 123px;background:#EADFCD">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:right;color:#3F5A4C;padding-top:18px">31 July 2026</div>
+<div>
+<h2 style="font-weight:100;font-size:clamp(60px,6vw,96px);line-height:.95;letter-spacing:-.035em;margin:0 0 29px">where it is invested</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 47px;max-width:32em">Mostly in bonds, which are steadier, with smaller shares in stocks and in real assets like property and infrastructure.</p>
+<div style="display:flex;height:76px;margin-bottom:29px">
+<sc-for list="{{ alloc }}" as="a" hint-placeholder-count="5">
+<div style="flex:{{ a.pct }};background:{{ a.c }}"></div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px 29px">
+<sc-for list="{{ alloc }}" as="a" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:center">
+<span style="width:18px;height:18px;background:{{ a.c }}"></span>
+<span style="font-size:20px;font-weight:600">{{ a.name }} · {{ a.pct }}%</span>
+<span></span>
+<span style="font-size:18px;line-height:1.4">{{ a.note }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Who is covered" style="padding:123px clamp(20px,5vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:47px">
+<sc-for list="{{ people }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:12px;border-top:2px solid #2F4A3D;padding-top:18px">
+<span style="font-weight:100;font-size:clamp(60px,6vw,96px);line-height:.9;letter-spacing:-.04em">{{ p.v }}</span>
+<span style="font-size:20px;font-weight:600">{{ p.label }}</span>
+<span style="font-size:18px;line-height:1.5">{{ p.note }}</span>
+</div>
+</sc-for>
+</section>
+
+<section data-screen-label="Risks" style="padding:94px clamp(20px,5vw,88px) 123px;background:#EADFCD">
+<h2 style="font-weight:100;font-size:clamp(60px,7vw,110px);line-height:.95;letter-spacing:-.035em;margin:0 0 76px">what could go wrong</h2>
+<sc-for list="{{ risks }}" as="r" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px 76px;padding:29px 0;border-top:2px solid #2F4A3D">
+<div style="display:flex;gap:18px;align-items:baseline"><span style="font-weight:300;font-size:47px;line-height:.9;color:{{ r.c }}">{{ r.n }}</span><h3 style="font-size:26px;font-weight:600;margin:0;line-height:1.2">{{ r.title }}</h3></div>
+<p style="font-size:20px;line-height:1.618;margin:0">{{ r.body }}</p>
+</div>
+</sc-for>
+</section>
+
+<section data-screen-label="Words" style="padding:123px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<h2 style="font-weight:100;font-size:clamp(60px,6vw,96px);line-height:.95;letter-spacing:-.035em;margin:0;text-align:right">words used</h2>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ terms }}" as="t" hint-placeholder-count="5">
+<div style="padding:18px 0;border-top:1px solid #AFC0B3"><div style="font-size:22px;font-weight:700;margin-bottom:4px">{{ t.term }}</div><div style="font-size:20px;line-height:1.5">{{ t.def }}</div></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Sources" style="padding:94px clamp(20px,5vw,88px);background:#2F4A3D;color:#F3ECE0;font-weight:500">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<h2 style="font-weight:100;font-size:clamp(60px,6vw,96px);line-height:.95;letter-spacing:-.035em;margin:0;text-align:right">sources</h2>
+<div>
+<ol style="margin:0 0 29px;padding:0 0 0 29px;display:flex;flex-direction:column;gap:12px;font-size:20px;line-height:1.5">
+<li>Milliman, <em>NMI Settlement Fund Actuarial Valuation as of September 30, 2025</em>, dated September 14, 2026.</li>
+<li>Wilshire Advisors, <em>NMI Settlement Fund Monthly Investment Summary</em>, July 2026.</li>
+<li>NMI Settlement Fund, <em>Schedule of CNMI Government annual contribution payments, FY 2026</em>, as of July 1, 2026.</li>
+<li>NMI Settlement Fund press releases, 21 Nov and 5 Dec 2025.</li>
+<li>Marianas Variety, Marianas Press and Isla Public Media reporting on GHLI, Nov 2025 – Sep 2026.</li>
+</ol>
+<p style="display:inline-flex;align-items:center;gap:14px;border:2px solid #EEF3ED;padding:14px 20px;font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin:0;color:#EEF3ED;font-weight:500"><span style="width:14px;height:14px;border-radius:50%;background:#C4553A;flex:none"></span><span>A plain-language summary; the reports are the official record. <strong style="font-weight:700">Not legal or financial advice.</strong></span></p>
+</div>
+</div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#C4553A;color:#FFFFFF;padding:94px clamp(20px,5vw,88px) 47px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:47px;align-items:end">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:29px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font-weight:400;font-size:29px">an independent guide</span><span style="font-weight:600;font-size:29px;white-space:nowrap">nmi pensions, explained</span></div>
+<div style="height:12px;background:#2F4A3D;width:100%"></div>
+<div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:clamp(60px,6vw,96px);line-height:.85;letter-spacing:-.03em">salåppeʼta</div>
+</div>
+<div style="justify-self:end;display:flex;gap:18px;align-items:stretch">
+<div style="display:flex;flex-direction:column;font-size:20px;line-height:1.3;font-weight:600">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">home</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">about</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">glossary</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">contact</a>
+<span style="display:inline-flex;align-items:center;gap:14px;border:2px solid #FFFFFF;padding:14px 20px;font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin-top:29px;color:#FFFFFF;max-width:16em"><span style="width:14px;height:14px;border-radius:50%;background:#FFFFFF;flex:none"></span>Not legal or financial advice</span>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</div>
+<div style="grid-column:1/-1;border-top:1px solid rgba(255,255,255,.6);padding-top:18px;margin-top:29px;font-size:18px;font-weight:600;color:#FFFFFF">© 2026 Salåppeʼta and Alexie Zotomayor. All rights reserved.</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { large: false };
+  renderVals() {
+    const T = '#C4553A', G = '#2F4A3D', S = '#3F5A4C', P = '#AFC0B3', M = '#6F8A78';
+    const bal = [148.4,146.9,144.4,139.7,132.8,124.2,113.8,102.1,89.5,77.6,66.4,55.8,46.0,37.0,28.8,21.6,15.4,10.2,6.1,3.0,1.0,0.07,0,0,0];
+    const gov = [['FY 2025 (paid)',30],['FY 2026',29],['FY 2027',27],['FY 2028',25],['FY 2029',22],['FY 2030',19],['FY 2031',16.5],['FY 2032',14],['FY 2033',12],['2034–2047',10.6]];
+    const rets = [['Past 1 year',9.20],['Past 3 years',8.49],['Past 5 years',3.71],['Past 10 years',4.87],['Since 2013',4.37]];
+    const maxR = 10;
+    return {
+      zoom: this.state.large ? 1.18 : 1,
+      largeLabel: this.state.large ? 'A− smaller text' : 'A+ larger text',
+      toggleLarge: () => this.setState(s => ({ large: !s.large })),
+      answers: [
+        { q:'Is the 75% safe?', big:'Yes, if…', body:'the Government makes every required payment and the investments earn about 5.8% a year. The actuary\u2019s plan pays the 75% for as long as members live.', bg:'#F3ECE0', fg:G },
+        { q:'Is the 100% covered?', big:'No', body:'This plan only covers 75%. The other 25% was never part of it, and the Government stopped paying it after 2025.', bg:T, fg:'#FFFFFF' },
+        { q:'Biggest risk?', big:'Late payments', body:'The plan depends on the Government paying on time every year. Investments below 5.8% would also mean the Government has to pay more.', bg:G, fg:'#F3ECE0' }
+      ],
+      flows: [
+        { label:'Government payment', v:'+ $29.0M', w:(29/36.5*100)+'%', color:S, text:G },
+        { label:'Investment earnings (expected)', v:'+ $8.4M', w:(8.4/36.5*100)+'%', color:M, text:G },
+        { label:'Pensions paid at 75%', v:'− $36.5M', w:'100%', color:T, text:T },
+        { label:'Running the Fund', v:'− $1.7M', w:(1.7/36.5*100)+'%', color:'#D98B77', text:T }
+      ],
+      balance: bal.map((v,i) => { const y = 2026+i; return { h: Math.max(v/148.4*100, .6)+'%', c: y>=2047 ? T : (i===0 ? G : S), label: (i%4===0 || y===2048) ? "'"+String(y).slice(2) : '' }; }),
+      milestones: [ { y:'2026', v:'$148M' }, { y:'2034', v:'$90M' }, { y:'2040', v:'$29M' }, { y:'~2048', v:'$0' } ],
+      govpay: gov.map(([y,v],i) => ({ y, v:'$'+v+'M', w:(v/30*100)+'%', c: i===0 ? M : (i===1 ? '#F3ECE0' : P) })),
+      targetLeft: (5.8/maxR*100)+'%',
+      returns: rets.map(([label,v]) => ({ label, v: v.toFixed(2)+'%', w:(v/maxR*100)+'%', c: v>=5.8 ? S : T })),
+      alloc: [
+        { name:'Bonds', pct:40.7, c:G, note:'Loans to governments and companies that pay interest.' },
+        { name:'Real assets', pct:18.2, c:S, note:'Property, infrastructure and similar holdings.' },
+        { name:'Real return', pct:17.6, c:M, note:'Holdings meant to keep pace with inflation.' },
+        { name:'Stocks', pct:17.9, c:P, note:'Shares in US and world companies.' },
+        { name:'Cash', pct:5.6, c:'#D9CDB8', note:'Kept on hand to pay monthly benefits.' }
+      ],
+      people: [
+        { v:'2,417', label:'members in total', note:'As of 30 September 2025, down from 2,511 a year earlier.' },
+        { v:'2,338', label:'receiving a benefit', note:'1,563 retirees, 696 surviving spouses, 50 children and others.' },
+        { v:'69', label:'average age', note:'Across everyone receiving or waiting for a benefit.' },
+        { v:'14.6', label:'years of life expected, on average', note:'This is what the plan is built around.' }
+      ],
+      risks: [
+        { n:'1', c:T, title:'The Government pays late or less', body:'The whole plan assumes every required payment arrives. Missed or late payments are the single biggest threat to the 75%.' },
+        { n:'2', c:S, title:'Investments earn less than 5.8%', body:'Over the past five and ten years, returns were below the goal. If that continues, the actuary will ask the Government for more each year.' },
+        { n:'3', c:S, title:'Members live longer than expected', body:'Good news for families, but it means paying benefits for more years than planned.' },
+        { n:'4', c:T, title:'Health insurance depends on each year\u2019s budget', body:'Coverage is not part of the Fund. If the Government\u2019s budget falls short, retiree health insurance is at risk, as it nearly was in December 2025.' },
+        { n:'5', c:S, title:'After 2048, it all depends on the Government', body:'Once the account is empty, benefits must be paid from the Government\u2019s budget each year.' }
+      ],
+      ghli: [
+        { date:'19 Nov 2025', text:'The Secretary of Finance warns that the Aetna contract ends December 31 and that $7.2M is needed to keep retirees covered.', dot:'#F3ECE0' },
+        { date:'5 Dec 2025', text:'The House passes HB 24-75 with $2.8M for retiree health and life insurance, leaving a $4.4M gap. The Settlement Fund urges retirees to look at other options.', dot:'#C4553A' },
+        { date:'Dec 2025', text:'The Governor signs the revised FY 2026 budget, Public Law 24-20, with $4.3M more for GHLI. The Aetna contract is renewed.', dot:'#2F4A3D' },
+        { date:'Aug 2026', text:'The Secretary of Finance estimates GHLI will cost the general fund about $11.9M in FY 2027, including $6.4M for retiree health.', dot:'#F3ECE0' },
+        { date:'Sep 2026', text:'The House passes the FY 2027 budget, HB 24-108, setting aside half of certain special accounts for retirees\u2019 benefits, including GHLI. It now goes to the Senate.', dot:'#C4553A' }
+      ],
+      hcontacts: [
+        { name:'Pacifica Insurance (Aetna agent), Susupe', num:'(670) 234-6267', href:'tel:+16702346267' },
+        { name:'GHLI office, Department of Finance', num:'ghli@dof.gov.mp', href:'mailto:ghli@dof.gov.mp' },
+        { name:'Medicare', num:'1-800-772-1213', href:'tel:+18007721213' },
+        { name:'CNMI Medicaid', num:'(670) 664-4880', href:'tel:+16706644880' }
+      ],
+      terms: [
+        { term:'Actuary', def:'An expert who estimates how much a pension fund will need to pay, and for how long.' },
+        { term:'Actuarial valuation', def:'The actuary\u2019s yearly check-up of the Fund. This one is by Milliman, as of 30 September 2025.' },
+        { term:'Minimum Annual Payment', def:'The amount the Government must pay the Fund each year under the settlement.' },
+        { term:'Investment return', def:'What the Fund\u2019s money earns in a year, shown as a percentage.' },
+        { term:'Net of fees', def:'Returns after the managers\u2019 fees are taken out.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

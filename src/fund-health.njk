@@ -1,0 +1,266 @@
+---
+layout: layouts/base.njk
+title: Will the money last?
+description: "The 2025 actuarial valuation and the July 2026 investment summary for the NMI Settlement Fund, explained in plain words."
+navSet: fund
+permalink: /will-the-money-last/
+---
+{%- set v = fundView -%}
+<section class="page-title" aria-labelledby="fh-h">
+  <div class="split">
+    <div class="aside-r stack meta meta--bold meta--forest" style="padding-top:var(--s2)">
+      <span>fund reports, explained</span>
+      <span style="color:var(--sage)">actuarial valuation · 30 Sep 2025</span>
+      <span style="color:var(--sage)">investment summary · 31 Jul 2026</span>
+    </div>
+    <div>
+      <div class="sigbar mb-4" aria-hidden="true"></div>
+      <h1 id="fh-h" class="h-page mb-5">will the money last?</h1>
+      <p class="lede">The short answer: <strong>yes, for the 75% — if the Government keeps paying and the investments keep earning.</strong> Here is what the two latest reports say, in plain words.</p>
+    </div>
+  </div>
+</section>
+
+<div class="split" style="padding:0 var(--gutter) var(--s6)">
+  <div class="spacer"></div>
+  {% include "partials/notice.njk" %}
+</div>
+
+<section style="padding:0 var(--gutter) var(--s8)" aria-label="Three answers">
+  <div class="auto cards">
+    {%- for a in fundPage.answers %}
+    <div class="card card--{{ a.tone }}{% if a.tone == 'almond' %} card--outline{% endif %}">
+      <h2 class="q">{{ a.q }}</h2>
+      <span class="big-word">{{ a.big }}</span>
+      <p>{{ a.body }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--94 bg-deep" aria-labelledby="flow-h">
+  <div class="auto align-end mb-6">
+    <h2 id="flow-h" class="h-section h-section--sm">one year, in and out</h2>
+    <p class="body justify-end" style="max-width:28em">Think of the Fund as a bank account. This is what the actuary expects to go in and come out during the year ending September 2026.</p>
+  </div>
+  <div class="split align-start">
+    <div class="aside-r">
+      <div style="font-size:1.25rem;font-weight:600">In the account</div>
+      <div class="big" style="line-height:.9">{{ v.startBalance }}</div>
+      <div class="meta meta--bold" style="margin-top:var(--s2)">30 September 2025</div>
+    </div>
+    <div class="stack gap-3">
+      <div class="hbars">
+        {%- for f in v.flows %}
+        <div class="hbar">
+          <span class="label">{{ f.label }}</span>
+          <span class="v{% if f.out %} v--out{% endif %}">{{ f.v }}</span>
+          <i class="c-{{ f.color }}" style="width:{{ f.w }}" aria-hidden="true"></i>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="total-row"><b>Left at year end</b><span>{{ v.endBalance }}</span></div>
+      <p class="body-sm">Money in almost exactly matches money out, so the balance stays about the same this year.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="plan-h">
+  <div class="auto align-end mb-6">
+    <h2 id="plan-h" class="h-section h-section--sm">the plan: spend it down</h2>
+    <div class="justify-end measure">
+      <p class="body mb-3">The Fund is <strong>meant</strong> to shrink. As members pass away, less is paid out, and the Government's yearly payment gets smaller too.</p>
+      <p class="body">By about 2048 the account is expected to be empty. From then on, the Government is expected to pay each year's benefits directly.</p>
+    </div>
+  </div>
+  <figure class="vchart" style="--n:25;--bar-gap:clamp(2px,.5vw,8px);--h:clamp(240px,30vw,380px)" aria-labelledby="bal-cap">
+    <div class="vchart__axis meta--bold" aria-hidden="true" style="color:var(--forest)">money in the Fund, $ millions</div>
+    <div>
+      <div class="vchart__bars" role="list">
+        {%- for b in v.balance %}
+        <div class="vchart__col" role="listitem" aria-label="{{ b.y }}: ${{ b.v }} million"><i class="c-{{ b.color }}" style="height:{{ b.h }}"></i></div>
+        {%- endfor %}
+      </div>
+      <div class="vchart__labels" aria-hidden="true" style="margin-top:8px">
+        {%- for b in v.balance %}<span style="font-size:clamp(.6875rem,1vw,1rem);font-weight:700">{{ b.label }}</span>{% endfor %}
+      </div>
+    </div>
+    <figcaption id="bal-cap" class="visually-hidden">Projected Settlement Fund balance at the end of each fiscal year, 2026 to 2050, in millions of dollars. Years from 2047 are highlighted.</figcaption>
+  </figure>
+  <div class="split mt-5">
+    <div class="spacer"></div>
+    <div class="auto" style="--min:160px;--gap:var(--s4)">
+      {%- for m in fundPage.milestones %}
+      <div><div class="meta meta--bold">{{ m.y }}</div><div class="figure-47">{{ m.v }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--94 bg-forest on-dark" aria-labelledby="gov-h">
+  <div class="split">
+    <div class="aside-r meta meta--bold" style="padding-top:var(--s3)">required by the settlement</div>
+    <div>
+      <h2 id="gov-h" class="h-section h-section--sm mb-4">what the Government must pay</h2>
+      <p class="body mb-5" style="max-width:32em">The actuary sets this amount each year. It is the money needed, on top of investments, to keep paying the 75%.</p>
+      <div class="govpay">
+        {%- for g in v.govpay %}
+        <div class="govpay__row">
+          <span class="y">{{ g.y }}</span>
+          <i class="c-{{ g.color }}" style="width:{{ g.w }}" aria-hidden="true"></i>
+          <span class="v">{{ g.v }}</span>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="callout">
+        <p><strong>FY 2026 is paid in full.</strong> The {{ v.required2026 }} was remitted in installments; the last {{ v.finalInstallment }} arrived on 1 July 2026. The Fund's schedule for this year references an MPLT loan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="health" class="section" aria-labelledby="health-h">
+  <div class="auto align-end mb-6">
+    <h2 id="health-h" class="h-section h-section--sm">and your health insurance</h2>
+    <div class="justify-end measure">
+      <p class="body mb-3">Health insurance is <strong>not paid from the Settlement Fund.</strong> It comes from the Government's yearly budget, through its Group Health and Life Insurance program (GHLI).</p>
+      <p class="body">Under the settlement, the Government must give retirees the same health insurance it gives full-time employees. That means every budget fight puts coverage at risk.</p>
+    </div>
+  </div>
+  <div class="auto cards" style="margin-bottom:var(--s7)">
+    <div class="card card--forest">
+      <span class="q">2026</span>
+      <span class="big-word">Covered</span>
+      <p>A last-minute budget in December 2025 renewed the Aetna contract for about 7,000 retirees and employees.</p>
+    </div>
+    <div class="card card--terracotta">
+      <span class="q">2027</span>
+      <span class="big-word">Not settled</span>
+      <p>The FY 2027 budget has passed the House and is now with the Senate. Lawmakers have called it a very tight budget.</p>
+    </div>
+    <div class="card card--almond card--outline">
+      <span class="q">cost to cover retirees, FY 2027</span>
+      <span class="big-word">{{ v.healthTotal }}</span>
+      <p>{{ v.healthSplit }}, per the Secretary of Finance.</p>
+    </div>
+  </div>
+  <div class="split" style="margin-bottom:var(--s7)">
+    <div class="aside-r meta meta--bold" style="padding-top:var(--s1)">how we got here</div>
+    <ol class="timeline" style="list-style:none;margin:0;padding:0;max-width:40em">
+      {%- for g in fundPage.ghli %}
+      <li class="timeline__item">
+        <div class="tl-dot tl-dot--{{ g.dot }}" aria-hidden="true"></div>
+        <div class="meta meta--bold" style="margin-bottom:4px">{{ g.date }}</div>
+        <p class="body" style="line-height:1.5">{{ g.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+  <div class="auto">
+    <div>
+      <h3 class="h-sub mb-3">Being discussed</h3>
+      <p class="body mb-3">Lawmakers and the Department of Finance have talked about moving retirees 65 and older onto Medicare as their main coverage, since insuring them on the Aetna plan is costly.</p>
+      <p class="body">Another idea is Guam's approach, where the government reimburses retirees' Medicare premiums instead. Nothing has been decided.</p>
+    </div>
+    <div class="side-rule">
+      <h3 class="h-sub mb-3">Questions about your coverage</h3>
+      <div class="contacts contacts--bold">
+        {%- for c in fundPage.healthContacts %}
+        <div class="contact" style="padding:14px 0"><span>{{ c.name }}</span><a href="{{ c.href }}">{{ c.num }}</a></div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" aria-labelledby="inv-h">
+  <div class="auto align-end mb-6">
+    <h2 id="inv-h" class="h-section h-section--sm">how the investments are doing</h2>
+    <p class="body justify-end measure">The plan assumes the Fund's investments earn <strong>{{ v.goal }}% a year</strong> over the long run. Here is what they have actually earned, after fees.</p>
+  </div>
+  <div class="split">
+    <div class="aside-r">
+      <div style="font-size:1.25rem;font-weight:600">Invested today</div>
+      <div class="big" style="font-size:clamp(3.75rem,7vw,6.875rem);line-height:.9">{{ v.invested }}</div>
+      <div class="meta meta--bold" style="margin-top:var(--s2)">31 July 2026</div>
+    </div>
+    <div>
+      <div class="returns">
+        <div class="returns__goal" style="left:{{ v.goalLeft }}" aria-hidden="true"><span>{{ v.goal }}% goal</span></div>
+        {%- for r in v.returns %}
+        <div class="return return--{{ 'above' if r.above else 'below' }}">
+          <div class="return__head"><span>{{ r.label }}</span><span>{{ r.v }}<span class="visually-hidden">{{ ', above the goal' if r.above else ', below the goal' }}</span></span></div>
+          <i class="{{ 'c-sage' if r.above else 'c-terracotta' }}" style="width:{{ r.w }}" aria-hidden="true"></i>
+        </div>
+        {%- endfor %}
+      </div>
+      <p class="body mt-5" style="max-width:34em">The last one and three years beat the goal. Over five and ten years, and since the Fund began in 2013, returns have been <strong>below</strong> it. Last year's strong results let the actuary trim future Government payments slightly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--94 bg-deep" aria-labelledby="alloc-h">
+  <div class="split">
+    <div class="aside-r meta meta--bold" style="padding-top:var(--s3)">31 July 2026</div>
+    <div>
+      <h2 id="alloc-h" class="h-section h-section--xs mb-4">where it is invested</h2>
+      <p class="body mb-5" style="max-width:32em">Mostly in bonds, which are steadier, with smaller shares in stocks and in real assets like property and infrastructure.</p>
+      <div class="alloc-bar" aria-hidden="true">
+        {%- for a in v.allocation %}<div class="c-{{ a.color }}" style="flex:{{ a.pct }}"></div>{% endfor %}
+      </div>
+      <ul class="auto alloc-legend" style="list-style:none;margin:0;padding:0">
+        {%- for a in v.allocation %}
+        <li><span class="sw c-{{ a.color }}" aria-hidden="true"></span><b>{{ a.name }} · {{ a.pct }}%</b><p>{{ a.note }}</p></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section auto people" aria-label="Who is covered">
+  {%- for p in v.people %}
+  <div class="person">
+    <b>{{ p.v }}</b>
+    <strong>{{ p.label }}</strong>
+    <span>{{ p.note }}</span>
+  </div>
+  {%- endfor %}
+</section>
+
+<section class="section section--94 bg-deep" aria-labelledby="risk-h">
+  <h2 id="risk-h" class="h-section mb-6">what could go wrong</h2>
+  {%- for r in fundPage.risks %}
+  <div class="auto risk">
+    <div class="risk__head"><span class="n{% if r.urgent %} n--urgent{% endif %}" aria-hidden="true">{{ loop.index }}</span><h3 class="h-item" style="line-height:1.2">{{ r.title }}</h3></div>
+    <p class="body">{{ r.body }}</p>
+  </div>
+  {%- endfor %}
+</section>
+
+<section class="section" aria-labelledby="words-h">
+  <div class="split">
+    <h2 id="words-h" class="h-section h-section--xs aside-r">words used</h2>
+    <div class="terms">
+      {%- for t in fundPage.terms %}
+      <div><b>{{ t.term }}</b><p>{{ t.def }}</p></div>
+      {%- endfor %}
+      <p class="mt-4"><a class="link-strong" href="/glossary/">All {{ glossary | length }} words in the glossary →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--94 bg-forest on-dark" style="padding-bottom:var(--s7)" aria-labelledby="fsrc-h">
+  <div class="split">
+    <h2 id="fsrc-h" class="h-section h-section--xs aside-r">sources</h2>
+    <div>
+      <ol class="sources-list mb-4" style="font-size:1.25rem">
+        <li>Milliman, <em>NMI Settlement Fund Actuarial Valuation as of September 30, 2025</em>, dated September 14, 2026.</li>
+        <li>Wilshire Advisors, <em>NMI Settlement Fund Monthly Investment Summary</em>, July 2026.</li>
+        <li>NMI Settlement Fund, <em>Schedule of CNMI Government annual contribution payments, FY 2026</em>, as of July 1, 2026.</li>
+        <li>NMI Settlement Fund press releases, 21 Nov and 5 Dec 2025.</li>
+        <li>Marianas Variety, Marianas Press and Isla Public Media reporting on GHLI, Nov 2025 – Sep 2026.</li>
+      </ol>
+      <p class="note-outline" style="color:var(--sage-mist)"><span class="dot" aria-hidden="true"></span><span>A plain-language summary; the reports are the official record. <strong>Not legal or financial advice.</strong></span></p>
+    </div>
+  </div>
+</section>

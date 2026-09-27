@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#F3ECE0;color:#2F4A3D;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2F4A3D;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:#3F5A4C}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="background:#F3ECE0;min-height:100vh;zoom:{{ zoom }}">
+<div style="position:fixed;top:0;left:0;height:6px;width:{{ progress }};background:#C4553A;z-index:30"></div>
+
+<header data-screen-label="Article header" style="padding:40px clamp(20px,5vw,88px) 0;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:clamp(16px,3vw,47px);align-items:start">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-weight:700;font-size:24px;letter-spacing:-.01em">salåppeʼ<span style="color:#C4553A">ta</span></a>
+<nav style="justify-self:end;display:flex;gap:29px;align-items:stretch">
+<div style="display:flex;flex-direction:column">
+<a href="Salappedia%20Home.dc.html#standing" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">where things stand</a>
+<a href="Salappedia%20Home.dc.html#library" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">laws &amp; court orders</a>
+<a href="Salappedia%20Blog.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px;background:#3F5A4C;color:#EEF3ED">blog</a>
+<a href="Salappedia%20Podcast.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">podcast</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">contact us</a>
+<button onClick="{{ toggleLarge }}" style="font-family:inherit;font-size:20px;font-weight:600;background:none;border:none;padding:0;min-height:44px;cursor:pointer;color:#3F5A4C;text-align:left">{{ largeLabel }}</button>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</nav>
+</header>
+
+<section data-screen-label="Article title" style="padding:94px clamp(20px,5vw,88px) 76px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:6px;padding-top:12px">
+<a href="Salappedia%20Blog.dc.html" style="color:#3F5A4C">← all explainers</a>
+<span style="margin-top:29px">the settlement</span>
+<span style="font-weight:700">{{ date }}</span>
+<span style="color:#3F5A4C">{{ ago }}</span>
+<span style="color:#6F8A78">8 min read</span>
+</div>
+<div>
+<div style="height:14px;background:#C4553A;width:61.8%;margin-bottom:29px"></div>
+<h1 style="font-weight:100;font-size:clamp(60px,7.5vw,120px);line-height:.95;letter-spacing:-.04em;margin:0 0 47px;text-wrap:balance">the 75% and the 25%</h1>
+<p style="font-size:clamp(22px,2.2vw,29px);font-weight:400;line-height:1.382;margin:0;max-width:30em;text-wrap:pretty">Where each part of a retiree's pension comes from, why one part stopped, and what the documents say about both.</p>
+</div>
+</div>
+</section>
+
+<div data-screen-label="Notice" style="padding:0 clamp(20px,5vw,88px) 76px;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px"><div></div><div style="border:3px solid #C4553A;padding:24px 29px;display:flex;gap:18px;align-items:flex-start;max-width:760px"><span style="width:18px;height:18px;border-radius:50%;background:#C4553A;flex:none;margin-top:8px"></span><p style="font-size:22px;line-height:1.5;margin:0"><strong style="font-weight:700;font-size:24px">Not legal or financial advice.</strong> Salåppeʼta exists to keep the conversation going about what retirees are facing. It supplements, and does not replace, the NMI Settlement Fund, which remains the official source. For questions about your own benefits, contact the Fund or a qualified adviser.</p></div></div>
+<section data-screen-label="Summary" style="padding:0 clamp(20px,5vw,88px) 94px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;text-align:right;color:#3F5A4C;padding-top:6px">in short</div>
+<div style="background:#2F4A3D;color:#F3ECE0;font-weight:500;padding:47px;display:flex;flex-direction:column;gap:18px;max-width:760px">
+<sc-for list="{{ summary }}" as="s" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:baseline">
+<span style="font-weight:300;font-size:29px;color:#AFC0B3">{{ s.n }}</span>
+<p style="font-size:20px;line-height:1.5;margin:0">{{ s.t }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<article data-screen-label="Article body" style="padding:0 clamp(20px,5vw,88px) 123px">
+
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-bottom:76px">
+<aside style="font-size:18px;line-height:1.5;text-align:right;color:#3F5A4C;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding-top:12px">
+<span style="font-family:'Courier Prime',monospace">key term</span>
+<span style="font-weight:600;color:#2F4A3D">Settlement Class Member</span>
+<span style="max-width:16em">A retiree or beneficiary covered by the 2013 settlement.</span>
+</aside>
+<div style="max-width:36em">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0 0 29px">1 · The promise</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 29px;text-wrap:pretty"><span style="float:left;font-weight:100;font-size:110px;line-height:.8;margin:6px 12px 0 -4px;color:#3F5A4C">I</span>n 2013, a federal court approved a settlement in <em>Betty Johnson v. Eloy S. Inos</em>, Case No. 09-00023. Retirees had sued because the Government had not paid what it owed into the Retirement Fund for years, and the Fund was running out of money.</p>
+<p style="font-size:20px;line-height:1.618;margin:0;text-wrap:pretty">The settlement created the NMI Settlement Fund, which took over certain Retirement Fund assets. Its job is to make sure every Settlement Class Member receives <strong style="font-weight:600">at least 75% of their Full Benefits</strong>.</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-bottom:76px">
+<aside style="font-size:18px;line-height:1.5;text-align:right;color:#3F5A4C;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding-top:12px">
+<span style="font-family:'Courier Prime',monospace">key term</span>
+<span style="font-weight:600;color:#2F4A3D">Minimum Annual Payment</span>
+<span style="max-width:16em">The amount the Government must pay the Settlement Fund each fiscal year.</span>
+</aside>
+<div style="max-width:36em">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0 0 29px">2 · Where the 75% comes from</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 29px;text-wrap:pretty">The Settlement Fund pays the guaranteed 75% from its own assets and from payments the settlement requires the NMI Government to make every year.</p>
+<p style="font-size:20px;line-height:1.618;margin:0;text-wrap:pretty">That required payment peaked at $45 million in FY 2018 and has fallen each year since, to $29 million in FY 2026. The Fund's status report for FY 2026 references a loan from MPLT.</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-bottom:94px;align-items:center">
+<div></div>
+<figure style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:29px;align-items:end;border-top:2px solid #2F4A3D;padding-top:29px">
+<div><div style="font-weight:100;font-size:clamp(76px,9vw,140px);line-height:.85;letter-spacing:-.04em">$45M</div><div style="font-family:'Courier Prime',monospace;font-size:18px;margin-top:12px">FY 2018</div></div>
+<div style="font-weight:300;font-size:47px;color:#6F8A78">→</div>
+<div><div style="font-weight:100;font-size:clamp(76px,9vw,140px);line-height:.85;letter-spacing:-.04em;color:#3F5A4C">$29M</div><div style="font-family:'Courier Prime',monospace;font-size:18px;margin-top:12px">FY 2026</div></div>
+<figcaption style="grid-column:1/-1;font-size:18px;color:#3F5A4C"><strong style="font-weight:600;color:#2F4A3D">Required Minimum Annual Payment.</strong> Source: NMISF annual payment status.</figcaption>
+</figure>
+</div>
+
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-bottom:94px">
+<aside style="font-family:'Courier Prime',monospace;font-size:18px;text-align:right;color:#3F5A4C;padding-top:12px">timeline of notices</aside>
+<div style="max-width:36em">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0 0 29px">3 · Where the 25% came from</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 47px;text-wrap:pretty">The settlement guarantees 75%. The remaining 25% was paid by the Government separately. That is why it could stop without the settlement itself changing.</p>
+<div style="border-left:2px solid #2F4A3D;display:flex;flex-direction:column;gap:29px">
+<sc-for list="{{ notices }}" as="n" hint-placeholder-count="4">
+<div style="position:relative;padding-left:29px">
+<div style="position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:{{ n.dot }};border:2px solid #2F4A3D"></div>
+<div style="font-family:'Courier Prime',monospace;font-size:18px;color:#3F5A4C;margin-bottom:4px">{{ n.date }}</div>
+<p style="font-size:20px;line-height:1.5;margin:0 0 6px">{{ n.text }}</p>
+<a href="{{ n.href }}" style="font-family:'Courier Prime',monospace;font-size:18px;color:#3F5A4C">press release ↗</a>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:47px;margin-bottom:94px;padding:76px 0;border-top:1px solid #AFC0B3;border-bottom:1px solid #AFC0B3">
+<blockquote style="margin:0;color:#C4553A;font-weight:300;font-size:clamp(36px,4.2vw,60px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance">The settlement guarantees 75%. The other 25% was never part of that guarantee.</blockquote>
+<div style="align-self:end;justify-self:end;display:flex;gap:18px;align-items:stretch"><span style="font-family:'Courier Prime',monospace;font-size:18px;color:#3F5A4C;align-self:flex-end">the key point</span><div style="width:10px;background:#2F4A3D;height:94px"></div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;margin-bottom:94px">
+<aside style="font-family:'Courier Prime',monospace;font-size:18px;text-align:right;color:#3F5A4C;padding-top:12px">an example</aside>
+<div style="max-width:36em">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0 0 29px">4 · What it means for a check</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 29px">Take a retiree whose full benefit is $1,500 a month.</p>
+<div style="display:flex;height:47px;margin-bottom:18px"><div style="flex:75;background:#3F5A4C"></div><div style="flex:25;background:#C4553A"></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:18px;margin-bottom:29px">
+<div><div style="font-size:18px;font-weight:600">Guaranteed</div><div style="font-weight:300;font-size:47px">$1,125</div></div>
+<div><div style="font-size:18px;font-weight:600;display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;background:#C4553A"></span>Stopped</div><div style="font-weight:300;font-size:47px;color:#C4553A">$375</div></div>
+<div><div style="font-size:18px;font-weight:600">Per year</div><div style="font-weight:300;font-size:47px">$4,500</div></div>
+</div>
+<a href="Salappedia%20Home.dc.html#check" style="font-size:20px;font-weight:600">Try it with your own benefit →</a>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<aside style="font-family:'Courier Prime',monospace;font-size:18px;text-align:right;color:#3F5A4C;padding-top:12px">useful numbers</aside>
+<div style="max-width:36em">
+<h2 style="font-size:36px;font-weight:600;letter-spacing:-.015em;margin:0 0 29px">5 · What you can do</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 29px;text-wrap:pretty">The Settlement Fund has urged members to contact their representatives, keep their annuity information (Form SF-200) up to date, and check whether they qualify for other health insurance.</p>
+<sc-for list="{{ contacts }}" as="c" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;padding:18px 0;border-top:1px solid #AFC0B3;align-items:baseline">
+<span style="font-size:20px;font-weight:600">{{ c.name }}</span>
+<a href="{{ c.tel }}" style="font-family:'Courier Prime',monospace;font-size:20px">{{ c.num }}</a>
+</div>
+</sc-for>
+</div>
+</div>
+</article>
+
+<section data-screen-label="Sources" style="padding:94px clamp(20px,5vw,88px);background:#EADFCD">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<h2 style="font-weight:100;font-size:clamp(60px,6vw,96px);line-height:.95;letter-spacing:-.035em;margin:0;text-align:right">sources</h2>
+<ol style="margin:0;padding:0 0 0 29px;display:flex;flex-direction:column;gap:12px;font-size:18px;line-height:1.5;max-width:40em">
+<sc-for list="{{ sources }}" as="s" hint-placeholder-count="5">
+<li><a href="{{ s.href }}">{{ s.label }}</a></li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<section data-screen-label="Read next" style="padding:123px clamp(20px,5vw,88px)">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;text-align:right;color:#3F5A4C">read next</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ next }}" as="r" hint-placeholder-count="2">
+<a href="Salappedia%20Blog.dc.html" style="padding:29px 0;border-top:2px solid #2F4A3D;text-decoration:none" style-hover="background:#EADFCD">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;color:#3F5A4C;margin-bottom:6px">{{ r.topic }}</div>
+<div style="font-size:29px;font-weight:600;line-height:1.2">{{ r.title }}</div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#C4553A;color:#FFFFFF;padding:94px clamp(20px,5vw,88px) 47px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:47px;align-items:end">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:29px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font-weight:400;font-size:29px">an independent guide</span><span style="font-weight:600;font-size:29px;white-space:nowrap">nmi pensions, explained</span></div>
+<div style="height:12px;background:#2F4A3D;width:100%"></div>
+<div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:clamp(60px,6vw,96px);line-height:.85;letter-spacing:-.03em">salåppeʼta</div>
+</div>
+<div style="justify-self:end;display:flex;gap:18px;align-items:stretch">
+<div style="display:flex;flex-direction:column;font-size:20px;line-height:1.3;font-weight:600">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">home</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">about</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">glossary</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">contact</a>
+<span style="display:inline-flex;align-items:center;gap:14px;border:2px solid #FFFFFF;padding:14px 20px;font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin-top:29px;color:#FFFFFF;max-width:16em"><span style="width:14px;height:14px;border-radius:50%;background:#FFFFFF;flex:none"></span>Not legal or financial advice</span>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</div>
+<div style="grid-column:1/-1;border-top:1px solid rgba(255,255,255,.6);padding-top:18px;margin-top:29px;font-size:18px;font-weight:600;color:#FFFFFF">© 2026 Salåppeʼta and Alexie Zotomayor. All rights reserved.</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { large: false, p: 0 };
+  componentDidMount() {
+    this.onScroll = () => {
+      const el = document.scrollingElement || document.documentElement;
+      const max = el.scrollHeight - el.clientHeight;
+      this.setState({ p: max > 0 ? el.scrollTop / max : 0 });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    const U = 'http://www.nmisf.com/wp-content/uploads/';
+    const d = '2026-09-26';
+    const days = Math.round((Date.now() - new Date(d+'T12:00:00'))/864e5);
+    const ago = days <= 0 ? 'today' : days === 1 ? 'yesterday' : days < 7 ? days+' days ago' : days < 30 ? Math.floor(days/7)+' wk ago' : Math.floor(days/30)+' mo ago';
+    return {
+      zoom: this.state.large ? 1.18 : 1,
+      largeLabel: this.state.large ? 'A− smaller text' : 'A+ larger text',
+      toggleLarge: () => this.setState(s => ({ large: !s.large })),
+      progress: (this.state.p*100).toFixed(1) + '%',
+      date: new Date(d+'T12:00:00').toLocaleDateString('en-US',{ day:'numeric', month:'short', year:'numeric' }),
+      ago,
+      summary: [
+        { n:'1', t:'The 2013 settlement guarantees at least 75% of your full benefit.' },
+        { n:'2', t:'The other 25% was paid separately by the Government, and it has stopped.' },
+        { n:'3', t:'The Government\u2019s required yearly payment to the Fund has fallen from $45M to $29M.' }
+      ],
+      notices: [
+        { date:'21 Nov 2025', text:'The Fund warns that the 25% payments may be discontinued and retiree health insurance may lapse.', href: U+'2025/11/11.21.2025-NMISF-Press-Release-Possible-Lapse-of-Health-Insurance-Coverage-and-Discontinuation-of-25-Percent-Benefit-Payments.pdf', dot:'#F3ECE0' },
+        { date:'5 Dec 2025', text:'The Government informs the Fund there is no funding for the 25% beyond December 31, 2025.', href: U+'2025/12/12.5.2025-NMISF-Press-Release-Lapse-of-Health-Insurance-Coverage-and-25-Benefit-Payments.pdf', dot:'#AFC0B3' },
+        { date:'9 Jun 2026', text:'The Fund issues a notice on the cessation of 25 percent benefit payments.', href: U+'2026/06/Press-Release-Cessation-of-25-Percent-Benefit-Payments-6.9.2026.pdf', dot:'#C4553A' },
+        { date:'8 Jul 2026', text:'A further important notice on the cessation follows.', href: U+'2026/07/NMISF-Press-Release-Important-Notice-re-Cessation-of-25-Percent-Benefit-Payments-7.8.2026.pdf', dot:'#3F5A4C' }
+      ],
+      contacts: [
+        { name:'NMI Settlement Fund', num:'670.322.3863', tel:'tel:+16703223863' },
+        { name:'Health Insurance Marketplace', num:'1-800-318-2596', tel:'tel:+18003182596' },
+        { name:'CNMI Medicaid', num:'(670) 664-4880', tel:'tel:+16706644880' },
+        { name:'Medicare', num:'1-800-772-1213', tel:'tel:+18007721213' }
+      ],
+      sources: [
+        { label:'NMI Settlement Fund — homepage statement on the settlement', href:'https://www.nmisf.com' },
+        { label:'Settlement Agreement, Doc 468', href:'https://www.nmisf.com/460-0-settlement-agreement/' },
+        { label:'Final Judgment approving the settlement, Doc 561', href:'https://www.nmisf.com/final-judgment-approving-class-action-settlement-in-johnson-v-inos/' },
+        { label:'Annual payment status, FY 2014–2026', href:'https://www.nmisf.com/rfp/annual-payment-status/' },
+        { label:'NMISF press releases, Nov 2025 – Jul 2026', href:'https://www.nmisf.com/news/' }
+      ],
+      next: [
+        { topic:'The money', title:'How the Minimum Annual Payment works' },
+        { topic:'Health insurance', title:'Retiree health insurance after HB 24-75' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

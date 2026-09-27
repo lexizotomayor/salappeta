@@ -1,0 +1,31 @@
+{
+  "sources": {
+    "actuarial": "Milliman, NMI Settlement Fund Actuarial Valuation as of September 30, 2025 (dated September 14, 2026)",
+    "investment": "Wilshire Advisors, NMI Settlement Fund Monthly Investment Summary, July 2026",
+    "payments": "NMI Settlement Fund, Schedule of CNMI Government annual contribution payments, FY2026, as of 7/1/2026"
+  },
+  "asOf": "2025-09-30",
+  "marketValueOfAssets": 148570469,
+  "unrestrictedNetAssets": 148540144,
+  "fy2026Projection": { "beginningBalance": 148540144, "cnmiPayment": 29000000, "otherContribs": 706811, "investmentEarnings": 8368737, "benefitsAt75": -36461879, "expenses": -1748087, "endingBalance": 148405725 },
+  "annualBenefitsAt100": 48615839,
+  "annualBenefitsAt75": 36461879,
+  "assumedReturn": 0.058,
+  "cnmiPaymentsHistory": { "2014": 25000000, "2015": 27000000, "2016": 30000000, "2017": 33000000, "2018": 45000000, "2019": 44000000, "2020": 42000000, "2021": 40000000, "2022": 38000000, "2023": 35169231, "2024": 34830769, "2025": 30000000 },
+  "requiredMinimumAnnualPaymentHistory_nmisfStatusPages": { "2014": 25, "2016": 30, "2017": 33, "2018": 45, "2019": 44, "2020": 42, "2021": 40, "2022": 38, "2023": 36, "2024": 34, "2025": 31, "2026": 29 },
+  "cnmiPaymentsProjected": { "2026": 29000000, "2027": 27000000, "2028": 25000000, "2029": 22000000, "2030": 19000000, "2031": 16500000, "2032": 14000000, "2033": 12000000, "2034_2047_each": 10600000, "2048_on": "equal to benefits and expenses (pay-as-you-go)" },
+  "projectedEndingBalanceMillions": { "2026": 148.4, "2027": 146.9, "2028": 144.4, "2029": 139.7, "2030": 132.8, "2031": 124.2, "2032": 113.8, "2033": 102.1, "2034": 89.5, "2035": 77.6, "2036": 66.4, "2037": 55.8, "2038": 46.0, "2039": 37.0, "2040": 28.8, "2041": 21.6, "2042": 15.4, "2043": 10.2, "2044": 6.1, "2045": 3.0, "2046": 1.0, "2047": 0.07, "2048": 0.002 },
+  "fy2026PaymentStatus": { "required": 29000000, "paidInFullBy": "2026-07-01", "finalInstallment": 8700000, "note": "Schedule file is titled with reference to an MPLT loan" },
+  "members": { "total": 2417, "receiving": 2338, "healthyRetirees": 1563, "survivingSpouses": 696, "childPensioners": 50, "disabled": 9, "backToService": 20, "active": 34, "vestedTerminees": 45, "averageAge": 69.0, "averageRemainingLifeExpectancy": 14.6, "totalPriorYear": 2511 },
+  "investments": {
+    "asOf": "2026-07-31",
+    "marketValue": 153825254,
+    "returnsNetOfFees": { "1yr": 9.20, "3yr": 8.49, "5yr": 3.71, "10yr": 4.87, "sinceInception2013": 4.37, "fiscalYTD": 5.72 },
+    "allocationPct": { "bonds": 40.72, "realAssets": 18.15, "realReturn": 17.57, "stocks": 17.94, "cash": 5.63 }
+  },
+  "healthInsurance": {
+    "fy2026": "Covered; revised FY2026 budget P.L. 24-20 signed Dec 2025, Aetna contract renewed",
+    "fy2027RetireeCost": { "health": 6400000, "life": 494000, "source": "Secretary of Finance testimony, Aug 2026" },
+    "fy2027Budget": "HB 24-108 passed House Sept 2026; in Senate"
+  }
+}

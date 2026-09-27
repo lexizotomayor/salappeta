@@ -1,0 +1,21 @@
+<footer class="site-footer bg-terracotta on-terracotta{% if isHome %} site-footer--home{% endif %}">
+  <div class="site-footer__brand">
+    <div class="kicker"><span>an independent guide</span><span>nmi pensions, explained</span></div>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="vertical-name" aria-hidden="true">salåppeʼta</div>
+  </div>
+  <div class="site-footer__links">
+    <div class="stack">
+      <nav aria-label="Footer">
+        <ul>
+        {%- for item in site.footer %}{% if not (isHome and item.href == "/") %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {%- endif %}{% endfor %}
+        </ul>
+      </nav>
+      <span class="note-outline mt-4" style="max-width:16em"><span class="dot dot--light" aria-hidden="true" style="background:#fff"></span>Not legal or financial advice</span>
+    </div>
+    <div class="bar-v" aria-hidden="true"></div>
+  </div>
+  <p class="site-footer__legal">{{ site.copyright }}</p>
+</footer>

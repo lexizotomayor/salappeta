@@ -1,0 +1,8 @@
+{
+  "stages": ["Introduced", "Committee", "Passed House", "Senate", "Governor"],
+  "items": [
+    { "title": "HB 24-108 — FY 2027 budget", "plain": "The Government’s budget for October 2026 to September 2027. A House amendment reserves half of certain special accounts for retirees’ benefits, including health insurance.", "note": "passed by the House, Sept 2026 · now in the Senate", "stage": 2 },
+    { "title": "Public Law 24-20 — revised FY 2026 budget", "plain": "The $138.9 million revised budget that funded retiree health insurance for 2026 and allowed the Aetna contract to be renewed.", "note": "signed by the Governor, Dec 2025", "stage": 4 },
+    { "title": "HB 24-75 — retiree health & life insurance", "plain": "Proposed $2.8 million for retiree group health and life insurance, leaving a $4.4 million gap.", "note": "passed by the House on 5 Dec 2025 · later status to confirm", "stage": 2 }
+  ]
+}

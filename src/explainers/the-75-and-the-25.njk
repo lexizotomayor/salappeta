@@ -1,0 +1,111 @@
+---
+title: "the 75% and the 25%"
+headline: "The 75% and the 25%: where each part of your pension comes from"
+lede: "Where each part of a retiree's pension comes from, why one part stopped, and what the documents say about both."
+dek: "The settlement guarantees one part. The Government funded the other separately — until it said it could not. A walk through the documents behind both."
+description: "Where each part of a retiree's pension comes from, why the 25% stopped, and what the documents say."
+topic: The settlement
+date: 2026-09-26
+readMinutes: 8
+featured: true
+photo: blog-feature.jpg
+photoLabel: "Photo: Settlement Fund office or courthouse (b&w)"
+summary:
+  - "The 2013 settlement guarantees at least 75% of your full benefit."
+  - "The other 25% was paid separately by the Government, and it has stopped."
+  - "The Government’s required yearly payment to the Fund has fallen from $45M to $29M."
+sources:
+  - { label: "NMI Settlement Fund — homepage statement on the settlement", href: "https://www.nmisf.com" }
+  - { label: "Settlement Agreement, Doc 468", href: "https://www.nmisf.com/460-0-settlement-agreement/" }
+  - { label: "Final Judgment approving the settlement, Doc 561", href: "https://www.nmisf.com/final-judgment-approving-class-action-settlement-in-johnson-v-inos/" }
+  - { label: "Annual payment status, FY 2014–2026", href: "https://www.nmisf.com/rfp/annual-payment-status/" }
+  - { label: "NMISF press releases, Nov 2025 – Jul 2026", href: "https://www.nmisf.com/news/" }
+noticeTimeline:
+  - { date: "21 Nov 2025", dot: "almond", text: "The Fund warns that the 25% payments may be discontinued and retiree health insurance may lapse.", href: "2025/11/11.21.2025-NMISF-Press-Release-Possible-Lapse-of-Health-Insurance-Coverage-and-Discontinuation-of-25-Percent-Benefit-Payments.pdf" }
+  - { date: "5 Dec 2025", dot: "pale", text: "The Government informs the Fund there is no funding for the 25% beyond December 31, 2025.", href: "2025/12/12.5.2025-NMISF-Press-Release-Lapse-of-Health-Insurance-Coverage-and-25-Benefit-Payments.pdf" }
+  - { date: "9 Jun 2026", dot: "terracotta", text: "The Fund issues a notice on the cessation of 25 percent benefit payments.", href: "2026/06/Press-Release-Cessation-of-25-Percent-Benefit-Payments-6.9.2026.pdf" }
+  - { date: "8 Jul 2026", dot: "sage", text: "A further important notice on the cessation follows.", href: "2026/07/NMISF-Press-Release-Important-Notice-re-Cessation-of-25-Percent-Benefit-Payments-7.8.2026.pdf" }
+contacts:
+  - { name: "NMI Settlement Fund", num: "670.322.3863", tel: "+16703223863" }
+  - { name: "Health Insurance Marketplace", num: "1-800-318-2596", tel: "+18003182596" }
+  - { name: "CNMI Medicaid", num: "(670) 664-4880", tel: "+16706644880" }
+  - { name: "Medicare", num: "1-800-772-1213", tel: "+18007721213" }
+---
+<div class="a-row">
+  <div class="aside"><span class="meta">key term</span><b>Settlement Class Member</b><span>A retiree or beneficiary covered by the 2013 settlement.</span></div>
+  <div class="main">
+    <h2>1 · The promise</h2>
+    <p class="dropcap">In 2013, a federal court approved a settlement in <em>Betty Johnson v. Eloy S. Inos</em>, Case No. 09-00023. Retirees had sued because the Government had not paid what it owed into the Retirement Fund for years, and the Fund was running out of money.</p>
+    <p>The settlement created the NMI Settlement Fund, which took over certain Retirement Fund assets. Its job is to make sure every Settlement Class Member receives <strong style="font-weight:600">at least 75% of their Full Benefits</strong>.</p>
+  </div>
+</div>
+
+<div class="a-row">
+  <div class="aside"><span class="meta">key term</span><b>Minimum Annual Payment</b><span>The amount the Government must pay the Settlement Fund each fiscal year.</span></div>
+  <div class="main">
+    <h2>2 · Where the 75% comes from</h2>
+    <p>The Settlement Fund pays the guaranteed 75% from its own assets and from payments the settlement requires the NMI Government to make every year.</p>
+    <p>That required payment peaked at $45 million in FY 2018 and has fallen each year since, to $29 million in FY 2026. The Fund's status report for FY 2026 references a loan from MPLT.</p>
+  </div>
+</div>
+
+<div class="a-row a-row--94" style="align-items:center">
+  <div></div>
+  <figure class="a-figure main" style="max-width:none">
+    <div><div class="big">$45M</div><div class="meta meta--forest mt-3" style="margin-top:var(--s2)">FY 2018</div></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div><div class="big" style="color:var(--sage)">$29M</div><div class="meta meta--forest" style="margin-top:var(--s2)">FY 2026</div></div>
+    <figcaption><strong>Required Minimum Annual Payment.</strong> Source: NMISF annual payment status.</figcaption>
+  </figure>
+</div>
+
+<div class="a-row a-row--94">
+  <div class="aside"><span class="meta">timeline of notices</span></div>
+  <div class="main">
+    <h2>3 · Where the 25% came from</h2>
+    <p style="margin-bottom:var(--s5)">The settlement guarantees 75%. The remaining 25% was paid by the Government separately. That is why it could stop without the settlement itself changing.</p>
+    <ol class="timeline" style="list-style:none;margin:0;padding:0">
+      {%- for n in noticeTimeline %}
+      <li class="timeline__item">
+        <div class="tl-dot tl-dot--{{ n.dot }}" aria-hidden="true"></div>
+        <div class="meta" style="margin-bottom:4px">{{ n.date }}</div>
+        <p style="line-height:1.5;margin-bottom:6px">{{ n.text }}</p>
+        <a class="meta" href="{{ site.uploads }}{{ n.href }}">press release ↗</a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</div>
+
+<div class="pull">
+  <blockquote>The settlement guarantees 75%. The other 25% was never part of that guarantee.</blockquote>
+  <div class="pull__mark" aria-hidden="true"><span class="meta">the key point</span><div class="bar-v"></div></div>
+</div>
+
+<div class="a-row a-row--94">
+  <div class="aside"><span class="meta">an example</span></div>
+  <div class="main">
+    <h2>4 · What it means for a check</h2>
+    <p style="margin-bottom:var(--s4)">Take a retiree whose full benefit is $1,500 a month.</p>
+    <div class="split-bar split-bar--article mb-3" aria-hidden="true"><div class="a"></div><div class="b"></div></div>
+    <div class="auto mb-4" style="--min:160px;--gap:var(--s3)">
+      <div><div style="font-size:1.125rem;font-weight:600">Guaranteed</div><div class="figure-47">$1,125</div></div>
+      <div><div style="font-size:1.125rem;font-weight:600;display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;background:var(--terracotta)" aria-hidden="true"></span>Stopped</div><div class="figure-47 accent">$375</div></div>
+      <div><div style="font-size:1.125rem;font-weight:600">Per year</div><div class="figure-47">$4,500</div></div>
+    </div>
+    <a class="link-strong" href="/#check">Try it with your own benefit →</a>
+  </div>
+</div>
+
+<div class="a-row" style="margin-bottom:0">
+  <div class="aside"><span class="meta">useful numbers</span></div>
+  <div class="main">
+    <h2>5 · What you can do</h2>
+    <p style="margin-bottom:var(--s4)">The Settlement Fund has urged members to contact their representatives, keep their annuity information (Form SF-200) up to date, and check whether they qualify for other health insurance.</p>
+    <div class="contacts">
+      {%- for c in contacts %}
+      <div class="contact"><span>{{ c.name }}</span><a href="tel:{{ c.tel }}">{{ c.num }}</a></div>
+      {%- endfor %}
+    </div>
+  </div>
+</div>

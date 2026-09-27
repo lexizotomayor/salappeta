@@ -1,0 +1,51 @@
+{
+  "answers": [
+    { "q": "Is the 75% safe?", "big": "Yes, if…", "tone": "almond", "body": "the Government makes every required payment and the investments earn about 5.8% a year. The actuary’s plan pays the 75% for as long as members live." },
+    { "q": "Is the 100% covered?", "big": "No", "tone": "terracotta", "body": "This plan only covers 75%. The other 25% was never part of it, and the Government stopped paying it after 2025." },
+    { "q": "Biggest risk?", "big": "Late payments", "tone": "forest", "body": "The plan depends on the Government paying on time every year. Investments below 5.8% would also mean the Government has to pay more." }
+  ],
+  "milestones": [
+    { "y": "2026", "v": "$148M" }, { "y": "2034", "v": "$90M" }, { "y": "2040", "v": "$29M" }, { "y": "~2048", "v": "$0" }
+  ],
+  "ghli": [
+    { "date": "19 Nov 2025", "dot": "almond", "text": "The Secretary of Finance warns that the Aetna contract ends December 31 and that $7.2M is needed to keep retirees covered." },
+    { "date": "5 Dec 2025", "dot": "terracotta", "text": "The House passes HB 24-75 with $2.8M for retiree health and life insurance, leaving a $4.4M gap. The Settlement Fund urges retirees to look at other options." },
+    { "date": "Dec 2025", "dot": "forest", "text": "The Governor signs the revised FY 2026 budget, Public Law 24-20, with $4.3M more for GHLI. The Aetna contract is renewed." },
+    { "date": "Aug 2026", "dot": "almond", "text": "The Secretary of Finance estimates GHLI will cost the general fund about $11.9M in FY 2027, including $6.4M for retiree health." },
+    { "date": "Sep 2026", "dot": "terracotta", "text": "The House passes the FY 2027 budget, HB 24-108, setting aside half of certain special accounts for retirees’ benefits, including GHLI. It now goes to the Senate." }
+  ],
+  "healthContacts": [
+    { "name": "Pacifica Insurance (Aetna agent), Susupe", "num": "(670) 234-6267", "href": "tel:+16702346267" },
+    { "name": "GHLI office, Department of Finance", "num": "ghli@dof.gov.mp", "href": "mailto:ghli@dof.gov.mp" },
+    { "name": "Medicare", "num": "1-800-772-1213", "href": "tel:+18007721213" },
+    { "name": "CNMI Medicaid", "num": "(670) 664-4880", "href": "tel:+16706644880" }
+  ],
+  "allocation": [
+    { "key": "bonds", "name": "Bonds", "color": "forest", "note": "Loans to governments and companies that pay interest." },
+    { "key": "realAssets", "name": "Real assets", "color": "sage", "note": "Property, infrastructure and similar holdings." },
+    { "key": "realReturn", "name": "Real return", "color": "sage-muted", "note": "Holdings meant to keep pace with inflation." },
+    { "key": "stocks", "name": "Stocks", "color": "sage-pale", "note": "Shares in US and world companies." },
+    { "key": "cash", "name": "Cash", "color": "sand", "note": "Kept on hand to pay monthly benefits." }
+  ],
+  "returns": [
+    { "key": "1yr", "label": "Past 1 year" },
+    { "key": "3yr", "label": "Past 3 years" },
+    { "key": "5yr", "label": "Past 5 years" },
+    { "key": "10yr", "label": "Past 10 years" },
+    { "key": "sinceInception2013", "label": "Since 2013" }
+  ],
+  "risks": [
+    { "urgent": true, "title": "The Government pays late or less", "body": "The whole plan assumes every required payment arrives. Missed or late payments are the single biggest threat to the 75%." },
+    { "title": "Investments earn less than 5.8%", "body": "Over the past five and ten years, returns were below the goal. If that continues, the actuary will ask the Government for more each year." },
+    { "title": "Members live longer than expected", "body": "Good news for families, but it means paying benefits for more years than planned." },
+    { "urgent": true, "title": "Health insurance depends on each year’s budget", "body": "Coverage is not part of the Fund. If the Government’s budget falls short, retiree health insurance is at risk, as it nearly was in December 2025." },
+    { "title": "After 2048, it all depends on the Government", "body": "Once the account is empty, benefits must be paid from the Government’s budget each year." }
+  ],
+  "terms": [
+    { "term": "Actuary", "def": "An expert who estimates how much a pension fund will need to pay, and for how long." },
+    { "term": "Actuarial valuation", "def": "The actuary’s yearly check-up of the Fund. This one is by Milliman, as of 30 September 2025." },
+    { "term": "Minimum Annual Payment", "def": "The amount the Government must pay the Fund each year under the settlement." },
+    { "term": "Investment return", "def": "What the Fund’s money earns in a year, shown as a percentage." },
+    { "term": "Net of fees", "def": "Returns after the managers’ fees are taken out." }
+  ]
+}

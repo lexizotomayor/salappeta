@@ -1,0 +1,53 @@
+{
+  "name": "Salåppeʼta",
+  "tagline": "nmi pensions, explained",
+  "description": "An independent, plain-language guide to the pensions of Northern Mariana retirees: the Johnson v. Inos settlement, the NMI Settlement Fund, bills, budgets and retiree health insurance.",
+  "url": "https://salappeta.netlify.app",
+  "updated": "2026-09-27",
+  "copyright": "© 2026 Salåppeʼta and Alexie Zotomayor. All rights reserved.",
+  "nmisf": "https://www.nmisf.com",
+  "uploads": "http://www.nmisf.com/wp-content/uploads/",
+  "nav": {
+    "home": [
+      { "label": "where things stand", "href": "#standing" },
+      { "label": "timeline", "href": "#timeline" },
+      { "label": "the money", "href": "#money" },
+      { "label": "laws & court orders", "href": "#library" },
+      { "label": "the feed", "href": "#news" },
+      { "label": "blog", "href": "/explainers/" },
+      { "label": "podcast", "href": "/podcast/" },
+      { "label": "contact us", "href": "#stay" }
+    ],
+    "reading": [
+      { "label": "where things stand", "href": "/#standing" },
+      { "label": "laws & court orders", "href": "/#library" },
+      { "label": "blog", "href": "/explainers/" },
+      { "label": "podcast", "href": "/podcast/" },
+      { "label": "contact us", "href": "/#stay" }
+    ],
+    "fund": [
+      { "label": "where things stand", "href": "/#standing" },
+      { "label": "will the money last?", "href": "/will-the-money-last/" },
+      { "label": "health insurance", "href": "/will-the-money-last/#health" },
+      { "label": "laws & court orders", "href": "/#library" },
+      { "label": "blog", "href": "/explainers/" },
+      { "label": "contact us", "href": "/#stay" }
+    ],
+    "reference": [
+      { "label": "home", "href": "/" },
+      { "label": "will the money last?", "href": "/will-the-money-last/" },
+      { "label": "blog", "href": "/explainers/" },
+      { "label": "glossary", "href": "/glossary/" },
+      { "label": "about", "href": "/about/" },
+      { "label": "contact us", "href": "/#stay" }
+    ]
+  },
+  "footer": [
+    { "label": "home", "href": "/" },
+    { "label": "about", "href": "/about/" },
+    { "label": "glossary", "href": "/glossary/" },
+    { "label": "sources", "href": "/about/#sources" },
+    { "label": "contact", "href": "/#stay" },
+    { "label": "nmisf.com ↗", "href": "https://www.nmisf.com" }
+  ]
+}

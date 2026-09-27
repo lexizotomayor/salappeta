@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#F3ECE0;color:#2F4A3D;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2F4A3D;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:#3F5A4C}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="background:#F3ECE0;min-height:100vh">
+<header data-screen-label="Podcast header" style="padding:40px clamp(20px,5vw,88px) 0;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:clamp(16px,3vw,47px);align-items:start">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-weight:700;font-size:24px;letter-spacing:-.01em">salåppeʼ<span style="color:#C4553A">ta</span></a>
+<nav style="justify-self:end;display:flex;gap:29px;align-items:stretch">
+<div style="display:flex;flex-direction:column">
+<a href="Salappedia%20Home.dc.html#standing" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">where things stand</a>
+<a href="Salappedia%20Home.dc.html#library" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">laws &amp; court orders</a>
+<a href="Salappedia%20Blog.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">blog</a>
+<a href="Salappedia%20Podcast.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px;background:#3F5A4C;color:#EEF3ED">podcast</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">contact us</a>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</nav>
+</header>
+
+<section data-screen-label="Podcast title" style="position:relative;padding:94px clamp(20px,5vw,88px) 123px;display:flex;flex-direction:column;gap:76px;overflow:hidden">
+<h1 style="font-weight:100;font-size:clamp(60px,9vw,150px);line-height:.9;letter-spacing:-.045em;margin:0 0 0 -0.04em">the breadfruit<br>dispatch</h1>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:76px 47px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:29px;max-width:520px">
+<div style="height:14px;background:#C4553A;width:61.8%"></div>
+<span style="font-family:'Courier Prime',monospace;font-size:18px;color:#3F5A4C">a podcast from salåppeʼta</span>
+<p style="font-size:20px;line-height:1.618;margin:0;text-wrap:pretty">Retirees in their own voices, lawmakers and trustees on the record, and one topic explained at a time.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="#" style="font-size:20px;font-weight:700;background:#C4553A;color:#FFFFFF;text-decoration:none;min-height:52px;padding:0 24px;display:flex;align-items:center" style-hover="filter:brightness(.9)">Listen on Spotify ↗</a>
+<a href="#" style="font-size:20px;font-weight:600;border:2px solid #2F4A3D;text-decoration:none;min-height:52px;padding:0 24px;display:flex;align-items:center" style-hover="background:#2F4A3D;color:#F3ECE0;font-weight:500">Apple Podcasts ↗</a>
+</div>
+</div>
+<div style="position:relative;width:min(100%,480px);aspect-ratio:1;justify-self:end">
+<div style="position:absolute;inset:0;border-radius:50%;overflow:hidden;filter:grayscale(1);background:#EADFCD">
+<image-slot id="podcast-cover" shape="circle" placeholder="Podcast cover art / breadfruit (b&amp;w)" style="width:100%;height:100%;display:block"></image-slot>
+</div>
+<div style="position:absolute;width:38.2%;aspect-ratio:1;left:-10%;top:-6%;border-radius:50%;background:#AFC0B3;mix-blend-mode:multiply;pointer-events:none"></div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Formats" style="padding:94px clamp(20px,5vw,88px);border-top:1px solid #AFC0B3;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:47px">
+<sc-for list="{{ formats }}" as="f" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font-weight:300;font-size:60px;line-height:.9;color:#6F8A78">{{ f.n }}</span>
+<h3 style="font-size:24px;font-weight:600;margin:0">{{ f.name }}</h3>
+<p style="font-size:18px;line-height:1.618;margin:0">{{ f.body }}</p>
+</div>
+</sc-for>
+</section>
+
+<section data-screen-label="Episodes" style="padding:94px clamp(20px,5vw,88px) 123px;background:#2F4A3D;color:#F3ECE0;font-weight:500">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:29px 47px;align-items:end;margin-bottom:76px">
+<h2 style="font-weight:100;font-size:clamp(60px,7vw,110px);line-height:.95;letter-spacing:-.035em;margin:0">episodes</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap;justify-self:end">
+<sc-for list="{{ filters }}" as="t" hint-placeholder-count="5">
+<button onClick="{{ t.pick }}" style="font-family:inherit;font-size:18px;min-height:44px;padding:0 18px;border:1px solid #F3ECE0;background:{{ t.bg }};color:{{ t.fg }};cursor:pointer">{{ t.label }}</button>
+</sc-for>
+</div>
+</div>
+<sc-for list="{{ episodes }}" as="e" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;padding:29px 0;border-top:1px solid #3F5A4C">
+<div style="display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:6px">
+<span style="font-weight:300;font-size:47px;line-height:1;letter-spacing:-.02em">{{ e.no }}</span>
+<span style="font-family:'Courier Prime',monospace;font-size:18px;color:#AFC0B3">{{ e.format }} · {{ e.len }}</span>
+</div>
+<div>
+<h3 style="font-size:clamp(24px,2.4vw,29px);font-weight:600;margin:0 0 8px;line-height:1.2">{{ e.title }}</h3>
+<p style="font-size:18px;line-height:1.618;margin:0 0 18px;max-width:36em;color:#DDE6DF">{{ e.summary }}</p>
+<div style="display:flex;gap:29px;flex-wrap:wrap;font-size:18px;font-weight:600">
+<a href="#" style="color:#F3ECE0">Spotify ↗</a>
+<a href="#" style="color:#F3ECE0">Apple ↗</a>
+</div>
+</div>
+</div>
+</sc-for>
+<p style="font-family:'Courier Prime',monospace;font-size:18px;color:#AFC0B3;margin:29px 0 0">planned episodes — guests to be confirmed</p>
+</section>
+
+<section data-screen-label="Pitch a guest" style="padding:123px clamp(20px,5vw,88px);display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div></div>
+<div style="border-left:6px solid #2F4A3D;padding-left:47px;max-width:640px">
+<h2 style="font-size:29px;font-weight:600;margin:0 0 12px">Want to be on the show?</h2>
+<p style="font-size:20px;line-height:1.618;margin:0 0 29px">Retirees, family members and anyone who has worked on the Fund — we would like to hear from you.</p>
+<a href="Salappedia%20Home.dc.html#stay" style="font-size:20px;font-weight:600">Get in touch →</a>
+</div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#C4553A;color:#FFFFFF;padding:94px clamp(20px,5vw,88px) 47px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:47px;align-items:end">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:29px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font-weight:400;font-size:29px">an independent guide</span><span style="font-weight:600;font-size:29px;white-space:nowrap">nmi pensions, explained</span></div>
+<div style="height:12px;background:#2F4A3D;width:100%"></div>
+<div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:clamp(60px,6vw,96px);line-height:.85;letter-spacing:-.03em">salåppeʼta</div>
+</div>
+<div style="justify-self:end;display:flex;gap:18px;align-items:stretch">
+<div style="display:flex;flex-direction:column;font-size:20px;line-height:1.3;font-weight:600">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">home</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">about</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">glossary</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">contact</a>
+<span style="display:inline-flex;align-items:center;gap:14px;border:2px solid #FFFFFF;padding:14px 20px;font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin-top:29px;color:#FFFFFF;max-width:16em"><span style="width:14px;height:14px;border-radius:50%;background:#FFFFFF;flex:none"></span>Not legal or financial advice</span>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</div>
+<div style="grid-column:1/-1;border-top:1px solid rgba(255,255,255,.6);padding-top:18px;margin-top:29px;font-size:18px;font-weight:600;color:#FFFFFF">© 2026 Salåppeʼta and Alexie Zotomayor. All rights reserved.</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { f: 'All' };
+  renderVals() {
+    const f = this.state.f;
+    const formats = [
+      ['Retiree voices','Retirees and their families on life since the cuts.'],
+      ['Explainers','One topic, fifteen minutes, sources in the show notes.'],
+      ['On the record','Interviews with lawmakers, the trustee and Fund staff.'],
+      ['Roundup','The month\u2019s bills, court filings and notices.']
+    ];
+    const eps = [
+      ['Explainers','18 min','The 75% and the 25%','Where each part of a retiree\u2019s benefit comes from, and what changed when the 25% stopped.'],
+      ['Retiree voices','32 min','Thirty years of service','A retired teacher on planning a retirement around a promise, and adjusting when it changed.'],
+      ['Roundup','14 min','December 2025: health insurance on the line','HB 24-75, the $4.4 million gap, and the alternatives retirees were told to explore.'],
+      ['On the record','40 min','Questions for the Settlement Fund','How payments are scheduled, what causes delays, and what the Fund can and cannot decide.'],
+      ['Explainers','16 min','Reading the actuarial report','The few numbers that tell you whether the money will last.']
+    ];
+    return {
+      formats: formats.map(([name,body],i) => ({ n: String(i+1).padStart(2,'0'), name, body })),
+      filters: ['All', ...formats.map(x=>x[0])].map(n => ({ label:n, bg: f===n?'#F3ECE0':'transparent', fg: f===n?'#2F4A3D':'#F3ECE0', pick: () => this.setState({ f:n }) })),
+      episodes: eps.filter(e => f==='All' || e[0]===f).map(([format,len,title,summary],i) => ({ no: 'no. ' + String(eps.length - eps.indexOf(eps.find(x=>x[2]===title))).padStart(2,'0'), format, len, title, summary }))
+    };
+  }
+}
+</script>
+</body>
+</html>

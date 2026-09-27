@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3ECE0;color:#2F4A3D;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2F4A3D;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:#C4553A}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="background:#F3ECE0;min-height:100vh;zoom:{{ zoom }}">
+<header data-screen-label="Header" style="padding:40px clamp(20px,5vw,88px) 0;display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:clamp(16px,3vw,47px);align-items:start">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-weight:700;font-size:24px;letter-spacing:-.01em">salåppeʼ<span style="color:#C4553A">ta</span></a>
+<nav style="justify-self:end;display:flex;gap:29px;align-items:stretch">
+<div style="display:flex;flex-direction:column">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">home</a>
+<a href="Salappedia%20Fund%20Health.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">will the money last?</a>
+<a href="Salappedia%20Blog.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">blog</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px;background:#3F5A4C;color:#EEF3ED">glossary</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">about</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;font-size:20px;min-height:34px;display:flex;align-items:center;padding:0 10px;margin:0 -10px" style-hover="background:#3F5A4C;color:#EEF3ED">contact us</a>
+<button onClick="{{ toggleLarge }}" style="font-family:inherit;font-size:20px;font-weight:600;background:none;border:none;padding:0;min-height:44px;cursor:pointer;color:#3F5A4C;text-align:left">{{ largeLabel }}</button>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</nav>
+</header>
+
+<section data-screen-label="Title" style="padding:94px clamp(20px,5vw,88px) 76px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div style="font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;text-align:right;padding-top:12px">{{ count }} words, in plain English</div>
+<div>
+<div style="height:14px;background:#C4553A;width:61.8%;margin-bottom:29px"></div>
+<h1 style="font-weight:100;font-size:clamp(60px,7.5vw,120px);line-height:.95;letter-spacing:-.04em;margin:0 0 47px">glossary</h1>
+<p style="font-size:clamp(22px,2.2vw,29px);font-weight:400;line-height:1.382;margin:0 0 47px;max-width:30em">The words you will meet in court orders, fund reports and news about the pensions, explained simply.</p>
+<label style="display:flex;flex-direction:column;gap:12px;max-width:560px">
+<span style="font-size:20px;font-weight:600">Look up a word</span>
+<input type="search" placeholder="e.g. actuary" value="{{ q }}" onChange="{{ setQ }}" style="font-family:inherit;font-size:24px;padding:14px 18px;background:#FFFFFF;border:2px solid #2F4A3D;outline:none;color:#2F4A3D;min-height:56px">
+</label>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Letters" style="padding:0 clamp(20px,5vw,88px) 47px">
+<div style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px">
+<div></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ letters }}" as="l" hint-placeholder-count="14">
+<a href="{{ l.href }}" style="min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center;border:2px solid #2F4A3D;font-size:22px;font-weight:700;text-decoration:none" style-hover="background:#2F4A3D;color:#F3ECE0">{{ l.ch }}</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Terms" style="padding:47px clamp(20px,5vw,88px) 123px">
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+<div id="{{ g.id }}" style="display:grid;grid-template-columns:minmax(0,38.2fr) minmax(0,61.8fr);gap:47px;border-top:2px solid #2F4A3D;padding:29px 0 18px">
+<div style="font-weight:100;font-size:clamp(60px,7vw,110px);line-height:.85;text-align:right;color:#C4553A">{{ g.ch }}</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ g.items }}" as="t" hint-placeholder-count="3">
+<div style="padding:18px 0;border-bottom:1px solid #AFC0B3;max-width:40em">
+<h2 style="font-size:26px;font-weight:700;margin:0 0 8px">{{ t.term }}</h2>
+<p style="font-size:20px;line-height:1.618;margin:0">{{ t.def }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+<sc-if value="{{ none }}" hint-placeholder-val="{{ false }}">
+<p style="font-size:22px;font-weight:600;margin:0">No match. Try another word, or <a href="Salappedia%20Home.dc.html#stay">ask us to add it</a>.</p>
+</sc-if>
+</section>
+
+<footer data-screen-label="Footer" style="background:#C4553A;color:#FFFFFF;padding:94px clamp(20px,5vw,88px) 47px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:47px;align-items:end">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:29px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font-weight:400;font-size:29px">an independent guide</span><span style="font-weight:600;font-size:29px;white-space:nowrap">nmi pensions, explained</span></div>
+<div style="height:12px;background:#2F4A3D;width:100%"></div>
+<div style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:clamp(60px,6vw,96px);line-height:.85;letter-spacing:-.03em">salåppeʼta</div>
+</div>
+<div style="justify-self:end;display:flex;gap:18px;align-items:stretch">
+<div style="display:flex;flex-direction:column;font-size:20px;line-height:1.3;font-weight:600">
+<a href="Salappedia%20Home.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">home</a>
+<a href="Salappedia%20About.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">about</a>
+<a href="Salappedia%20Glossary.dc.html" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">glossary</a>
+<a href="Salappedia%20About.dc.html#sources" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">sources</a>
+<a href="Salappedia%20Home.dc.html#stay" style="text-decoration:none;color:#FFFFFF" style-hover="text-decoration:underline">contact</a>
+<span style="display:inline-flex;align-items:center;gap:14px;border:2px solid #FFFFFF;padding:14px 20px;font-size:22px;font-weight:700;line-height:1.3;margin-top:29px;max-width:16em"><span style="width:14px;height:14px;border-radius:50%;background:#FFFFFF;flex:none"></span>Not legal or financial advice</span>
+</div>
+<div style="width:10px;background:#2F4A3D"></div>
+</div>
+<div style="grid-column:1/-1;border-top:1px solid rgba(255,255,255,.6);padding-top:18px;margin-top:29px;font-size:18px;font-weight:600">© 2026 Salåppeʼta and Alexie Zotomayor. All rights reserved.</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { large: false, q: '' };
+  renderVals() {
+    const T = [
+      ['25% payment','The part of a retiree\u2019s full benefit above the guaranteed 75%. It was paid separately by the Government and stopped after it said there was no funding beyond December 31, 2025.'],
+      ['75% guarantee','The settlement\u2019s promise that members receive at least 75% of their Full Benefits.'],
+      ['Actuary','An expert who uses math and statistics to estimate how much a pension fund will need to pay, and for how long.'],
+      ['Actuarial valuation','The actuary\u2019s yearly check-up of the Fund: how many members there are, how much money there is, and how much the Government must pay.'],
+      ['Annuity','A regular payment for life. Your monthly pension is an annuity.'],
+      ['Appeal','A formal request asking the Settlement Fund to review a decision about your benefits. The Fund publishes its appeal rules, forms and fees.'],
+      ['Assumed return','The yearly investment earnings the plan expects over the long run. For the Settlement Fund it is 5.8%.'],
+      ['Beneficiary','A person who receives benefits because of a member, such as a surviving spouse or child.'],
+      ['Class action','A lawsuit brought by a few people on behalf of a larger group with the same problem. Johnson v. Inos was a class action for retirees.'],
+      ['Class Member','A retiree or beneficiary covered by the 2013 settlement.'],
+      ['Consent judgment','A court order that records what both sides agreed to. Doc 562 in the settlement case.'],
+      ['Contribution','Money paid into a pension fund, by the employee from each paycheck or by the employer.'],
+      ['Defined benefit plan','A pension that promises a set monthly amount based on salary and years of service, rather than on how investments perform.'],
+      ['Final judgment','The court\u2019s last decision in a case. Doc 561 approved the retirees\u2019 settlement.'],
+      ['Full Benefits','The pension a member would receive under the original Retirement Fund rules, before any reduction.'],
+      ['Funded ratio','Money a fund holds divided by what it owes. 100% means fully funded.'],
+      ['GHLI','Group Health and Life Insurance: the Government program that provides health and life insurance to employees and retirees.'],
+      ['Investment return','What the Fund\u2019s money earned over a period, shown as a percentage.'],
+      ['Medicaid','Government health coverage for people with low income. CNMI Medicaid: (670) 664-4880.'],
+      ['Medicare','Federal health insurance for people 65 and older. Medicare: 1-800-772-1213.'],
+      ['Minimum Annual Payment','The amount the Government must pay the Settlement Fund each fiscal year, set by the actuary. $29 million for FY 2026.'],
+      ['MPLT','Marianas Public Land Trust, which holds public land money in trust. The Government has borrowed from it to meet budget needs.'],
+      ['Net of fees','Investment returns after the managers\u2019 fees are taken out.'],
+      ['Pay-as-you-go','Paying each year\u2019s benefits from that year\u2019s budget instead of from savings. Expected for the Settlement Fund from about 2048.'],
+      ['Public Law','A bill that has passed the Legislature and been signed by the Governor. Written like P.L. 24-20.'],
+      ['Retirement Fund','The NMI Retirement Fund, created in 1980. It ran short of money after years of unpaid Government contributions.'],
+      ['Settlement Agreement','The 2013 agreement in Johnson v. Inos that created the Settlement Fund. Doc 468.'],
+      ['Settlement Fund','The NMI Settlement Fund, which took over Retirement Fund assets to pay class members at least 75% of Full Benefits.'],
+      ['SF-200','The Annuity Recipient Information Update form. The Fund asks members to return it each year to keep payments going.'],
+      ['Surviving spouse benefit','A pension paid to a member\u2019s husband or wife after the member dies, generally 50% of the member\u2019s benefit.'],
+      ['Trustee','The independent person appointed by the court to oversee the Settlement Fund and report on it.'],
+      ['Vested terminee','A former employee who earned the right to a pension but has not started receiving it yet.']
+    ];
+    const q = (this.state.q || '').trim().toLowerCase();
+    const list = T.filter(([t,d]) => !q || t.toLowerCase().includes(q) || d.toLowerCase().includes(q));
+    const key = t => /^[0-9]/.test(t) ? '#' : t[0].toUpperCase();
+    const groups = [];
+    list.forEach(([term,def]) => { const k = key(term); let g = groups.find(x => x.ch === k); if (!g) groups.push(g = { ch:k, id:'l-'+(k==='#'?'num':k), items:[] }); g.items.push({ term, def }); });
+    return {
+      zoom: this.state.large ? 1.18 : 1,
+      largeLabel: this.state.large ? 'A− smaller text' : 'A+ larger text',
+      toggleLarge: () => this.setState(s => ({ large: !s.large })),
+      q: this.state.q, setQ: e => this.setState({ q: e.target.value }),
+      count: T.length,
+      letters: groups.map(g => ({ ch: g.ch, href: '#'+g.id })),
+      groups, none: groups.length === 0
+    };
+  }
+}
+</script>
+</body>
+</html>
