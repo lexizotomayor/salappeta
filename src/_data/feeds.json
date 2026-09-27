@@ -68,16 +68,16 @@
       "note": "placeholder — feeds to be selected",
       "fallback": [
         {
-          "source": "National press",
-          "date": "",
-          "title": "US public pension headlines appear here",
-          "href": ""
+          "source": "Indiana Capital Chronicle",
+          "date": "2026-09-27",
+          "title": "Indiana officials expect saving $1B a year as teacher pension plan hits funded status",
+          "href": "https://indianacapitalchronicle.com/2026/09/25/indiana-officials-expect-saving-1b-a-year-as-teacher-pension-plan-hits-funded-status/"
         },
         {
-          "source": "Research",
-          "date": "",
-          "title": "Sources to confirm: Pew, NASRA, Pensions & Investments",
-          "href": ""
+          "source": "Pew Charitable Trusts",
+          "date": "2026-09-27",
+          "title": "Public Workers With Nontraditional Career Paths May Face Insufficient Retirement Benefits",
+          "href": "https://pewtrsts.org/4xa5rza"
         }
       ]
     }
