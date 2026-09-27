@@ -65,7 +65,7 @@
       "label": "United States",
       "name": "National press",
       "url": "",
-      "note": "placeholder — feeds to be selected",
+      "note": "Click to read for more",
       "fallback": [
         {
           "source": "Indiana Capital Chronicle",
