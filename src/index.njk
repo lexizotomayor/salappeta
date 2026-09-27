@@ -112,12 +112,9 @@ navSet: home
 </section>
 
 <section id="stories" class="section" aria-labelledby="stories-h">
-  <div class="split mb-6">
-    <div class="spacer"></div>
-    <div>
-      <h2 id="stories-h" class="h-section mb-4">in their words</h2>
-      <p class="body measure">Teachers, nurses, police officers and clerks who spent their careers in public service, on what the cuts have meant for them.</p>
-    </div>
+  <div class="mb-6">
+    <h2 id="stories-h" class="h-section mb-4">in their words</h2>
+    <p class="body measure">Teachers, nurses, police officers and clerks who spent their careers in public service, on what the cuts have meant for them.</p>
   </div>
   <div class="auto stories">
     {%- set storySizes = ["100%", "61.8%", "80%"] %}{% set storyOffsets = ["0px", "123px", "47px"] %}
@@ -180,10 +177,7 @@ navSet: home
 </section>
 
 <section id="library" class="section section--94 bg-sage on-dark" aria-labelledby="library-h">
-  <div class="split">
-    <div class="spacer"></div>
-    <h2 id="library-h" class="h-section mb-6">laws &amp; court orders</h2>
-  </div>
+  <h2 id="library-h" class="h-section mb-6">laws &amp; court orders</h2>
   <div class="row-list row-list--thin">
     {%- for d in documents.items %}
     <a class="row split" href="{{ d.href }}">

@@ -45,7 +45,7 @@ layout: layouts/base.njk
 {% if sources %}
 <section class="section section--94 bg-deep" style="padding-bottom:var(--s7)" aria-labelledby="sources-h">
   <div class="split">
-    <h2 id="sources-h" class="h-section h-section--xs aside-r">sources</h2>
+    <h2 id="sources-h" class="h-section h-section--xs">sources</h2>
     <ol class="sources-list">
       {%- for s in sources %}
       <li><a href="{{ s.href }}">{{ s.label }}</a></li>
@@ -57,7 +57,7 @@ layout: layouts/base.njk
 
 <section class="section" aria-labelledby="next-h">
   <div class="split">
-    <h2 id="next-h" class="aside-r meta" style="font-weight:400">read next</h2>
+    <h2 id="next-h" class="meta" style="font-weight:400">read next</h2>
     <div class="row-list">
       {%- for r in collections.explainers | whereNot("title", title) | take(2) %}
       <a class="row" href="{{ r.url or '/explainers/' }}">
